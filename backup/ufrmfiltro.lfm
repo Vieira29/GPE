@@ -1,11 +1,11 @@
 inherited FrmFiltro: TFrmFiltro
   Left = 198
-  Height = 410
+  Height = 365
   Top = 104
-  Width = 984
+  Width = 782
   Caption = 'FrmFiltro'
-  ClientHeight = 410
-  ClientWidth = 984
+  ClientHeight = 365
+  ClientWidth = 782
   OnClose = FormClose
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
@@ -148,6 +148,7 @@ inherited FrmFiltro: TFrmFiltro
         Color = clWindow
         Columns = <>
         DataSource = DSObjetos
+        ReadOnly = True
         TabOrder = 0
         OnDrawColumnCell = DBGrid1DrawColumnCell
         OnDblClick = DBGrid1DblClick

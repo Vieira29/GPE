@@ -17,10 +17,13 @@ type
     BitBtnTelaPacientes: TBitBtn;
     BitBtnTelaCidades: TBitBtn;
     BitBtnTelaProcedimento: TBitBtn;
+    ImageFundo: TImage;
     PageControlOpcoes: TPageControl;
     Panel1: TPanel;
+    StatusBarWelcome: TStatusBar;
     TabSheetPrincipal: TTabSheet;
     TabSheet2: TTabSheet;
+    Timer1: TTimer;
     procedure BitBtnTelaCidadesClick(Sender: TObject);
     procedure BitBtnTelaPacientesClick(Sender: TObject);
     procedure BitBtnTelaProcedimentoClick(Sender: TObject);
@@ -29,6 +32,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure TabControlPrincipalChange(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
 
   public
@@ -51,6 +55,13 @@ uses udm, uFrmCadPacientes, uFrmCadCidade, uFrmCadRemedio, uFrmCadProcedimento;
 procedure TFrmMain.TabControlPrincipalChange(Sender: TObject);
 begin
 
+end;
+
+procedure TFrmMain.Timer1Timer(Sender: TObject);
+begin
+    StatusBarWelcome.Panels[1].text :=
+    formatdatetime('dddd","dd" de "mmmm" de "yyyy', now) + ' - ' +
+    formatdatetime('hh:mm:ss', now);
 end;
 
 procedure TFrmMain.BitBtnTelaPacientesClick(Sender: TObject);
@@ -113,6 +124,7 @@ begin
   Left := 0;
   Width := Screen.Width;
   Height := Screen.Height;
+  self.WindowState:= wsMaximized;
 end;
 
 procedure TFrmMain.BitBtnTelaCidadesClick(Sender: TObject);

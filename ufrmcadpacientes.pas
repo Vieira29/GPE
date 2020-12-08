@@ -36,7 +36,6 @@ type
     DBEditBairro: TDBEdit;
     DBImageImgPaciente: TDBImage;
     DBMemoProblema: TDBMemo;
-    DBRadioGroupOrigemCad: TDBRadioGroup;
     GroupBoxImagem: TGroupBox;
     Image1: TImage;
     Image2: TImage;
@@ -71,7 +70,6 @@ type
     ZQObjetosNOME: TStringField;
     ZQObjetosNOME_CIDADE: TStringField;
     ZQObjetosNRO: TLongintField;
-    ZQObjetosORIGEM_CAD: TSmallintField;
     ZQObjetosPROBLEMA: TStringField;
     ZQObjetosSELECIONADO: TStringField;
     ZQObjetosTELEFONE: TStringField;

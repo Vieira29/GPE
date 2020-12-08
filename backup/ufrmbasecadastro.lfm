@@ -136,9 +136,9 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
       Height = 419
       Top = 56
       Width = 774
-      ActivePage = TabCadastro
+      ActivePage = TabConsulta
       Align = alClient
-      TabIndex = 1
+      TabIndex = 0
       TabOrder = 2
       OnChange = PageControlCadChange
       OnChanging = PageControlCadChanging
@@ -162,6 +162,7 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
             Top = 29
             Width = 112
             ItemHeight = 15
+            OnChange = ComboBoxColunaChange
             TabOrder = 0
           end
           object EditPesquisa: TEdit

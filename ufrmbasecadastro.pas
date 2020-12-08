@@ -50,6 +50,7 @@ type
     ZQComandos: TZQuery;
     procedure ActionGravarExecute(Sender: TObject);
     procedure ActionSairExecute(Sender: TObject);
+    procedure ComboBoxColunaChange(Sender: TObject);
     procedure ConfiguraControles;
     procedure ActionCancelarExecute(Sender: TObject);
     procedure ActionExcluirExecute(Sender: TObject);
@@ -264,15 +265,15 @@ var
   i, J: Integer;
 begin
 
-  //if DBGridCad.Columns.Count > 0 then
-  //begin
-    //for i := 0 to DBGridCad.Columns.Count - 1 do
-      //if (DBGridCad.Columns[i].Field = nil) then
-        //ComboBoxColuna.Items.Add('Não definido')
-      //else
-        //ComboBoxColuna.Items.Add(DBGridCad.Columns[i].Field.DisplayName);
+  {if DBGridCad.Columns.Count > 0 then
+  begin
+    for i := 0 to DBGridCad.Columns.Count - 1 do
+      if (DBGridCad.Columns[i].Field = nil) then
+        ComboBoxColuna.Items.Add('Não definido')
+      else
+        ComboBoxColuna.Items.Add(DBGridCad.Columns[i].Field.DisplayName);
 
-  //end;
+  end;}
 
 end;
 
@@ -564,6 +565,11 @@ begin
    END;
 
   Close;
+end;
+
+procedure TFrmBaseCadastro.ComboBoxColunaChange(Sender: TObject);
+begin
+  idxColunaProcura := ComboBoxColuna.ItemIndex;
 end;
 
 procedure TFrmBaseCadastro.ActionGravarExecute(Sender: TObject);

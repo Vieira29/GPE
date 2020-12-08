@@ -54,11 +54,12 @@ inherited FrmFiltro: TFrmFiltro
         TabOrder = 1
       end
       object ComboBoxColuna: TComboBox
-        Left = 10
+        Left = 11
         Height = 23
         Top = 25
         Width = 144
         ItemHeight = 15
+        OnChange = ComboBoxColunaChange
         TabOrder = 2
       end
       object Label1: TLabel

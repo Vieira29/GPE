@@ -210,12 +210,12 @@ begin
   END;
 
   //NASCIMENTO
-  if ZQObjetos.FieldByName('NASCIMENTO').AsString = '' then
+ { if ZQObjetos.FieldByName('NASCIMENTO').AsString = '' then
   BEGIN
     MessageDlg('Atenção', 'Preencha a Data de Nacimento do paciente!', mtWarning, [mbOK],0 );
     DBDateEditNacimento.SetFocus;
     abort;
-  END;
+  END;}
 
   //LOGRADOURO
   if ZQObjetos.FieldByName('LOGRADOURO').AsString = '' then

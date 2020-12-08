@@ -36,6 +36,7 @@ type
     procedure BitBtnCancelarClick(Sender: TObject);
     procedure BitBtnSelecionarClick(Sender: TObject);
     procedure Busca(TipoPesquisa: string);
+    procedure ComboBoxColunaChange(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
@@ -212,6 +213,11 @@ begin
   end;
 
 
+end;
+
+procedure TFrmFiltro.ComboBoxColunaChange(Sender: TObject);
+begin
+  idxColunaProcura := ComboBoxColuna.ItemIndex;
 end;
 
 procedure TFrmFiltro.DBGrid1DblClick(Sender: TObject);
