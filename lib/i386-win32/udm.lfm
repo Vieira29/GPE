@@ -1,0 +1,46 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 292
+  HorizontalOffset = 486
+  VerticalOffset = 144
+  Width = 335
+  PPI = 96
+  object ZConexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+    )
+    AfterConnect = ZConexaoAfterConnect
+    Port = 3050
+    Database = 'E:\PROJECTS\GPE\banco\GPE_BD.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    LibraryLocation = 'fbclient.dll'
+    left = 37
+    top = 32
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConexao
+    Params = <>
+    left = 37
+    top = 88
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+    )
+    Port = 0
+    Protocol = 'ado'
+    left = 195
+    top = 40
+  end
+  object ZQuery2: TZQuery
+    Params = <>
+    left = 213
+    top = 108
+  end
+end

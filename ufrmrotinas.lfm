@@ -1,0 +1,8 @@
+object FrmRotinas: TFrmRotinas
+  Left = 256
+  Height = 240
+  Top = 145
+  Width = 320
+  Caption = 'FrmRotinas'
+  LCLVersion = '2.0.4.0'
+end

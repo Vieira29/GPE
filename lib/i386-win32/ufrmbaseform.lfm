@@ -1,0 +1,24 @@
+object FrmBaseForm: TFrmBaseForm
+  Left = 256
+  Height = 329
+  Top = 145
+  Width = 448
+  AlphaBlendValue = 0
+  Caption = 'FrmBaseForm'
+  OnKeyDown = FormKeyDown
+  LCLVersion = '2.0.6.0'
+  object FadeIn: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = FadeInTimer
+    left = 64
+    top = 24
+  end
+  object FadeOut: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = FadeOutTimer
+    left = 144
+    top = 72
+  end
+end

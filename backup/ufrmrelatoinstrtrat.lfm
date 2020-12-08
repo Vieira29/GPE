@@ -1,0 +1,508 @@
+inherited FrmRelatoInstrTrat: TFrmRelatoInstrTrat
+  Left = 260
+  Height = 579
+  Top = 211
+  Width = 1124
+  ClientHeight = 579
+  ClientWidth = 1124
+  OnClose = FormClose
+  inherited PanelRelRodape: TPanel
+    Top = 503
+    Width = 1124
+    ClientWidth = 1124
+  end
+  inherited PanelInfo: TPanel
+    Top = 439
+    Width = 1124
+    ClientWidth = 1124
+  end
+  inherited RLReportRelatorio: TRLReport
+    Left = 1056
+    Top = 72
+  end
+  object RLReportGuiaInstrucoes: TRLReport[3]
+    Left = 304
+    Height = 1123
+    Top = -528
+    Width = 794
+    Borders.Sides = sdCustom
+    Borders.DrawLeft = True
+    Borders.DrawTop = True
+    Borders.DrawRight = True
+    Borders.DrawBottom = True
+    DataSource = DSRelatorio
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    RealBounds.Left = 0
+    RealBounds.Top = 0
+    RealBounds.Width = 0
+    RealBounds.Height = 0
+    object RLBand1: TRLBand
+      Left = 39
+      Height = 122
+      Top = 39
+      Width = 716
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = False
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      BeforePrint = RLBand1BeforePrint
+      object RLLabel1: TRLLabel
+        Left = 139
+        Height = 18
+        Top = 4
+        Width = 436
+        Caption = 'CASA DA FRATERNIDADE SÃO FRANCISCO DE ASSIS'
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel2: TRLLabel
+        Left = 82
+        Height = 16
+        Top = 25
+        Width = 535
+        Caption = 'Rua do Médico, Nro 80 - Bairro Santo Inácio - Temporariamente Whatsapp: (34) 99900-9500'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel3: TRLLabel
+        Left = 261
+        Height = 16
+        Top = 44
+        Width = 205
+        Caption = 'Uberlândia - MG - CEP: 38412-306'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw1: TRLDraw
+        Left = 0
+        Height = 59
+        Top = 62
+        Width = 717
+        Angle = 0
+        Brush.Color = cl3DLight
+        Color = clMedGray
+        ParentColor = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Transparent = False
+      end
+      object RLLabelTituloProc: TRLLabel
+        Left = 140
+        Height = 19
+        Top = 68
+        Width = 428
+        Alignment = taCenter
+        Caption = 'RECOMENDAÇÕES PARA TRATAMENTO À DISTÂNCIA'
+        Color = cl3DLight
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Transparent = False
+      end
+      object RLLabel5: TRLLabel
+        Left = 198
+        Height = 18
+        Top = 94
+        Width = 324
+        Alignment = taCenter
+        Caption = 'DR. HANSEN E SUA EQUIPE ESPIRITUAL'
+        Color = cl3DLight
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Transparent = False
+      end
+    end
+    object RLGroupMestre: TRLGroup
+      Left = 39
+      Height = 922
+      Top = 161
+      Width = 716
+      DataFields = 'ID_PROCEDIMENTO'
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLBand2: TRLBand
+        Left = 0
+        Height = 44
+        Top = 0
+        Width = 716
+        BandType = btColumnHeader
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        object RLLabel9: TRLLabel
+          Left = 1
+          Height = 16
+          Top = 4
+          Width = 64
+          Caption = 'Paciente:'
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText4: TRLDBText
+          Left = 72
+          Height = 16
+          Top = 4
+          Width = 116
+          DataField = 'NOME_PACIENTE'
+          DataSource = DSRelatorio
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold, fsItalic]
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDraw2: TRLDraw
+          Left = -1
+          Height = 23
+          Top = 21
+          Width = 175
+          Angle = 0
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel8: TRLLabel
+          Left = 8
+          Height = 16
+          Top = 26
+          Width = 152
+          Caption = 'Datas do Procedimento'
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDraw3: TRLDraw
+          Left = 172
+          Height = 24
+          Top = 21
+          Width = 150
+          Angle = 0
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel10: TRLLabel
+          Left = 182
+          Height = 16
+          Top = 26
+          Width = 33
+          Caption = 'Data'
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDraw4: TRLDraw
+          Left = 321
+          Height = 24
+          Top = 21
+          Width = 313
+          Angle = 0
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel11: TRLLabel
+          Left = 328
+          Height = 16
+          Top = 26
+          Width = 66
+          Caption = 'Descrição'
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+      end
+      object RLBand5: TRLBand
+        Left = 0
+        Height = 25
+        Top = 44
+        Width = 716
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        object RLDraw5: TRLDraw
+          Left = 173
+          Height = 24
+          Top = 0
+          Width = 149
+          Angle = 0
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText1: TRLDBText
+          Left = 185
+          Height = 14
+          Top = 5
+          Width = 116
+          Alignment = taCenter
+          DataField = 'DATA_PROCEDIMENTO'
+          DataSource = DSRelatorio
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDraw6: TRLDraw
+          Left = 321
+          Height = 24
+          Top = 0
+          Width = 313
+          Angle = 0
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLDBText3: TRLDBText
+          Left = 329
+          Height = 14
+          Top = 5
+          Width = 301
+          AutoSize = False
+          DataField = 'DESCRICAO_DIA'
+          DataSource = DSRelatorio
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+      end
+      object RLBand3: TRLBand
+        Left = 0
+        Height = 515
+        Top = 69
+        Width = 716
+        BandType = btColumnFooter
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        BeforePrint = RLBand3BeforePrint
+        object RLMemo1: TRLMemo
+          Left = 0
+          Height = 515
+          Top = 0
+          Width = 716
+          Align = faClient
+          Behavior = [beSiteExpander]
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Lines.Strings = (
+            '1) NA SEMANA QUE ANTECEDE A CIRURGIA'
+            'A) Ler o evangelho todos os dias'
+            'B) Orai e vigiar pensamentos e atos'
+            'C) Evitar bebidas alcoólicas '
+            ''
+            '2) NO DIA DA CIRURGIA'
+            'A) Manter conversações e vibrações positivas desde o amanhecer.'
+            'B) Não fuma e não beber bebidas alcoólicas'
+            'C) Fazer uma alimentação leve, sem carnes, gorduras, frituras e frutas ácidas'
+            'D) A última refeição deverá ser (02) horas antes da cirurgia.'
+            ''
+            '3) NO MOMENTO DO RECOLHIMENTO PARA A CIRURGIA '
+            'A) Recolher-se às 20h30 min, do dia marcado em seu leito, se possível, sobre um lençol branco e virol branco, em penumbra, com vestuário claro podendo ter 1 (um) ou mais acompanhantes para preces, leitura e meditações sobre o evangelho até as 21h30 '
+            ''
+            'B) Colocar uma garrafa com água ao lado da cama, para magnetização, iniciando bebê-la após 01 (uma) hora da cirurgia, caso esteja acordada '
+            ''
+            'C) Seguir bebendo a água de 02 em 02 horas. '
+            ''
+            'REPOUSO APÓS A CIRURGIA (IMPORTANTE) '
+            ''
+            'MUITO IMPORTANTE'
+            'A) Repouso absoluto por três (3) dias'
+            'B) Repouso relativo por quatro (4) dias, podendo sentar e andar sem grandes movimentos e esforços.'
+            'C) Retirar os pontos da cirurgia em sua casa (no local onde foi realizada) '
+            ''
+            'RETIRADA DE PONTOS SEGUE O MESMO PROCESSO DO DIA DA CIRURGIA '
+            ''
+            'DIETA APÓS A CIRURGIA'
+            'A dieta alimentar ficará liberada a partir do 9º dia.'
+          )
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+          AfterPrint = RLMemo1AfterPrint
+          BeforePrint = RLMemo1BeforePrint
+        end
+      end
+    end
+  end
+  inherited FadeIn: TTimer[4]
+  end
+  inherited FadeOut: TTimer[5]
+  end
+  inherited RLDraftFilter1: TRLDraftFilter[6]
+  end
+  inherited RLHTMLFilter1: TRLHTMLFilter[7]
+  end
+  inherited RLPDFFilter1: TRLPDFFilter[8]
+  end
+  inherited RLXLSFilter1: TRLXLSFilter[9]
+  end
+  inherited RLPreviewSetup1: TRLPreviewSetup[10]
+  end
+  inherited DSRelatorio: TDataSource[11]
+  end
+  inherited ZQComandos: TZQuery[12]
+    SQL.Strings = (
+      'select'
+      'proc.id_procedimento,'
+      'proc.paciente,'
+      'pac.nome as nome_paciente,'
+      'dias.data_procedimento,'
+      'dias.tipo_dia,'
+      'CASE dias.tipo_dia'
+      'WHEN ''TE'' then ''Tratamento Espiritual'''
+      'WHEN ''CE'' then ''Cirurgia Espiritual'''
+      'WHEN ''RA'' then ''Repouso Absoluto'''
+      'WHEN ''RR'' then ''Repouso Relativo'''
+      'WHEN ''RP'' then ''Repouso Relativo e Retirada dos Pontos'''
+      'end as DESCRICAO_DIA'
+      'from tprocedimento proc'
+      'left join tpaciente pac on proc.paciente = pac.id_paciente'
+      'left join tdias_procedimento dias on proc.id_procedimento = dias.procedimento'
+    )
+    object ZQComandosID_PROCEDIMENTO: TLongintField[0]
+      FieldKind = fkData
+      FieldName = 'ID_PROCEDIMENTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQComandosPACIENTE: TLongintField[1]
+      FieldKind = fkData
+      FieldName = 'PACIENTE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQComandosNOME_PACIENTE: TStringField[2]
+      FieldKind = fkData
+      FieldName = 'NOME_PACIENTE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQComandosDATA_PROCEDIMENTO: TDateField[3]
+      FieldKind = fkData
+      FieldName = 'DATA_PROCEDIMENTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQComandosTIPO_DIA: TStringField[4]
+      FieldKind = fkData
+      FieldName = 'TIPO_DIA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object ZQComandosDESCRICAO_DIA: TStringField[5]
+      FieldKind = fkData
+      FieldName = 'DESCRICAO_DIA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 21
+    end
+  end
+end

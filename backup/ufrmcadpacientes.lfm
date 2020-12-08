@@ -1,0 +1,967 @@
+inherited FrmCadPacientes: TFrmCadPacientes
+  Left = 170
+  Height = 556
+  Top = 40
+  Width = 780
+  Caption = 'Cadastro de Pacientes'
+  ClientHeight = 556
+  ClientWidth = 780
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  inherited PanelContent: TPanel
+    Left = 1
+    inherited PanelHeader: TPanel
+      inherited LabelTitulo: TLabel
+        Width = 121
+        Caption = 'Pacientes'
+      end
+    end
+    inherited PanelControle: TPanel
+      inherited SpeedButton1: TSpeedButton
+        Flat = False
+      end
+      inherited DBNavigatorCad: TDBNavigator
+        Hints.Strings = (        )
+      end
+      inherited SpeedButton2: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton3: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton4: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton5: TSpeedButton
+        Flat = False
+      end
+    end
+    inherited PageControlCad: TPageControl
+      inherited TabConsulta: TTabSheet
+        inherited DBGridCad: TDBGrid
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Caption = ' X '
+              Width = 25
+              FieldName = 'SELECIONADO'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Código'
+              FieldName = 'ID_PACIENTE'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Nome do Paciente'
+              Width = 420
+              FieldName = 'NOME'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Email ou Conta'
+              Width = 180
+              FieldName = 'EMAIL_CONTA'
+            end>
+          OnCellClick = DBGridCadCellClick
+          OnDrawColumnCell = DBGridCadDrawColumnCell
+        end
+      end
+      inherited TabCadastro: TTabSheet
+        object DBEditCodigo: TDBEdit[0]
+          Left = 9
+          Height = 23
+          Top = 33
+          Width = 80
+          DataField = 'ID_PACIENTE'
+          DataSource = DSObjetos
+          ReadOnly = True
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object LabelCodigo: TLabel[1]
+          Left = 9
+          Height = 15
+          Top = 17
+          Width = 42
+          Caption = 'Código:'
+          ParentColor = False
+        end
+        object DBEditNomePaciente: TDBEdit[2]
+          Left = 9
+          Height = 23
+          Top = 82
+          Width = 415
+          DataField = 'NOME'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object LabelCodigo1: TLabel[3]
+          Left = 9
+          Height = 15
+          Top = 65
+          Width = 36
+          Caption = 'Nome:'
+          ParentColor = False
+        end
+        object DBEditIdade: TDBEdit[4]
+          Left = 551
+          Height = 23
+          Top = 81
+          Width = 73
+          DataField = 'IDADE'
+          DataSource = DSObjetos
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object LabelCodigo2: TLabel[5]
+          Left = 551
+          Height = 15
+          Top = 64
+          Width = 32
+          Caption = 'Idade:'
+          ParentColor = False
+        end
+        object DBDateEditNacimento: TDBDateEdit[6]
+          Left = 432
+          Height = 23
+          Top = 81
+          Width = 112
+          CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+          DateOrder = doNone
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          OnExit = DBDateEditNacimentoExit
+          TabOrder = 2
+          DataField = 'NASCIMENTO'
+          DataSource = DSObjetos
+        end
+        object LabelCodigo3: TLabel[7]
+          Left = 432
+          Height = 15
+          Top = 64
+          Width = 94
+          Caption = 'Data Nascimento:'
+          ParentColor = False
+        end
+        object DBEditCEP: TDBEdit[8]
+          Left = 9
+          Height = 23
+          Top = 127
+          Width = 80
+          DataField = 'CEP'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object LabelCodigo4: TLabel[9]
+          Left = 8
+          Height = 15
+          Top = 110
+          Width = 24
+          Caption = 'CEP:'
+          ParentColor = False
+        end
+        object DBEditLogradouro: TDBEdit[10]
+          Left = 132
+          Height = 23
+          Top = 127
+          Width = 80
+          DataField = 'LOGRADOURO'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+        object LabelCodigo5: TLabel[11]
+          Left = 131
+          Height = 15
+          Top = 110
+          Width = 65
+          Caption = 'Logradouro:'
+          ParentColor = False
+        end
+        object DBEditEndereco: TDBEdit[12]
+          Left = 221
+          Height = 23
+          Top = 127
+          Width = 407
+          DataField = 'ENDERECO'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 6
+        end
+        object LabelCodigo6: TLabel[13]
+          Left = 220
+          Height = 15
+          Top = 110
+          Width = 52
+          Caption = 'Endereço:'
+          ParentColor = False
+        end
+        object DBEditNro: TDBEdit[14]
+          Left = 10
+          Height = 23
+          Top = 174
+          Width = 80
+          DataField = 'NRO'
+          DataSource = DSObjetos
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 7
+        end
+        object LabelCodigo7: TLabel[15]
+          Left = 9
+          Height = 15
+          Top = 157
+          Width = 23
+          Caption = 'Nro:'
+          ParentColor = False
+        end
+        object DBEditComplemento: TDBEdit[16]
+          Left = 97
+          Height = 23
+          Top = 174
+          Width = 368
+          DataField = 'COMPLEMENTO'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 8
+        end
+        object LabelCodigo8: TLabel[17]
+          Left = 97
+          Height = 15
+          Top = 157
+          Width = 80
+          Caption = 'Complemento:'
+          ParentColor = False
+        end
+        object DBEditBairro: TDBEdit[18]
+          Left = 476
+          Height = 23
+          Top = 174
+          Width = 278
+          DataField = 'BAIRRO'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 9
+        end
+        object LabelCodigo9: TLabel[19]
+          Left = 476
+          Height = 15
+          Top = 156
+          Width = 34
+          Caption = 'Bairro:'
+          ParentColor = False
+        end
+        object DBEditCidade: TDBEdit[20]
+          Left = 10
+          Height = 23
+          Top = 221
+          Width = 80
+          DataField = 'CIDADE'
+          DataSource = DSObjetos
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 10
+          OnExit = DBEditCidadeExit
+        end
+        object LabelCodigo10: TLabel[21]
+          Left = 9
+          Height = 15
+          Top = 204
+          Width = 40
+          Caption = 'Cidade:'
+          ParentColor = False
+        end
+        object BtnPesqCidade: TSpeedButton[22]
+          Left = 96
+          Height = 24
+          Hint = 'Selecionar Cidade...'
+          Top = 220
+          Width = 32
+          Flat = True
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000CA990000CA9900000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFCFCFCF4F4F4EDEDEDE7E7E7E4E4E4D7D7D7BBBBBBB6B6
+            B6D0D0D0FAFAFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDF9F9F9F5
+            F5F5F2F2F2F0F0F0E7E7E7999898A2A2A3BBBBBBFCFCFCFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA8A8A731302F9291
+            91CFCECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFE0E0DF3635345E5C5ACFCECEFBFBFBFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDDDDD4B4949696665C3C2C2FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE
+            FEFE686767535150B2B1B1F7F6F6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            F6F6F6E6E6E6DADADAD4D4D4E5E5E5C5C5C5646261A4A2A2FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFF4F4F4D5D2CEDAD2C7D1C8C0C3BCB5AFACAA9F
+            9FA1C6C6C6F0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2CCC7BF
+            F3E3C9FEF4E1FFFCF6FEFCFBF6EFEAC8C4BFD6D6D6FFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFD8D6D3D7CBB7FFF0D1FFF5DFFFFBF3FFFEFDFEFDFCF6
+            EFE8CAC8C7F5F5F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC2BDB6E8DDCA
+            FFF0D2FFF4DBFFFAEEFFFEFBFFFFFFFDFBF9DED8D2E9E9E9FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFB7B3ACECE3D5FFF3DAFFF2D8FFF8E8FFFDF8FFFFFFFE
+            FCFBE1DAD4EBEBEBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCBCAC7DDD5C5
+            FFF5E1FFF1D5FFF6E3FFFCF3FFFFFFFAF6F3DBD8D3F3F3F3FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFE8E8E7CFCDC7FEF8E9FFF2D6FFF4DEFFFAEEFEFCF9D4
+            CECAE3E3E3FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFDE8E7E6
+            D5D4D1E0D7C6DBD1BCD9D2C6C1BDB9D0CFCEFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDE7E6E6CFCDCCC5C3BFD1D0CDE6E5E5FC
+            FCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          }
+          Layout = blGlyphTop
+          OnClick = BtnPesqCidadeClick
+          ShowHint = True
+          ParentFont = False
+          ParentShowHint = False
+        end
+        object DBEditNomeCidade: TDBEdit[23]
+          Left = 136
+          Height = 23
+          Top = 221
+          Width = 169
+          DataField = 'NOME_CIDADE'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 11
+        end
+        object LabelCodigo11: TLabel[24]
+          Left = 318
+          Height = 15
+          Top = 204
+          Width = 38
+          Caption = 'Estado:'
+          ParentColor = False
+        end
+        object DBEditUF: TDBEdit[25]
+          Left = 318
+          Height = 23
+          Top = 221
+          Width = 80
+          DataField = 'UF_CIDADE'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 12
+        end
+        object LabelCodigo12: TLabel[26]
+          Left = 413
+          Height = 15
+          Top = 204
+          Width = 40
+          Caption = 'Celular:'
+          ParentColor = False
+        end
+        object DBEditCelular: TDBEdit[27]
+          Left = 413
+          Height = 23
+          Top = 221
+          Width = 154
+          DataField = 'CELULAR'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 13
+        end
+        object LabelCodigo13: TLabel[28]
+          Left = 580
+          Height = 15
+          Top = 204
+          Width = 69
+          Caption = 'Email/Conta:'
+          ParentColor = False
+        end
+        object DBEditEmailConta: TDBEdit[29]
+          Left = 580
+          Height = 23
+          Top = 221
+          Width = 174
+          DataField = 'EMAIL_CONTA'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 14
+        end
+        object DBRadioGroupOrigemCad: TDBRadioGroup[30]
+          Left = 410
+          Height = 39
+          Top = 254
+          Width = 185
+          AutoFill = True
+          Caption = 'Origem:'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 2
+          Columns = 2
+          DataField = 'ORIGEM_CAD'
+          DataSource = DSObjetos
+          Items.Strings = (
+            'Whatsapp'
+            'Instagram'
+          )
+          TabOrder = 16
+          Values.Strings = (
+            '1'
+            '2'
+          )
+        end
+        object DBMemoProblema: TDBMemo[31]
+          Left = 8
+          Height = 90
+          Top = 273
+          Width = 392
+          DataField = 'PROBLEMA'
+          DataSource = DSObjetos
+          TabOrder = 15
+        end
+        object LabelCodigo14: TLabel[32]
+          Left = 9
+          Height = 15
+          Top = 252
+          Width = 54
+          Caption = 'Problema:'
+          ParentColor = False
+        end
+        object BtnAbrirImagem: TSpeedButton[33]
+          Left = 634
+          Height = 35
+          Top = 115
+          Width = 38
+          Glyph.Data = {
+            C6050000424DC605000000000000360400002800000013000000140000000100
+            08000000000090010000120B0000120B000000010000EB00000000990000AAC9
+            970062BCE70061A3BE0051849A0023BB4700F2E0D70017B32E00A5ADAD007ED2
+            E800E9D8CF006EC7DE00AFC8D20042C291006FD0FF0082E3EF0039C8570055AF
+            4B00BBC3C3006BB4D40071D7E7008BE79F001E9F1B007EC5D900DBD8D4009BD8
+            E70081BE730051BFA5006CA1B30094B7C400D7D7BE0026B74D00A6C5DC0071D2
+            E800A9D3E30070BFDF008CCFEB0043B084002EB9520092D8CD00A0C68E00ABAA
+            A80064B2C40076E389008CECF500D9DAC00078E0F00040AE3A0074BCEB0074B4
+            CE00BED2D50049C5520008A611002AA226007DDBEE0073D1FA008ADEE10069B1
+            CF0070BDBB0086DBEB006CC6ED00DECFC70072DAD40026C64E00C9DFE4002DC6
+            5D0086F0FB007BD1F40077CBE3006DB661008EBCCE00C5BAB30023B048008DD7
+            E5007AE9F70048C86F005CA2C8006FB3DA0091D4EE0083D3F50088E5F100538D
+            A600EDE2DA0097E9AA00BFDAE30025B76000AADBA40065B5DA0075D8F10086D3
+            E200CAECC60079E6F60075D6FF009CDBF2005A9DBC0071CDE30074C6E700C1CD
+            D5006EC6EC00D2DFDB0010A820006ECAE30086EBF800BDDEE70091C7D70026C8
+            5E007DD7EB0067BBE000079C0700E5E0DA00CED5D50086D7F3005FAFD10082E5
+            F4002DC45A00C8CCCB008AEBAD0079D7FB0089F2FC0035CA6200A8B8BB0060B2
+            550059BAB50072D8940075D4FF000DA00D0076DEF000A7DCEE004AB5920067A7
+            BF0030CB61006EB5D20092D2F30072C3E300B0D09D0097C0CD0033A7310075D8
+            EB008AE8F3002BB656007AD2E70064ABC9006FBDE5005695B000A0DAF7007EDA
+            E8006ECAF30071CADF008CF4FC0073B9E5002CCB5900EBDBD700DDE1DE00ECE0
+            D1007DD8FD0070CDF70075C1F00021C14F00019600006AC1E70075C8E000D9D9
+            DB0065A3B90031B6510048C757006DBEDF00B2DDEB0087E3F00081E0F00071D7
+            F60078E4F40068B4D60076C9EB0086E7F70079CEE50024BA4900A2B1B30072D2
+            FF008BF7FF006DB8D70076DAEC0092D2EB0071CAF70031C665001CB23500049D
+            080071CAE300ACCBD4001DA21D0079C2DB0061B6C20091F0F60070B6CE0007A3
+            17008AEFFB0080DAF7008EE5F50098EBB00068ABC40083DBEB00EEDDD3007BC4
+            F100029A0400F6E4DA0079D7FF0086EFF7007DD7E70081D8EB007DCEE3008AE9
+            F9006DB2D70033CC66002DC8600028BA490075D2E70086E7F3006CB7D60083E3
+            F2001CB2310074D5E80082DBEF0068B2D30086DFEB0092D9F20075DBEE009FDC
+            F00075C6EB00D4DFDE0087D6F70071CCF400EBDED60086E3F30075CAE300FFFF
+            FF00000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000CBCBCBCB876E
+            CBCBCBCBCBCBCBCBCBCBCBCBCB1CCBCBCBBBBD78CBCBCBCB061861201D293DCB
+            CB1CCBE668A0AEB047730C46314D2A2513130806CB1C3217AEAEAE1C0403B3B3
+            95BE261FA5A5120AC81C0B658C8C8CA2518D23307A723F8B8EC96ECBCB1C5F5F
+            090909818FDD9C1B968272054880A1CBCB1C5F5F6A6A6AC65EAB0D96D3D37205
+            0734882DCB1C5F21363636C04C3A2B69D3D37205B864B935061C2121DCDCDCDC
+            39702715D4D4720507C1B900011CD689A8A8A8A8D857023853779D267BA4CACA
+            451CDBE0D9D9D9D9B36B620E91C51055845A339E111CDB7E717171A7239F925C
+            5C58744B24CB567D791C892EADADAD50853CE55C5C5CA93E24CB866C281CB4AA
+            6666668A6092375C5C5C5C5C4ECB2F16061CB45BCDCDCD2CAC9B375C5C5C5C5C
+            9028BC2DCB1C7E4A4242422CACB15C5C5C5C5C5C591A99CBCB1C2E4A767676BF
+            435C5C5C5C5C5C5CDFCBCBCBCB1C2E4AB2B2D1C3B15C5C5C5C5C5C9AE1CBCBCB
+            CB1C2E66C46F4FE4DF5D7FA66740E39852CBCBCBCB1C49192254E36D06CBCBCB
+            CBCBCBCBCBCBCBCBCB1C
+          }
+          Layout = blGlyphTop
+          Visible = False
+          OnClick = BtnAbrirImagemClick
+        end
+        object BtnLimparImagem: TSpeedButton[34]
+          Left = 717
+          Height = 34
+          Top = 115
+          Width = 37
+          Glyph.Data = {
+            C6050000424DC605000000000000360400002800000014000000140000000100
+            08000000000090010000120B0000120B000000010000A9000000082CC900DFCF
+            CF00B1ABC60022C9EC00158AFC00DEE8F1006168BB00838AC600083EF0004BD7
+            EE001066CF0026B9E200C7C7C700F6E4DA00273FB700B3C9D6008AC7DF000866
+            F000FFFFFF0068BBD90039CFF100C1C1C10056E4F9000A3AE4002497D700FDF8
+            FA00D0D0D000427CD2006170CB00C4C4C40074BCD3001139BC0051BFDF001053
+            FD00F7F7F6009EC5D5001872EC00284AD400CCCCCC004FE0F8002376DA00BBBB
+            BB002EC7EE0046DAF500D1E6F1001596F600E1D9D5001652CB007C7FBE004DD9
+            F500D4E1EB004FC7E30026CCF0000730DA001795EA003EBDDF002D5CDE001160
+            FF001E8AE5000D4CFD00B1D8E900C9C9C900D2C5D0004A74CD007575C200C2B4
+            C90060E9FC00B4C6CC0049D2EA00DBCECA00C7B8CB001F76CF0042D5F3003AC3
+            E5001039D3000F4BE100FAF1EB00B6D5E700EDDBD1002240C4000A65FA0071BE
+            D90036CFF100115DFF000C4AF30014A4FC0029C8EF009291C7001D72D1003BD2
+            F200327CD400E5D4CF001777F4001441E500073FDC0026D4F1000C94FE00E9EC
+            F3002AD2EF00DED5CF0027A0DD0040D3F200145BF800096FFF0056E2F400E7EF
+            F50046E4F9002748B6000B45E400B9AEC90033CEF1004DDFF2001199FF0052C5
+            E0001A6AEF002653D600507ACD00E4DCD80076C3DD0026D3F200E8DDD70054E1
+            F9000D49F80060EEFD0028C9EF000A46E5001258FF00D9C9CD0054E8FA0056C1
+            DF000B5EFE0035D3EE004EDDF600FFFFFF00BFB1CA0069BFDC00DFD3D100DFD7
+            D300C5C5C50038D7F500E3D2D200158FFF0058E9F8002ECAF0000E64FF0043D8
+            F500FBF3EF00F9F9F900BDBDBD000C4BFF00FFFFFF00B3ACC90025C7EF0029D7
+            F300E3DBD50060EDFF000868F2004ADBF50024CCF200EBDAD30036D1F3000C4D
+            F500DCD5D00055E3FA000E4DFE00DFCFD10060EBFD0060EFFD00000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00000000000000000000000000000000000000000000000000000D0D0D0D0D4C
+            290C2615261D940C26150C0C29120D0D0D0D0D63221212121212121212121212
+            93150D0D0D0D0D78121212121212121212121212121A0D0D0D0D0D45513C1212
+            121212121212121212150D0D0D0D0D2368097661121212121212121212150D0D
+            0D0D8833A3428E714D12121212121212123D0D0D0D0D1E2B6516424244101912
+            12121212128A0D0D0D43838F59489D9D9B6F876112121212120C0D0D6D1F6499
+            5652526584A680812C12121212260D8C4F5E004762342A529127276A13121212
+            12150D574B6C6C352F0B77566E6E8B206912121212150D3E73665454084A185F
+            989E37051212121212260D0D4638213B3B3B1758034932121219191919150D0D
+            0D407A7E7E82679C0A0F4E2E75898989A2920D0D415D3972248D6055740D0D0D
+            0D0D0D0D0D0D0D9F25905C07021B365A5B0D0D0D0D0D0D0D0D0D0D1C50043F0D
+            0D0D86A50D0D0D0D0D0D0D0D0D0D06117028010D0D0D0D0D0D0D0D0D0D0D0D0D
+            0D0D0E2D3A970D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D7F6B300D0D0D0D0D0D0D
+            0D0D0D0D0D0D0D0D0D0D
+          }
+          Layout = blGlyphTop
+          Visible = False
+          OnClick = BtnLimparImagemClick
+        end
+        object GroupBoxImagem: TGroupBox[35]
+          Left = 634
+          Height = 112
+          Top = 0
+          Width = 119
+          Caption = 'Imagem:'
+          ClientHeight = 92
+          ClientWidth = 115
+          TabOrder = 17
+          Visible = False
+          object DBImageImgPaciente: TDBImage
+            Left = 3
+            Height = 85
+            Top = 0
+            Width = 109
+            DataField = 'IMAGEM'
+            DataSource = DSObjetos
+            Proportional = True
+            Stretch = True
+          end
+        end
+        object BtnBuscaCEP: TSpeedButton[36]
+          Left = 95
+          Height = 24
+          Hint = 'Buscar Dados de Endereço'
+          Top = 125
+          Width = 32
+          Color = clBlue
+          Flat = True
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000CA990000CA9900000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFCFCFCF4F4F4EDEDEDE7E7E7E4E4E4D7D7D7BBBBBBB6B6
+            B6D0D0D0FAFAFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDF9F9F9F5
+            F5F5F2F2F2F0F0F0E7E7E7999898A2A2A3BBBBBBFCFCFCFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA8A8A731302F9291
+            91CFCECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFE0E0DF3635345E5C5ACFCECEFBFBFBFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDDDDD4B4949696665C3C2C2FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE
+            FEFE686767535150B2B1B1F7F6F6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            F6F6F6E6E6E6DADADAD4D4D4E5E5E5C5C5C5646261A4A2A2FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFF4F4F4D5D2CEDAD2C7D1C8C0C3BCB5AFACAA9F
+            9FA1C6C6C6F0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2CCC7BF
+            F3E3C9FEF4E1FFFCF6FEFCFBF6EFEAC8C4BFD6D6D6FFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFD8D6D3D7CBB7FFF0D1FFF5DFFFFBF3FFFEFDFEFDFCF6
+            EFE8CAC8C7F5F5F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC2BDB6E8DDCA
+            FFF0D2FFF4DBFFFAEEFFFEFBFFFFFFFDFBF9DED8D2E9E9E9FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFB7B3ACECE3D5FFF3DAFFF2D8FFF8E8FFFDF8FFFFFFFE
+            FCFBE1DAD4EBEBEBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCBCAC7DDD5C5
+            FFF5E1FFF1D5FFF6E3FFFCF3FFFFFFFAF6F3DBD8D3F3F3F3FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFE8E8E7CFCDC7FEF8E9FFF2D6FFF4DEFFFAEEFEFCF9D4
+            CECAE3E3E3FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFDE8E7E6
+            D5D4D1E0D7C6DBD1BCD9D2C6C1BDB9D0CFCEFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDE7E6E6CFCDCCC5C3BFD1D0CDE6E5E5FC
+            FCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          }
+          Layout = blGlyphTop
+          OnClick = BtnBuscaCEPClick
+          ShowHint = True
+          ParentFont = False
+          ParentShowHint = False
+        end
+      end
+    end
+  end
+  object Image1: TImage[1]
+    Left = 880
+    Height = 16
+    Top = 240
+    Width = 16
+    AutoSize = True
+    Picture.Data = {
+      07544269746D617036030000424D360300000000000036000000280000001000
+      000010000000010018000000000000030000120B0000120B0000000000000000
+      0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFF
+    }
+    Transparent = True
+  end
+  object Image2: TImage[2]
+    Left = 880
+    Height = 16
+    Top = 248
+    Width = 16
+    AutoSize = True
+    Picture.Data = {
+      07544269746D617036040000424D360400000000000036000000280000001000
+      0000100000000100200000000000000400000000000000000000000000000000
+      0000FF00FF00F3F3F300E9E9E900DDDDDD00D1D1D100C5C5C500B9B9B900B9B9
+      B900C3C3C300D1D1D100DDDDDD00E9E9E900F5F5F500FDFDFD00FF00FF00FF00
+      FF00FF00FF00FBFBFB00F5F5F500EFEFEF00EBEBEB00E4E5E4009CB9AA00E7E7
+      E700E9E9E900EDEDED00F1F1F100F7F7F700FDFDFD00FF00FF00FF00FF00FF00
+      FF00FF00FF00FF00FF00FF00FF00FF00FF00FDFEFE006FAA8B002C8759009EC4
+      B000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+      FF00FF00FF00FF00FF00FF00FF00FF00FF0079B093002C905C002B935E002B8D
+      5A00A8CBB800FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+      FF00FF00FF00FF00FF00FF00FF0085B79D002C965F002B9C62002B9C62002B9C
+      62002B925C00B2D1C100FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+      FF00FF00FF00FF00FF0091BEA6002B9B61002AA466002AA466002AA466002AA4
+      66002AA466002B976000B9D5C600FF00FF00FF00FF00FF00FF00FF00FF00FF00
+      FF00FF00FF009EC5B00050B07E0044B67D002AAD6A0029AC6A0029AC6A0029AC
+      6A0029AC6A0029AC6A002C9A6200C2DACD00FF00FF00FF00FF00FF00FF00FF00
+      FF00A8CBB90053B4820073CFA0006ECD9D0060C8940045BF82002FB7720028B5
+      6E0028B56E0028B56E0028B56E002F9E6500C9DED300FF00FF00FF00FF00FF00
+      FF0065A9850077D3A40073D4A2006DD29F0068D19B0062CF980057C78E0050C9
+      8C0042C5830036C17B002DBE750027BD710034A16900D1E4DA00FF00FF00FF00
+      FF00F0F6F3006AAF8B0070D7A3006DD8A20067D79E0049B57D006EAA8B004EC0
+      860052D190004CD08D0046CE890040CC850036CA800041A77200D8E8E000FF00
+      FF00FF00FF00EBF3EE0060AE85006ADBA20047BC8000B1D0C000FF00FF0085BA
+      9E004AC788004BD6900046D58D0040D48A003BD2860035D1830043A97400DFEC
+      E500FF00FF00FF00FF00E5F0EA004BA37500A8CBB900FF00FF00FF00FF00FF00
+      FF007BB7970045CE8A0045DC90003FDB8D003ADA8A0034D987002ED7820048A0
+      7200FF00FF00FF00FF00FF00FF00F5F9F700FF00FF00FF00FF00FF00FF00FF00
+      FF00FDFEFE006FB3900041D78B003EE3900039E28C0034E1890030B77200C0DA
+      CC00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+      FF00FF00FF00FCFDFC0066B18B003BDD8B0039E78F0031BE7600B9D5C600FF00
+      FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+      FF00FF00FF00FF00FF00F8FBF9005FB0860032BC7500B2D1C100FF00FF00FF00
+      FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+      FF00FF00FF00FF00FF00FF00FF00F6FAF800BBD6C700FF00FF00FF00FF00FF00
+      FF00
+    }
+    Transparent = True
+  end
+  inherited FadeIn: TTimer[3]
+  end
+  inherited FadeOut: TTimer[4]
+  end
+  inherited ApplicationProperties1: TApplicationProperties[5]
+    left = 808
+    top = 16
+  end
+  inherited ImageList1: TImageList[6]
+  end
+  inherited ActionList1: TActionList[7]
+    inherited ActionNovo: TAction
+      OnExecute = ActionNovoExecute
+    end
+    inherited ActionGravar: TAction
+      OnExecute = ActionGravarExecute
+    end
+    inherited ActionExcluir: TAction
+      OnExecute = ActionExcluirExecute
+    end
+    inherited ActionCancelar: TAction
+      OnExecute = ActionCancelarExecute
+    end
+  end
+  inherited DSObjetos: TDataSource[8]
+  end
+  inherited ZQObjetos: TZQuery[9]
+    SQL.Strings = (
+      'select '' '' as selecionado, PACIENTE.*,'
+      '       cidade.nome_cidade,                                                   '
+      '       CIDADE.uf_cidade'
+      'from tpaciente PACIENTE                                                      '
+      'inner join tcidade cidade on PACIENTE.cidade = cidade.id_cidade              '
+    )
+    left = 813
+    object ZQObjetosSELECIONADO: TStringField[0]
+      FieldKind = fkData
+      FieldName = 'SELECIONADO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object ZQObjetosID_PACIENTE: TLongintField[1]
+      FieldKind = fkData
+      FieldName = 'ID_PACIENTE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQObjetosNOME: TStringField[2]
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQObjetosTELEFONE: TStringField[3]
+      FieldKind = fkData
+      FieldName = 'TELEFONE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object ZQObjetosLOGRADOURO: TStringField[4]
+      FieldKind = fkData
+      FieldName = 'LOGRADOURO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object ZQObjetosBAIRRO: TStringField[5]
+      FieldKind = fkData
+      FieldName = 'BAIRRO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object ZQObjetosENDERECO: TStringField[6]
+      FieldKind = fkData
+      FieldName = 'ENDERECO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQObjetosNRO: TLongintField[7]
+      FieldKind = fkData
+      FieldName = 'NRO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosCOMPLEMENTO: TStringField[8]
+      FieldKind = fkData
+      FieldName = 'COMPLEMENTO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object ZQObjetosCIDADE: TLongintField[9]
+      FieldKind = fkData
+      FieldName = 'CIDADE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosCELULAR: TStringField[10]
+      FieldKind = fkData
+      FieldName = 'CELULAR'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object ZQObjetosNASCIMENTO: TDateField[11]
+      FieldKind = fkData
+      FieldName = 'NASCIMENTO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosEMAIL_CONTA: TStringField[12]
+      FieldKind = fkData
+      FieldName = 'EMAIL_CONTA'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQObjetosIMAGEM: TBlobField[13]
+      FieldKind = fkData
+      FieldName = 'IMAGEM'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosIDADE: TSmallintField[14]
+      FieldKind = fkData
+      FieldName = 'IDADE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosORIGEM_CAD: TSmallintField[15]
+      FieldKind = fkData
+      FieldName = 'ORIGEM_CAD'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosPROBLEMA: TStringField[16]
+      FieldKind = fkData
+      FieldName = 'PROBLEMA'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object ZQObjetosNOME_CIDADE: TStringField[17]
+      FieldKind = fkData
+      FieldName = 'NOME_CIDADE'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object ZQObjetosUF_CIDADE: TStringField[18]
+      FieldKind = fkData
+      FieldName = 'UF_CIDADE'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object ZQObjetosCEP: TStringField[19]
+      FieldKind = fkData
+      FieldName = 'CEP'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      EditMask = '00000\-000\'
+      Size = 9
+    end
+  end
+  inherited ZQComandos: TZQuery[10]
+  end
+  inherited ACBrEnterTab1: TACBrEnterTab[11]
+    EnterAsTab = True
+    left = 872
+    top = 96
+  end
+  object OpenPictureDialog1: TOpenPictureDialog[12]
+    left = 832
+    top = 294
+  end
+  object ACBrCEP1: TACBrCEP[13]
+    ProxyPort = '8080'
+    ParseText = True
+    IsUTF8 = True
+    WebService = wsRepublicaVirtual
+    PesquisarIBGE = True
+    OnBuscaEfetuada = ACBrCEP1BuscaEfetuada
+    left = 940
+    top = 168
+  end
+end

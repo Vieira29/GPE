@@ -1,0 +1,173 @@
+inherited FrmCadCidade: TFrmCadCidade
+  Width = 781
+  ClientWidth = 781
+  OnClose = FormClose
+  OnShow = FormShow
+  inherited PanelContent: TPanel
+    inherited PanelHeader: TPanel
+      inherited LabelTitulo: TLabel
+        Width = 101
+        Caption = 'Cidades'
+      end
+    end
+    inherited PanelControle: TPanel
+      inherited SpeedButton1: TSpeedButton
+        Flat = False
+      end
+      inherited DBNavigatorCad: TDBNavigator
+        Hints.Strings = (        )
+      end
+      inherited SpeedButton2: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton3: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton4: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton5: TSpeedButton
+        Flat = False
+      end
+    end
+    inherited PageControlCad: TPageControl
+      ActivePage = TabCadastro
+      TabIndex = 1
+      inherited TabConsulta: TTabSheet
+        inherited DBGridCad: TDBGrid
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Código'
+              FieldName = 'ID_CIDADE'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Nome Cidade'
+              Width = 400
+              FieldName = 'NOME_CIDADE'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'UF'
+              Width = 80
+              FieldName = 'UF_CIDADE'
+            end>
+        end
+      end
+      inherited TabCadastro: TTabSheet
+        ClientHeight = 391
+        ClientWidth = 766
+        object DBEditCodigoCidade: TDBEdit[0]
+          Left = 9
+          Height = 23
+          Top = 33
+          Width = 80
+          DataField = 'ID_CIDADE'
+          DataSource = DSObjetos
+          ReadOnly = True
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object LabelCodigo: TLabel[1]
+          Left = 9
+          Height = 15
+          Top = 17
+          Width = 42
+          Caption = 'Código:'
+          ParentColor = False
+        end
+        object DBEditNomeCidade: TDBEdit[2]
+          Left = 9
+          Height = 23
+          Top = 82
+          Width = 479
+          DataField = 'NOME_CIDADE'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object LabelCodigo1: TLabel[3]
+          Left = 9
+          Height = 15
+          Top = 65
+          Width = 92
+          Caption = 'Nome da Cidade:'
+          ParentColor = False
+        end
+        object DBEditUFCidade: TDBEdit[4]
+          Left = 496
+          Height = 23
+          Top = 82
+          Width = 92
+          DataField = 'UF_CIDADE'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object LabelCodigo2: TLabel[5]
+          Left = 496
+          Height = 15
+          Top = 65
+          Width = 17
+          Caption = 'UF:'
+          ParentColor = False
+        end
+      end
+    end
+  end
+  inherited ActionList1: TActionList
+    inherited ActionNovo: TAction
+      OnExecute = ActionNovoExecute
+    end
+    inherited ActionGravar: TAction
+      OnExecute = ActionGravarExecute
+    end
+    inherited ActionExcluir: TAction
+      OnExecute = ActionExcluirExecute
+    end
+    inherited ActionCancelar: TAction
+      OnExecute = ActionCancelarExecute
+    end
+  end
+  inherited ZQObjetos: TZQuery
+    SQL.Strings = (
+      'SELECT'
+      'CID.*'
+      'FROM tcidade CID'
+    )
+    object ZQObjetosID_CIDADE: TLongintField[0]
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQObjetosNOME_CIDADE: TStringField[1]
+      FieldKind = fkData
+      FieldName = 'NOME_CIDADE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object ZQObjetosUF_CIDADE: TStringField[2]
+      FieldKind = fkData
+      FieldName = 'UF_CIDADE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+end

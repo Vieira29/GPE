@@ -1,0 +1,137 @@
+inherited FrmCadRemedio: TFrmCadRemedio
+  Width = 782
+  Caption = 'Cadastro de Remédios'
+  ClientWidth = 782
+  OnClose = FormClose
+  OnShow = FormShow
+  inherited PanelContent: TPanel
+    inherited PanelHeader: TPanel
+      inherited LabelTitulo: TLabel
+        Width = 114
+        Caption = 'Remédio'
+      end
+    end
+    inherited PanelControle: TPanel
+      inherited SpeedButton1: TSpeedButton
+        Flat = False
+      end
+      inherited DBNavigatorCad: TDBNavigator
+        Hints.Strings = (        )
+      end
+      inherited SpeedButton2: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton3: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton4: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton5: TSpeedButton
+        Flat = False
+      end
+    end
+    inherited PageControlCad: TPageControl
+      inherited TabConsulta: TTabSheet
+        inherited DBGridCad: TDBGrid
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Código'
+              FieldName = 'ID_REMEDIO'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Nome Remédio'
+              Width = 500
+              FieldName = 'NOME_REMEDIO'
+            end>
+        end
+      end
+      inherited TabCadastro: TTabSheet
+        ClientHeight = 391
+        ClientWidth = 766
+        object DBEditCodigoRemedio: TDBEdit[0]
+          Left = 9
+          Height = 23
+          Top = 33
+          Width = 80
+          DataField = 'ID_REMEDIO'
+          DataSource = DSObjetos
+          ReadOnly = True
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object LabelCodigo: TLabel[1]
+          Left = 9
+          Height = 15
+          Top = 17
+          Width = 42
+          Caption = 'Código:'
+          ParentColor = False
+        end
+        object DBEditNomeRemedio: TDBEdit[2]
+          Left = 9
+          Height = 23
+          Top = 82
+          Width = 479
+          DataField = 'NOME_REMEDIO'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object LabelNomeRemedio: TLabel[3]
+          Left = 9
+          Height = 15
+          Top = 64
+          Width = 103
+          Caption = 'Nome do Remédio:'
+          ParentColor = False
+        end
+      end
+    end
+  end
+  inherited ActionList1: TActionList
+    inherited ActionNovo: TAction
+      OnExecute = ActionNovoExecute
+    end
+    inherited ActionGravar: TAction
+      OnExecute = ActionGravarExecute
+    end
+    inherited ActionExcluir: TAction
+      OnExecute = ActionExcluirExecute
+    end
+    inherited ActionCancelar: TAction
+      OnExecute = ActionCancelarExecute
+    end
+  end
+  inherited ZQObjetos: TZQuery
+    SQL.Strings = (
+      'SELECT'
+      'REM.*'
+      'FROM tremedio REM'
+    )
+    object ZQObjetosID_REMEDIO: TLongintField[0]
+      FieldKind = fkData
+      FieldName = 'ID_REMEDIO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQObjetosNOME_REMEDIO: TStringField[1]
+      FieldKind = fkData
+      FieldName = 'NOME_REMEDIO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+  end
+end

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="GPE"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0"/>
+    </RunParams>
+    <RequiredPackages Count="7">
+      <Item1>
+        <PackageName Value="frce"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="ACBrTCP"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="ACBrDiversos"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="zcomponent"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="FCL"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="LR_ZeosDB"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
+    </RequiredPackages>
+    <Units Count="20">
+      <Unit0>
+        <Filename Value="GPE.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ufrmbasecadastro.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="ufrmbasecadastro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmBaseCadastro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmBaseCadastro"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ufrmbaseform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmBaseForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmBaseForm"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="ufrmbaseform.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="ufrmbaserelatorio.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="ufrmbaserelatorio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmBaseRelatorio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmBaseRelatorio"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="ufrmfiltro.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="ufrmfiltro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmFiltro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="ufrmrotinas.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="ufrmrotinas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uvalidacaogeral.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uValidacaoGeral"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="ufrmmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmMain"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="ufrmcadpacientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmCadPacientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmCadPacientes"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="udm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uDM"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="ufrmcadcidade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmCadCidade"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmCadCidade"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="ufrmcadremedio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmCadRemedio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmCadRemedio"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="ufrmcadprocedimento.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmCadProcedimento"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmCadProcedimento"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="ufrmrelatoinstrtrat.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmRelatoInstrTrat"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmRelatoInstrTrat"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="ucarregaini.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uCarregaINI"/>
+      </Unit19>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="GPE"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
