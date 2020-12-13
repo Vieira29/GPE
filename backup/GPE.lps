@@ -26,10 +26,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFrmBaseCadastro"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="562"/>
-        <CursorPos X="99" Y="574"/>
+        <CursorPos X="109" Y="570"/>
         <UsageCount Value="94"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -147,9 +146,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFrmCadPacientes"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <TopLine Value="588"/>
-        <CursorPos X="74" Y="593"/>
+        <CursorPos X="108" Y="598"/>
         <UsageCount Value="94"/>
         <Bookmarks Count="1">
           <Item0 X="45" Y="642" ID="7"/>
@@ -202,7 +202,7 @@
         <UnitName Value="uFrmCadProcedimento"/>
         <EditorIndex Value="1"/>
         <TopLine Value="731"/>
-        <CursorPos X="117" Y="735"/>
+        <CursorPos X="125" Y="739"/>
         <UsageCount Value="78"/>
         <Bookmarks Count="5">
           <Item0 X="16" Y="972" ID="3"/>

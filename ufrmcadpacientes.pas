@@ -284,10 +284,10 @@ begin
           SQL.Clear;
           sql.add('UPDATE OR INSERT INTO TPACIENTE 															');
           sql.add('(ID_PACIENTE, NOME, TELEFONE, CEP, LOGRADOURO, BAIRRO, ENDERECO, NRO, COMPLEMENTO, CIDADE, ');
-          sql.add('CELULAR, NASCIMENTO ,EMAIL_CONTA, IMAGEM, IDADE, ORIGEM_CAD, PROBLEMA)                     ');
+          sql.add('CELULAR, NASCIMENTO ,EMAIL_CONTA, IMAGEM, IDADE, PROBLEMA)                     ');
           sql.add('VALUES                                                                                     ');
           sql.add('(:ID_PACIENTE, :NOME, :TELEFONE, :CEP, :LOGRADOURO, :BAIRRO, :ENDERECO, :NRO, :COMPLEMENTO, ');
-          sql.add(':CIDADE, :CELULAR, :NASCIMENTO, :EMAIL_CONTA, :IMAGEM, :IDADE, :ORIGEM_CAD, :PROBLEMA)      ');
+          sql.add(':CIDADE, :CELULAR, :NASCIMENTO, :EMAIL_CONTA, :IMAGEM, :IDADE, :PROBLEMA)      ');
           sql.add('MATCHING (ID_PACIENTE)                                                                     ');
           ParamByName('ID_PACIENTE').AsInteger := VCodigo;
           ParamByName('NOME').AsString 	      := ZQObjetos.FieldByName('NOME').AsString;
@@ -313,7 +313,6 @@ begin
           end;
 
           ParamByName('IDADE').AsInteger       := ZQObjetos.FieldByName('IDADE').AsInteger;
-          ParamByName('ORIGEM_CAD').AsString  := ZQObjetos.FieldByName('ORIGEM_CAD').AsString;
           ParamByName('PROBLEMA').AsString    := ZQObjetos.FieldByName('PROBLEMA').AsString;
           ExecSQL;
           DM.ConfirmaTransacao;
