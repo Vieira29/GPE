@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
   StdCtrls, uFrmBaseRelatorio, ZDataset, db, RLReport, RLDraftFilter,
-  RLHTMLFilter, RLPDFFilter, RLXLSFilter, RLPreviewForm;
+  RLHTMLFilter, RLPDFFilter, RLXLSFilter;
 
 type
 
@@ -19,18 +19,43 @@ type
     RLBand3: TRLBand;
     RLBand5: TRLBand;
     RLDBText1: TRLDBText;
+    RLDBText10: TRLDBText;
+    RLDBText11: TRLDBText;
+    RLDBText12: TRLDBText;
     RLDBText3: TRLDBText;
     RLDBText4: TRLDBText;
+    RLDBText5: TRLDBText;
+    RLDBText6: TRLDBText;
+    RLDBText7: TRLDBText;
+    RLDBText8: TRLDBText;
+    RLDBText9: TRLDBText;
     RLDraw1: TRLDraw;
+    RLDraw10: TRLDraw;
+    RLDraw11: TRLDraw;
+    RLDraw12: TRLDraw;
+    RLDraw13: TRLDraw;
+    RLDraw14: TRLDraw;
+    RLDraw15: TRLDraw;
     RLDraw2: TRLDraw;
     RLDraw3: TRLDraw;
     RLDraw4: TRLDraw;
     RLDraw5: TRLDraw;
     RLDraw6: TRLDraw;
+    RLDraw7: TRLDraw;
+    RLDraw8: TRLDraw;
+    RLDraw9: TRLDraw;
     RLGroupMestre: TRLGroup;
     RLLabel1: TRLLabel;
     RLLabel10: TRLLabel;
     RLLabel11: TRLLabel;
+    RLLabel12: TRLLabel;
+    RLLabel13: TRLLabel;
+    RLLabel14: TRLLabel;
+    RLLabel15: TRLLabel;
+    RLLabel16: TRLLabel;
+    RLLabel17: TRLLabel;
+    RLLabel18: TRLLabel;
+    RLLabel19: TRLLabel;
     RLLabel2: TRLLabel;
     RLLabel3: TRLLabel;
     RLLabelTituloProc: TRLLabel;
@@ -39,11 +64,17 @@ type
     RLLabel9: TRLLabel;
     RLMemo1: TRLMemo;
     RLReportGuiaInstrucoes: TRLReport;
+    ZQComandosBAIRRO: TStringField;
+    ZQComandosCIDADE_UF: TStringField;
     ZQComandosDATA_PROCEDIMENTO: TDateField;
     ZQComandosDESCRICAO_DIA: TStringField;
+    ZQComandosENDERECO: TStringField;
     ZQComandosID_PROCEDIMENTO: TLongintField;
+    ZQComandosLOGRADOURO: TStringField;
     ZQComandosNOME_PACIENTE: TStringField;
+    ZQComandosNRO: TLongintField;
     ZQComandosPACIENTE: TLongintField;
+    ZQComandosTELEFONE: TStringField;
     ZQComandosTIPO_DIA: TStringField;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure RLBand1BeforePrint(Sender: TObject; var PrintIt: Boolean);
@@ -51,6 +82,7 @@ type
     procedure RLMemo1AfterPrint(Sender: TObject);
     procedure RLMemo1BeforePrint(Sender: TObject; var AText: string;
       var PrintIt: Boolean);
+
 
   private
 
@@ -222,6 +254,7 @@ begin
 
 end;
 
+
 function TFrmRelatoInstrTrat.Gerar_Relatorio(ImpV: smallint): boolean;
 begin
 
@@ -231,36 +264,43 @@ begin
   begin
     close;
     sql.clear;
-    sql.add('select                                                                       ');
-    sql.add('proc.id_procedimento,                                                        ');
-    sql.add('proc.paciente,                                                               ');
-    sql.add('pac.nome as nome_paciente,                                                   ');
-    sql.add('dias.data_procedimento,                                                      ');
-    sql.add('dias.tipo_dia,                                                               ');
-    sql.add('CASE dias.tipo_dia                                                           ');
-    sql.add('WHEN ''TE'' then ''Tratamento Espiritual''                                   ');
-    sql.add('WHEN ''CE'' then ''Cirurgia Espiritual''                                     ');
-    sql.add('WHEN ''RA'' then ''Repouso Absoluto''                                        ');
-    sql.add('WHEN ''RR'' then ''Repouso Relativo''                                        ');
-    sql.add('WHEN ''RP'' then ''Repouso e Tirar Pontos''                                  ');
-    sql.add('end as DESCRICAO_DIA                                                         ');
-    sql.add('from tprocedimento proc                                                      ');
-    sql.add('left join tpaciente pac on proc.paciente = pac.id_paciente                   ');
-    sql.add('left join tdias_procedimento dias on proc.id_procedimento = dias.procedimento');
+    sql.add('select																			');
+    sql.add('proc.id_procedimento,                                                          ');
+    sql.add('proc.paciente,                                                                 ');
+    sql.add('pac.nome as nome_paciente,                                                     ');
+    sql.add('cid.nome_cidade || ''-'' ||cid.uf_cidade as CIDADE_UF,                         ');
+    sql.add('PAC.telefone,                                                                  ');
+    sql.add('PAC.logradouro,                                                                ');
+    sql.add('PAC.endereco,                                                                  ');
+    sql.add('PAC.nro,                                                                       ');
+    sql.add('PAC.bairro,                                                                    ');
+    sql.add('dias.data_procedimento,                                                        ');
+    sql.add('dias.tipo_dia,                                                                 ');
+    sql.add('CASE dias.tipo_dia                                                             ');
+    sql.add('WHEN ''TE'' then ''Tratamento Espiritual''                                     ');
+    sql.add('WHEN ''CE'' then ''Cirurgia Espiritual''                                       ');
+    sql.add('WHEN ''RA'' then ''Repouso Absoluto''                                          ');
+    sql.add('WHEN ''RR'' then ''Repouso Relativo''                                          ');
+    sql.add('WHEN ''RP'' then ''Repouso Relativo e Retirada dos Pontos''                    ');
+    sql.add('end as DESCRICAO_DIA                                                           ');
+    sql.add('from tprocedimento proc                                                        ');
+    sql.add('left join tpaciente pac on proc.paciente = pac.id_paciente                     ');
+    sql.add('inner join tcidade cid on pac.cidade = cid.id_cidade                           ');
+    sql.add('left join tdias_procedimento dias on proc.id_procedimento = dias.procedimento  ');
     sql.add(' WHERE 1=1 ');
 
     if not(Filtro = '')
     then begin
          sql.add('AND PROC.ID_PROCEDIMENTO IN ( ' + Filtro + ' )');
          end;
-
+    sql.add('ORDER BY dias.data_procedimento           ');
     open;
     last;
     first;
 
     if (recordcount = 0) then
     begin
-      //Application.MessageBox('A sua filtragem não retornou nenhum registro.', 'Atenção', MB_OK + MB_ICONWARNING);
+      MessageDlg('Não há registros para impressão', mtWarning, [mbOk], 0 );
       abort;
     end;
   end;

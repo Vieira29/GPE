@@ -569,7 +569,7 @@ end;
 
 procedure TFrmBaseCadastro.ComboBoxColunaChange(Sender: TObject);
 begin
-  GridSort(DBGridCad, ComboBoxColuna.ItemIndex, ZQObjetos);
+  idxColunaProcura := ComboBoxColuna.ItemIndex;
 end;
 
 procedure TFrmBaseCadastro.ActionGravarExecute(Sender: TObject);

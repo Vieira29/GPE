@@ -17,6 +17,7 @@ type
     BitBtnTelaPacientes: TBitBtn;
     BitBtnTelaCidades: TBitBtn;
     BitBtnTelaProcedimento: TBitBtn;
+    BitBtnTelaRelProcPorData: TBitBtn;
     ImageFundo: TImage;
     PageControlOpcoes: TPageControl;
     Panel1: TPanel;
@@ -27,10 +28,12 @@ type
     procedure BitBtnTelaCidadesClick(Sender: TObject);
     procedure BitBtnTelaPacientesClick(Sender: TObject);
     procedure BitBtnTelaProcedimentoClick(Sender: TObject);
+    procedure BitBtnTelaRelProcPorDataClick(Sender: TObject);
     procedure BitBtnTelaRemedioClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure ImageFundoClick(Sender: TObject);
     procedure TabControlPrincipalChange(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
@@ -46,7 +49,7 @@ var
 
 implementation
 
-uses udm, uFrmCadPacientes, uFrmCadCidade, uFrmCadRemedio, uFrmCadProcedimento;
+uses udm, uFrmCadPacientes, uFrmCadCidade, uFrmCadRemedio, uFrmCadProcedimento, uFrmRelProcPorData;
 
 {$R *.lfm}
 
@@ -90,6 +93,19 @@ begin
   end;
 end;
 
+procedure TFrmMain.BitBtnTelaRelProcPorDataClick(Sender: TObject);
+begin
+  if not Assigned(FrmRelProcPorData) then
+  begin
+    FrmRelProcPorData := TFrmRelProcPorData.Create(self);
+    FrmRelProcPorData.Show;
+  end
+  else
+  begin
+    FrmRelProcPorData.Show;
+  end;
+end;
+
 procedure TFrmMain.BitBtnTelaRemedioClick(Sender: TObject);
 begin
     if not Assigned(FrmCadRemedio) then
@@ -125,6 +141,11 @@ begin
   Width := Screen.Width;
   Height := Screen.Height;
   self.WindowState:= wsMaximized;
+end;
+
+procedure TFrmMain.ImageFundoClick(Sender: TObject);
+begin
+
 end;
 
 procedure TFrmMain.BitBtnTelaCidadesClick(Sender: TObject);

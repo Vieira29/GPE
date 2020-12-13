@@ -8,7 +8,8 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, uFrmBaseForm, uFrmMain, uFrmCadPacientes, uDM, zcomponent,
-  uFrmCadCidade, uFrmCadRemedio, uFrmCadProcedimento, uFrmRelatoInstrTrat, uCarregaINI
+  uFrmCadCidade, uFrmCadRemedio, uFrmCadProcedimento, uFrmRelatoInstrTrat,
+  uCarregaINI, ufrmrelreceita, uFrmRelProcPorData
   { you can add units after this };
 
 {$R *.res}
@@ -24,6 +25,8 @@ begin
   Application.CreateForm(TFrmCadRemedio, FrmCadRemedio);
   Application.CreateForm(TFrmCadProcedimento, FrmCadProcedimento);
   Application.CreateForm(TFrmRelatoInstrTrat, FrmRelatoInstrTrat);
+  Application.CreateForm(TFrmRelReceita, FrmRelReceita);
+  Application.CreateForm(TFrmRelProcPorData, FrmRelProcPorData);
   Application.Run;
 end.
 

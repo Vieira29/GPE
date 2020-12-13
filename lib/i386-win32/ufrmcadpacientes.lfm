@@ -1,11 +1,12 @@
 inherited FrmCadPacientes: TFrmCadPacientes
-  Left = 319
+  Left = 256
   Height = 556
-  Top = 47
-  Width = 780
+  Top = 36
+  Width = 782
+  BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Cadastro de Pacientes'
   ClientHeight = 556
-  ClientWidth = 780
+  ClientWidth = 782
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -59,19 +60,26 @@ inherited FrmCadPacientes: TFrmCadPacientes
             item
               PickList.Strings = (              )
               Title.Caption = 'Código'
+              Width = 50
               FieldName = 'ID_PACIENTE'
             end          
             item
               PickList.Strings = (              )
               Title.Caption = 'Nome do Paciente'
-              Width = 420
+              Width = 380
               FieldName = 'NOME'
             end          
             item
               PickList.Strings = (              )
               Title.Caption = 'Email ou Conta'
-              Width = 180
+              Width = 120
               FieldName = 'EMAIL_CONTA'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Celular'
+              Width = 120
+              FieldName = 'CELULAR'
             end>
           OnCellClick = DBGridCadCellClick
           OnDrawColumnCell = DBGridCadDrawColumnCell
@@ -912,7 +920,6 @@ inherited FrmCadPacientes: TFrmCadPacientes
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      EditMask = '00000\-000\'
       Size = 9
     end
   end

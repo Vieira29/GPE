@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
   StdCtrls, uFrmBaseForm, ZDataset, db, RLReport, RLDraftFilter, RLHTMLFilter,
-  RLPDFFilter, RLXLSFilter, RLPreviewForm, udm;
+  RLPDFFilter, RLXLSFilter, RLXLSXFilter, udm;
 
 type
 
@@ -25,9 +25,9 @@ type
     RLDraftFilter1: TRLDraftFilter;
     RLHTMLFilter1: TRLHTMLFilter;
     RLPDFFilter1: TRLPDFFilter;
-    RLPreviewSetup1: TRLPreviewSetup;
     RLReportRelatorio: TRLReport;
     RLXLSFilter1: TRLXLSFilter;
+    RLXLSXFilter1: TRLXLSXFilter;
     ZQComandos: TZQuery;
     procedure BitBtnSairClick(Sender: TObject);
   private

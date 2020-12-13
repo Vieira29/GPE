@@ -14,20 +14,26 @@ type
   { TFrmCadProcedimento }
 
   TFrmCadProcedimento = class(TFrmBaseCadastro)
+    ActionImpInstrucoes: TAction;
     BDDataProcDATA_PROCEDIMENTO: TDateTimeField;
     BDDataProcDESCRICAO_DIA: TStringField;
     BDDataProcID_DIAS_PROCEDIMENTO: TLongintField;
     BDDataProcTIPO_DIA: TStringField;
+    BDReceitaINTERVALO_POSOLOGIA: TSmallintField;
     BDReceitaNOME_REMEDIO: TStringField;
-    BDReceitaPOSOLOGIA: TStringField;
+    BDReceitaQTD_FRASCOS: TSmallintField;
+    BDReceitaQTD_POSOLOGIA: TSmallintField;
     BDReceitaREMEDIO: TLongintField;
     BtnPesqPaciente: TSpeedButton;
     BtnPesqRemedio: TSpeedButton;
     BDReceita: TBufDataset;
     BDDataProc: TBufDataset;
     DateEditDataInicial: TDateEdit;
+    DBDateEditDataLanProc: TDBDateEdit;
+    DBEditQtdPosologia: TDBEdit;
+    DBEditIntPosologia: TDBEdit;
     DBEditQtdDias: TDBEdit;
-    DBEditPosologia: TDBEdit;
+    DBEditQtdFrascos: TDBEdit;
     DBEditCodPaciente: TDBEdit;
     DBEditCodigoProcedimento: TDBEdit;
     DBEditCodRemedio: TDBEdit;
@@ -44,6 +50,9 @@ type
     Image2: TImage;
     LabelCodigo: TLabel;
     LabelCodigo1: TLabel;
+    LabelCodigo2: TLabel;
+    LabelCodigo3: TLabel;
+    LabelCodigo4: TLabel;
     LabelDataInicial: TLabel;
     LabelRemedio: TLabel;
     LabelQtdDias: TLabel;
@@ -54,7 +63,9 @@ type
     GravarReceita: TSpeedButton;
     ExcluirReceita: TSpeedButton;
     CancelarReceita: TSpeedButton;
+    SpeedButtonImprimirReceita: TSpeedButton;
     SpeedButtonInstrucoes: TSpeedButton;
+    SpeedButtonInstrucoes1: TSpeedButton;
     TabSheetDatasProc: TTabSheet;
     TabSheetReceita: TTabSheet;
     ZQDataProc: TZQuery;
@@ -62,6 +73,8 @@ type
     ZQDataProcDESCRICAO_DIA: TStringField;
     ZQDataProcID_DIAS_PROCEDIMENTO: TLongintField;
     ZQDataProcTIPO_DIA: TStringField;
+    ZQObjetosDATA_PROC_LAN: TDateField;
+    ZQObjetosPRIMEIRO_DIA_PROC: TDateField;
     ZQReceita: TZQuery;
     ZQObjetosID_PROCEDIMENTO: TLongintField;
     ZQObjetosNOME_PACIENTE: TStringField;
@@ -70,12 +83,15 @@ type
     ZQObjetosQTD_DIAS: TSmallintField;
     ZQObjetosSELECIONADO: TStringField;
     ZQObjetosTIPO_PROCEDIMENTO: TStringField;
+    ZQReceitaINTERVALO_POSOLOGIA: TSmallintField;
     ZQReceitaNOME_REMEDIO: TStringField;
-    ZQReceitaPOSOLOGIA: TSmallintField;
+    ZQReceitaQTD_FRASCOS: TSmallintField;
+    ZQReceitaQTD_POSOLOGIA: TSmallintField;
     ZQReceitaREMEDIO: TLongintField;
     procedure ActionCancelarExecute(Sender: TObject);
     procedure ActionExcluirExecute(Sender: TObject);
     procedure ActionGravarExecute(Sender: TObject);
+    procedure ActionImpInstrucoesExecute(Sender: TObject);
     procedure ActionNovoExecute(Sender: TObject);
     procedure BtnPesqPacienteClick(Sender: TObject);
     procedure BtnPesqRemedioClick(Sender: TObject);
@@ -89,6 +105,7 @@ type
     procedure DBRadioGroupTipoProcedimentoChange(Sender: TObject);
     procedure DSDataProcDataChange(Sender: TObject; Field: TField);
     procedure DSDataProcStateChange(Sender: TObject);
+    procedure DSObjetosStateChange(Sender: TObject);
     procedure DSReceitaStateChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure CarregarProcedimento;
@@ -100,7 +117,7 @@ type
     procedure ExcluirReceitaClick(Sender: TObject);
     procedure CancelarReceitaClick(Sender: TObject);
     procedure spbGerarDiasClick(Sender: TObject);
-    procedure SpeedButtonInstrucoesClick(Sender: TObject);
+    procedure SpeedButtonImprimirReceitaClick(Sender: TObject);
     procedure ZQObjetosAfterScroll(DataSet: TDataSet);
     function SetarProximaSegunda(pData:TDate):TDate;
     function Gravar_Receita(pProcedimento:integer):boolean;
@@ -132,7 +149,7 @@ var
 implementation
 
 uses
-  udm, uFrmFiltro, uFrmRelatoInstrTrat;
+  udm, uFrmFiltro, uFrmRelatoInstrTrat, ufrmrelreceita;
 
 {$R *.lfm}
 
@@ -376,6 +393,13 @@ begin
        ZQObjetos.Edit;
 
 end;
+
+procedure TFrmCadProcedimento.DSObjetosStateChange(Sender: TObject);
+begin
+  ActionImpInstrucoes.Enabled := (ZQObjetos.State in [dsBrowse, dsInactive]) and (PageControlCad.ActivePageIndex in [TabConsulta.TabIndex, TabCadastro.TabIndex]);
+  inherited;
+end;
+
 procedure TFrmCadProcedimento.DSReceitaStateChange(Sender: TObject);
 begin
   Config_Controles_Remedio();
@@ -437,8 +461,10 @@ begin
   inherited;
   DBEditCodigoProcedimento.SetFocus;
 
-  DateEditDataInicial.Date := now;
-  LastDataProc.DataProcedimento:= NOW;
+  DateEditDataInicial.Date                          := now;
+  LastDataProc.DataProcedimento                     := NOW;
+  ZQObjetos.FieldByName('data_proc_lan').AsDateTime := NOW;
+  ZQObjetos.FieldByName('QTD_DIAS').AsInteger       := 0;
 
 end;
 
@@ -467,10 +493,13 @@ begin
 
 
         VCodigo := 0;
-        if ZQObjetos.State IN [DSEDIT] then
-          VCodigo := ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger // ZQObjetosCODIGO.AsString
-        ELSE
-          VCODIGO := StrToInt(dm.ObtemSequencia('GEN_TPROCEDIMENTO_ID'));
+        if ZQObjetos.State IN [DSEDIT]
+        then begin
+             VCodigo := ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger // ZQObjetosCODIGO.AsString
+             end
+        ELSE begin
+             VCODIGO := StrToInt(dm.ObtemSequencia('GEN_TPROCEDIMENTO_ID'));
+             end;
 
         dm.IniciaTransacao();
 
@@ -478,15 +507,31 @@ begin
         begin
           CLOSE;
           SQL.Clear;
-          sql.add('UPDATE OR INSERT INTO TPROCEDIMENTO  							');
-          sql.add('(ID_PROCEDIMENTO, PACIENTE, TIPO_PROCEDIMENTO, QTD_DIAS)');
-          sql.add('VALUES                                                                                     ');
-          sql.add('(:ID_PROCEDIMENTO, :PACIENTE, :TIPO_PROCEDIMENTO, :QTD_DIAS)');
-          sql.add('MATCHING (ID_PROCEDIMENTO)                                                                     ');
-          ParamByName('ID_PROCEDIMENTO').AsInteger   := VCodigo;
-          ParamByName('PACIENTE').AsInteger          := ZQObjetos.FieldByName('PACIENTE').AsInteger;
-          ParamByName('TIPO_PROCEDIMENTO').AsString  := ZQObjetos.FieldByName('TIPO_PROCEDIMENTO').AsString;
-          ParamByName('QTD_DIAS').AsInteger          := ZQObjetos.FieldByName('QTD_DIAS').AsInteger;;
+
+          if ZQObjetos.State IN [dsInsert]
+          then begin
+               sql.add('UPDATE OR INSERT INTO TPROCEDIMENTO  							');
+               sql.add('(ID_PROCEDIMENTO, PACIENTE, TIPO_PROCEDIMENTO, QTD_DIAS, DATA_PROC_LAN)');
+               sql.add('VALUES                                                                                     ');
+               sql.add('(:ID_PROCEDIMENTO, :PACIENTE, :TIPO_PROCEDIMENTO, :QTD_DIAS, :DATA_PROC_LAN)');
+               sql.add('MATCHING (ID_PROCEDIMENTO)                                                                     ');
+               ParamByName('ID_PROCEDIMENTO').AsInteger   := VCodigo;
+               ParamByName('PACIENTE').AsInteger          := ZQObjetos.FieldByName('PACIENTE').AsInteger;
+               ParamByName('TIPO_PROCEDIMENTO').AsString  := ZQObjetos.FieldByName('TIPO_PROCEDIMENTO').AsString;
+               ParamByName('QTD_DIAS').AsInteger          := ZQObjetos.FieldByName('QTD_DIAS').AsInteger;
+               ParamByName('DATA_PROC_LAN').AsDateTime    := ZQObjetos.FieldByName('DATA_PROC_LAN').AsDateTime;
+               end
+          else begin
+               sql.add('UPDATE OR INSERT INTO TPROCEDIMENTO  							');
+               sql.add('(ID_PROCEDIMENTO, PACIENTE, TIPO_PROCEDIMENTO, QTD_DIAS)');
+               sql.add('VALUES                                                                                     ');
+               sql.add('(:ID_PROCEDIMENTO, :PACIENTE, :TIPO_PROCEDIMENTO, :QTD_DIAS)');
+               sql.add('MATCHING (ID_PROCEDIMENTO)                                                                     ');
+               ParamByName('ID_PROCEDIMENTO').AsInteger   := VCodigo;
+               ParamByName('PACIENTE').AsInteger          := ZQObjetos.FieldByName('PACIENTE').AsInteger;
+               ParamByName('TIPO_PROCEDIMENTO').AsString  := ZQObjetos.FieldByName('TIPO_PROCEDIMENTO').AsString;
+               ParamByName('QTD_DIAS').AsInteger          := ZQObjetos.FieldByName('QTD_DIAS').AsInteger;
+               end;
 
           ExecSQL;
           DM.ConfirmaTransacao;
@@ -536,6 +581,25 @@ begin
 
 end;
 
+procedure TFrmCadProcedimento.ActionImpInstrucoesExecute(Sender: TObject);
+begin
+       if not Assigned(FrmRelatoInstrTrat) then
+           begin
+             FrmRelatoInstrTrat := TFrmRelatoInstrTrat.Create(self);
+             FrmRelatoInstrTrat.Filtro   := ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsString;
+             FrmRelatoInstrTrat.TipoProc := ZQObjetos.FieldByName('tipo_procedimento').AsString;
+             FrmRelatoInstrTrat.Gerar_Relatorio(2);
+           end
+             else
+           begin
+             FrmRelatoInstrTrat.Filtro := ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsString;
+             FrmRelatoInstrTrat.TipoProc := ZQObjetos.FieldByName('tipo_procedimento').AsString;
+             FrmRelatoInstrTrat.Gerar_Relatorio(2);
+
+           end;
+
+end;
+
 procedure TFrmCadProcedimento.ActionExcluirExecute(Sender: TObject);
 begin
   inherited;
@@ -582,7 +646,7 @@ end;
 
 procedure TFrmCadProcedimento.CarregarProcedimento;
 begin
-    with ZQObjetos do
+  with ZQObjetos do
   begin
     close;
     sql.Clear;
@@ -596,9 +660,15 @@ begin
     sql.add('WHEN ''C'' then ''Cirurgia''                               ');
     sql.add('WHEN ''T'' then ''Tratamento''                             ');
     sql.add('end as NOME_PROCEDIMENTO,                                  ');
-    sql.add('proc.qtd_dias                                              ');
+    sql.add('proc.qtd_dias,                                             ');
+    sql.add('proc.data_proc_lan,                                        ');
+    sql.add('(SELECT FIRST 1 DPROC.data_procedimento                    ');
+    sql.add(' FROM tdias_procedimento DPROC                             ');
+    sql.add(' WHERE DPROC.procedimento = PROC.id_procedimento           ');
+    sql.add(' ORDER by DPROC.id_dias_procedimento) AS PRIMEIRO_DIA_PROC ');
     sql.add('FROM TPROCEDIMENTO PROC                                    ');
     sql.add('INNER JOIN TPACIENTE PAC ON PROC.paciente = PAC.id_paciente');
+    sql.add('ORDER BY PROC.id_procedimento');
     open;
     last;
     first;
@@ -629,6 +699,7 @@ begin
     sql.add('from tdias_procedimento DPROC              ');
     sql.add('WHERE                                      ');
     sql.add('DPROC.procedimento = :ID_PROCEDIMENTO      ');
+    sql.add('ORDER BY DPROC.data_procedimento           ');
     ParamByName('ID_PROCEDIMENTO').AsInteger := pProcedimento;
     open;
     last;
@@ -648,10 +719,12 @@ begin
   begin
     close;
     sql.Clear;
-    sql.add('SELECT													');
+    sql.add('SELECT						    ');
     sql.add('REC.remedio,                                           ');
     sql.add('REM.nome_remedio,                                      ');
-    sql.add('REC.posologia                                          ');
+    sql.add('REC.qtd_frascos,                                       ');
+    sql.add('REC.qtd_posologia,                                     ');
+    sql.add('REC.intervalo_posologia                                ');
     sql.add('FROM TRECEITA REC                                      ');
     sql.add('INNER JOIN TREMEDIO REM ON REC.remedio = REM.id_remedio');
     sql.add('WHERE                                                  ');
@@ -668,7 +741,6 @@ end;
 
 procedure TFrmCadProcedimento.FormShow(Sender: TObject);
 begin
-  inherited;
   BDReceita.CreateDataset;
   BDDataProc.CreateDataset;
 
@@ -677,8 +749,7 @@ begin
   CarregarProcedimento;
   CarregarDiasProcedimento(ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger);
   CarregarReceita(ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger);
-
-
+  inherited;
 end;
 
 procedure TFrmCadProcedimento.GravarReceitaClick(Sender: TObject);
@@ -792,41 +863,30 @@ begin
        end;
 end;
 
-procedure TFrmCadProcedimento.SpeedButtonInstrucoesClick(Sender: TObject);
+procedure TFrmCadProcedimento.SpeedButtonImprimirReceitaClick(Sender: TObject);
 begin
-  //if PageControlCad.ActivePage = TabCadastro
-  //then begin
-        if not Assigned(FrmRelatoInstrTrat) then
-           begin
-             FrmRelatoInstrTrat := TFrmRelatoInstrTrat.Create(self);
-             FrmRelatoInstrTrat.Filtro   := ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsString;
-             FrmRelatoInstrTrat.TipoProc := ZQObjetos.FieldByName('tipo_procedimento').AsString;
-             FrmRelatoInstrTrat.Gerar_Relatorio(2);
-           end
-             else
-           begin
-             FrmRelatoInstrTrat.Filtro := ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsString;
-             FrmRelatoInstrTrat.TipoProc := ZQObjetos.FieldByName('tipo_procedimento').AsString;
-             FrmRelatoInstrTrat.Gerar_Relatorio(2);
-
-           end;
-
-
-
-       //end;
+     if not Assigned(FrmRelReceita) then
+     begin
+       FrmRelReceita        := TFrmRelReceita.Create(self);
+       FrmRelReceita.Filtro := ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsString;
+       FrmRelReceita.GerarRelatorio(2);
+     end
+       else
+     begin
+       FrmRelReceita.Filtro := ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsString;
+       FrmRelReceita.GerarRelatorio(2);
+     end;
 end;
+
+
 
 procedure TFrmCadProcedimento.ZQObjetosAfterScroll(DataSet: TDataSet);
 begin
+  ActionImpInstrucoes.Enabled := (ZQObjetos.State in [dsBrowse, dsInactive]) and (PageControlCad.ActivePageIndex in [TabConsulta.TabIndex, TabCadastro.TabIndex]);
   inherited;
-  if PageControlnfoProc.ActivePage = TabSheetDatasProc then
-  begin
-    CarregarDiasProcedimento(ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger);
-  end
-  else if PageControlnfoProc.ActivePage = TabSheetReceita then
-  begin
-    CarregarReceita(ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger);
-  end
+  CarregarDiasProcedimento(ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger);
+  CarregarReceita(ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger);
+
 end;
 
 function TFrmCadProcedimento.SetarProximaSegunda(pData: TDate): TDate;
@@ -878,13 +938,15 @@ begin
             CLOSE;
             SQL.Clear;
             sql.add('UPDATE OR INSERT INTO TRECEITA 															');
-            sql.add('(PROCEDIMENTO, REMEDIO, POSOLOGIA)');
+            sql.add('(PROCEDIMENTO, REMEDIO, QTD_FRASCOS, QTD_POSOLOGIA, INTERVALO_POSOLOGIA)');
             sql.add('VALUES                                                                                     ');
-            sql.add('(:PROCEDIMENTO, :REMEDIO, :POSOLOGIA)');
+            sql.add('(:PROCEDIMENTO, :REMEDIO, :QTD_FRASCOS, :QTD_POSOLOGIA, :INTERVALO_POSOLOGIA)');
             sql.add('MATCHING (PROCEDIMENTO, REMEDIO)                                                            ');
             ParamByName('PROCEDIMENTO').AsInteger   := pProcedimento;
             ParamByName('REMEDIO').AsString         := BDReceita.FieldByName('REMEDIO').AsString;
-            ParamByName('POSOLOGIA').AsString       := BDReceita.FieldByName('POSOLOGIA').AsString;
+            ParamByName('QTD_FRASCOS').AsInteger    := BDReceita.FieldByName('QTD_FRASCOS').AsInteger;
+            ParamByName('QTD_POSOLOGIA').AsInteger    := BDReceita.FieldByName('QTD_POSOLOGIA').AsInteger;
+            ParamByName('INTERVALO_POSOLOGIA').AsInteger    := BDReceita.FieldByName('INTERVALO_POSOLOGIA').AsInteger;
             ExecSQL;
           end;
 
@@ -952,6 +1014,7 @@ begin
   GravarReceita.Enabled := (BDReceita.State in [DSINSERT, DSEDIT]);
   CancelarReceita.Enabled := (BDReceita.State in [DSINSERT, DSEDIT]);
   ExcluirReceita.Enabled := (BDReceita.State in [dsBrowse]);
+  SpeedButtonInstrucoes.Enabled := (BDReceita.State in [dsBrowse, dsInactive]);
 end;
 
 procedure TFrmCadProcedimento.ZQReceitaAfterScroll(DataSet: TDataSet);

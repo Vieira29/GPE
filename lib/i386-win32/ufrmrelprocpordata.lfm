@@ -1,0 +1,690 @@
+inherited FrmRelProcPorData: TFrmRelProcPorData
+  Left = 300
+  Height = 366
+  Top = 61
+  Width = 514
+  BorderIcons = [biSystemMenu, biMinimize, biMaximize]
+  Caption = 'Relatório de Fase de Procedimento'
+  ClientHeight = 366
+  ClientWidth = 514
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poDesigned
+  inherited PanelRelRodape: TPanel
+    Top = 290
+    Width = 514
+    ClientWidth = 514
+    inherited BitBtnImprimir: TBitBtn
+      OnClick = BitBtnImprimirClick
+    end
+    inherited BitBtnVisualizar: TBitBtn
+      OnClick = BitBtnVisualizarClick
+    end
+  end
+  inherited PanelInfo: TPanel
+    Top = 226
+    Width = 514
+    ClientWidth = 514
+    inherited LabelInfo: TLabel
+      Width = 284
+      Caption = 'Relatório de fase de procedimento por Data e Tipo.'
+    end
+  end
+  object RLReportRelProcPorData: TRLReport[3]
+    Left = 624
+    Height = 1123
+    Top = -24
+    Width = 794
+    DataSource = DSRelatorio
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    RealBounds.Left = 0
+    RealBounds.Top = 0
+    RealBounds.Width = 0
+    RealBounds.Height = 0
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 111
+      Top = 38
+      Width = 718
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = False
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLLabel1: TRLLabel
+        Left = 139
+        Height = 18
+        Top = 4
+        Width = 436
+        Caption = 'CASA DA FRATERNIDADE SÃO FRANCISCO DE ASSIS'
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel2: TRLLabel
+        Left = 82
+        Height = 16
+        Top = 25
+        Width = 535
+        Caption = 'Rua do Médico, Nro 80 - Bairro Santo Inácio - Temporariamente Whatsapp: (34) 99900-9500'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel3: TRLLabel
+        Left = 261
+        Height = 16
+        Top = 44
+        Width = 205
+        Caption = 'Uberlândia - MG - CEP: 38412-306'
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw1: TRLDraw
+        Left = 1
+        Height = 48
+        Top = 63
+        Width = 717
+        Angle = 0
+        Brush.Color = cl3DLight
+        Color = clMedGray
+        ParentColor = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Transparent = False
+      end
+      object RLLabelTituloProc: TRLLabel
+        Left = 184
+        Height = 19
+        Top = 68
+        Width = 340
+        Alignment = taCenter
+        Caption = 'Relatório de Fase de Procedimento por Data'
+        Color = cl3DLight
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Transparent = False
+      end
+      object RLLabelRelFiltro: TRLLabel
+        Left = 332
+        Height = 19
+        Top = 89
+        Width = 44
+        Alignment = taCenter
+        Caption = 'Filtro'
+        Color = cl3DLight
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+        Transparent = False
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Height = 26
+      Top = 149
+      Width = 718
+      BandType = btColumnHeader
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLDraw2: TRLDraw
+        Left = 1
+        Height = 24
+        Top = 0
+        Width = 92
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel8: TRLLabel
+        Left = 3
+        Height = 15
+        Top = 5
+        Width = 83
+        Caption = 'Procedimento'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw3: TRLDraw
+        Left = 92
+        Height = 24
+        Top = 0
+        Width = 63
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel9: TRLLabel
+        Left = 94
+        Height = 15
+        Top = 5
+        Width = 53
+        Caption = 'Paciente'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw4: TRLDraw
+        Left = 154
+        Height = 24
+        Top = 0
+        Width = 317
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel10: TRLLabel
+        Left = 156
+        Height = 15
+        Top = 5
+        Width = 89
+        Caption = 'Nome Paciente'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw5: TRLDraw
+        Left = 470
+        Height = 24
+        Top = 0
+        Width = 131
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel11: TRLLabel
+        Left = 472
+        Height = 15
+        Top = 5
+        Width = 112
+        Caption = 'Data Procedimento'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw6: TRLDraw
+        Left = 600
+        Height = 24
+        Top = 0
+        Width = 118
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel12: TRLLabel
+        Left = 605
+        Height = 15
+        Top = 5
+        Width = 99
+        Caption = 'Descrição do Dia'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Height = 26
+      Top = 175
+      Width = 718
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLDraw7: TRLDraw
+        Left = 1
+        Height = 24
+        Top = 0
+        Width = 92
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw8: TRLDraw
+        Left = 92
+        Height = 24
+        Top = 0
+        Width = 63
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw9: TRLDraw
+        Left = 154
+        Height = 24
+        Top = 0
+        Width = 317
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw10: TRLDraw
+        Left = 470
+        Height = 24
+        Top = 0
+        Width = 131
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDraw11: TRLDraw
+        Left = 600
+        Height = 24
+        Top = 0
+        Width = 118
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText1: TRLDBText
+        Left = 3
+        Height = 16
+        Top = 4
+        Width = 127
+        DataField = 'ID_PROCEDIMENTO'
+        DataSource = DSRelatorio
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText2: TRLDBText
+        Left = 94
+        Height = 16
+        Top = 4
+        Width = 68
+        DataField = 'PACIENTE'
+        DataSource = DSRelatorio
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText3: TRLDBText
+        Left = 156
+        Height = 16
+        Top = 4
+        Width = 308
+        AutoSize = False
+        DataField = 'NOME_PACIENTE'
+        DataSource = DSRelatorio
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText4: TRLDBText
+        Left = 472
+        Height = 16
+        Top = 4
+        Width = 149
+        DataField = 'DATA_PROCEDIMENTO'
+        DataSource = DSRelatorio
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText5: TRLDBText
+        Left = 605
+        Height = 16
+        Top = 4
+        Width = 108
+        DataField = 'DESCRICAO_DIA'
+        DataSource = DSRelatorio
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+    object RLBand4: TRLBand
+      Left = 38
+      Height = 24
+      Top = 201
+      Width = 718
+      BandType = btColumnFooter
+      RealBounds.Left = 0
+      RealBounds.Top = 0
+      RealBounds.Width = 0
+      RealBounds.Height = 0
+      object RLDraw12: TRLDraw
+        Left = 470
+        Height = 24
+        Top = 0
+        Width = 131
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel4: TRLLabel
+        Left = 345
+        Height = 16
+        Top = 5
+        Width = 115
+        Caption = 'Total de Registros'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBResult1: TRLDBResult
+        Left = 472
+        Height = 16
+        Top = 4
+        Width = 46
+        DataField = 'PACIENTE'
+        DataSource = DSRelatorio
+        Info = riCount
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+    end
+  end
+  object GroupBoxPeriodo: TGroupBox[4]
+    Left = 8
+    Height = 105
+    Top = 8
+    Width = 500
+    Caption = 'Período:'
+    ClientHeight = 85
+    ClientWidth = 496
+    TabOrder = 4
+    object DateEditDataInicial: TDateEdit
+      Left = 101
+      Height = 23
+      Top = 26
+      Width = 103
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 0
+      Text = 'DateEditDataInicial'
+    end
+    object DateEditDataFim: TDateEdit
+      Left = 257
+      Height = 23
+      Top = 26
+      Width = 103
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 1
+      Text = 'DateEditDataFim'
+    end
+    object LabelAte: TLabel
+      Left = 219
+      Height = 15
+      Top = 33
+      Width = 18
+      Caption = 'Até'
+      ParentColor = False
+    end
+  end
+  object RadioGroupTipoDia: TRadioGroup[5]
+    Left = 8
+    Height = 106
+    Top = 115
+    Width = 499
+    AutoFill = True
+    Caption = 'Tipo Dia:'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 3
+    ClientHeight = 86
+    ClientWidth = 495
+    Columns = 3
+    ItemIndex = 0
+    Items.Strings = (
+      'Tratamento Espiritual'
+      'Cirurgia Espiritual'
+      'Repouso Absoluto'
+      'Repouso Relativo'
+      'Retirada dos Pontos'
+    )
+    OnClick = RadioGroupTipoDiaClick
+    TabOrder = 5
+  end
+  inherited FadeIn: TTimer[6]
+    left = 536
+    top = 168
+  end
+  inherited FadeOut: TTimer[7]
+    left = 616
+    top = 216
+  end
+  inherited RLDraftFilter1: TRLDraftFilter[8]
+    left = 536
+    top = 56
+  end
+  inherited RLHTMLFilter1: TRLHTMLFilter[9]
+    left = 488
+  end
+  inherited RLPDFFilter1: TRLPDFFilter[10]
+    left = 520
+  end
+  inherited RLXLSFilter1: TRLXLSFilter[11]
+    left = 552
+  end
+  inherited DSRelatorio: TDataSource[12]
+    left = 536
+    top = 120
+  end
+  inherited ZQComandos: TZQuery[13]
+    SQL.Strings = (
+      'select'
+      'PROC.id_procedimento,'
+      'PROC.paciente,'
+      'PAC.nome AS NOME_PACIENTE,'
+      'DPROC.data_procedimento,'
+      'DPROC.tipo_dia,'
+      'CASE DPROC.tipo_dia'
+      'WHEN ''TE'' then ''Tratamento Espiritual'''
+      'WHEN ''CE'' then ''Cirurgia Espiritual'''
+      'WHEN ''RA'' then ''Repouso Absoluto'''
+      'WHEN ''RR'' then ''Repouso Relativo'''
+      'WHEN ''RP'' then ''Retirada dos Pontos'''
+      'end as DESCRICAO_DIA'
+      'FROM TPROCEDIMENTO PROC'
+      'INNER JOIN TPACIENTE PAC ON PROC.paciente = PAC.id_paciente'
+      'INNER JOIN tdias_procedimento DPROC ON PROC.id_procedimento = DPROC.procedimento'
+      'WHERE'
+      'DPROC.data_procedimento BETWEEN :DATA_INI AND :DATA_FIM'
+      'AND DPROC.tipo_dia = :TIPO_DIA'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'DATA_INI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATA_FIM'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPO_DIA'
+        ParamType = ptUnknown
+      end>
+    left = 496
+    top = 113
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'DATA_INI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATA_FIM'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPO_DIA'
+        ParamType = ptUnknown
+      end>
+    object ZQComandosID_PROCEDIMENTO: TLongintField[0]
+      FieldKind = fkData
+      FieldName = 'ID_PROCEDIMENTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQComandosPACIENTE: TLongintField[1]
+      FieldKind = fkData
+      FieldName = 'PACIENTE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQComandosNOME_PACIENTE: TStringField[2]
+      FieldKind = fkData
+      FieldName = 'NOME_PACIENTE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQComandosDATA_PROCEDIMENTO: TDateField[3]
+      FieldKind = fkData
+      FieldName = 'DATA_PROCEDIMENTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQComandosTIPO_DIA: TStringField[4]
+      FieldKind = fkData
+      FieldName = 'TIPO_DIA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object ZQComandosDESCRICAO_DIA: TStringField[5]
+      FieldKind = fkData
+      FieldName = 'DESCRICAO_DIA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 21
+    end
+  end
+end
