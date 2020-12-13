@@ -127,7 +127,7 @@ begin
     sql.add('REC.remedio,                                                                                   ');
     sql.add('REM.nome_remedio,                                                                              ');
     sql.add('REC.qtd_frascos,                                                                               ');
-    sql.add('REC.qtd_posologia || '' gotas entre '' || rec.intervalo_posologia || '' horas '' as POSOLOGIA  ');
+    sql.add('REC.qtd_posologia || '' gotas. '' || rec.intervalo_posologia || '' vezes ao dia '' as POSOLOGIA  ');
     sql.add('FROM TRECEITA REC                                                                              ');
     sql.add('INNER JOIN tprocedimento PROC ON PROC.id_procedimento = REC.procedimento                       ');
     sql.add('INNER JOIN TPACIENTE PAC ON PROC.paciente = PAC.id_paciente                                    ');

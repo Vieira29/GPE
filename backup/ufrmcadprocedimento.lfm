@@ -55,13 +55,14 @@ inherited FrmCadProcedimento: TFrmCadProcedimento
     end
     inherited PageControlCad: TPageControl
       Width = 875
-      ActivePage = TabCadastro
-      TabIndex = 1
       inherited TabConsulta: TTabSheet
         ClientWidth = 867
         inherited PanelPesquisa: TPanel
           Width = 867
           ClientWidth = 867
+          inherited ComboBoxColuna: TComboBox
+            OnClick = nil
+          end
           inherited EditPesquisa: TEdit
             Width = 696
           end

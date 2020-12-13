@@ -652,7 +652,7 @@ inherited FrmRelReceita: TFrmRelReceita
       end
       object RLBand5: TRLBand
         Left = 0
-        Height = 61
+        Height = 56
         Top = 102
         Width = 716
         RealBounds.Left = 0
@@ -725,7 +725,6 @@ inherited FrmRelReceita: TFrmRelReceita
           Height = 14
           Top = 4
           Width = 82
-          Alignment = taCenter
           DataField = 'NOME_REMEDIO'
           DataSource = DSRelatorio
           Font.Color = clBlack

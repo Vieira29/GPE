@@ -55,6 +55,8 @@ inherited FrmCadProcedimento: TFrmCadProcedimento
     end
     inherited PageControlCad: TPageControl
       Width = 875
+      ActivePage = TabCadastro
+      TabIndex = 1
       inherited TabConsulta: TTabSheet
         ClientWidth = 867
         inherited PanelPesquisa: TPanel
@@ -456,8 +458,8 @@ inherited FrmCadProcedimento: TFrmCadProcedimento
                   FieldName = 'QTD_POSOLOGIA'
                 end              
                 item
-                  Title.Caption = 'INTERVALO'
-                  Width = 80
+                  Title.Caption = 'QTD VEZES AO DIA'
+                  Width = 110
                   FieldName = 'INTERVALO_POSOLOGIA'
                 end>
               DataSource = DSReceita
@@ -782,8 +784,8 @@ inherited FrmCadProcedimento: TFrmCadProcedimento
               Left = 669
               Height = 15
               Top = 116
-              Width = 144
-              Caption = 'No intervalo de (em horas):'
+              Width = 89
+              Caption = 'Qtd vezes ao dia:'
               ParentColor = False
             end
           end

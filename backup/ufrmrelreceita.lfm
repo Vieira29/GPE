@@ -671,10 +671,10 @@ inherited FrmRelReceita: TFrmRelReceita
           RealBounds.Height = 0
         end
         object RLDraw6: TRLDraw
-          Left = 119
+          Left = 168
           Height = 25
-          Top = 23
-          Width = 598
+          Top = 24
+          Width = 548
           Angle = 0
           RealBounds.Left = 0
           RealBounds.Top = 0
@@ -685,7 +685,7 @@ inherited FrmRelReceita: TFrmRelReceita
           Left = 76
           Height = 25
           Top = -1
-          Width = 641
+          Width = 640
           Angle = 0
           RealBounds.Left = 0
           RealBounds.Top = 0
@@ -695,8 +695,8 @@ inherited FrmRelReceita: TFrmRelReceita
         object RLDraw10: TRLDraw
           Left = -1
           Height = 25
-          Top = 23
-          Width = 121
+          Top = 24
+          Width = 170
           Angle = 0
           RealBounds.Left = 0
           RealBounds.Top = 0
@@ -738,9 +738,9 @@ inherited FrmRelReceita: TFrmRelReceita
           RealBounds.Height = 0
         end
         object RLDBText3: TRLDBText
-          Left = 7
+          Left = 69
           Height = 14
-          Top = 28
+          Top = 29
           Width = 80
           Alignment = taCenter
           DataField = 'QTD_FRASCOS'
@@ -755,15 +755,31 @@ inherited FrmRelReceita: TFrmRelReceita
           RealBounds.Height = 0
         end
         object RLDBText6: TRLDBText
-          Left = 126
+          Left = 173
           Height = 14
-          Top = 28
+          Top = 29
           Width = 64
           DataField = 'POSOLOGIA'
           DataSource = DSRelatorio
           Font.Color = clBlack
           Font.Height = -11
           Font.Name = 'Arial'
+          ParentFont = False
+          RealBounds.Left = 0
+          RealBounds.Top = 0
+          RealBounds.Width = 0
+          RealBounds.Height = 0
+        end
+        object RLLabel11: TRLLabel
+          Left = 5
+          Height = 16
+          Top = 28
+          Width = 56
+          Caption = 'Frascos:'
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
           ParentFont = False
           RealBounds.Left = 0
           RealBounds.Top = 0
