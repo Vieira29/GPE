@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
   StdCtrls, uFrmBaseRelatorio, ZDataset, db, RLReport, RLDraftFilter,
-  RLHTMLFilter, RLPDFFilter, RLXLSFilter;
+  RLHTMLFilter, RLPDFFilter, RLXLSFilter, RLXLSXFilter;
 
 type
 
@@ -22,6 +22,7 @@ type
     RLDBText10: TRLDBText;
     RLDBText11: TRLDBText;
     RLDBText12: TRLDBText;
+    RLDBText13: TRLDBText;
     RLDBText3: TRLDBText;
     RLDBText4: TRLDBText;
     RLDBText5: TRLDBText;
@@ -57,6 +58,7 @@ type
     RLLabel18: TRLLabel;
     RLLabel19: TRLLabel;
     RLLabel2: TRLLabel;
+    RLLabel20: TRLLabel;
     RLLabel3: TRLLabel;
     RLLabelTituloProc: TRLLabel;
     RLLabel5: TRLLabel;
@@ -65,8 +67,10 @@ type
     RLMemo1: TRLMemo;
     RLReportGuiaInstrucoes: TRLReport;
     ZQComandosBAIRRO: TStringField;
+    ZQComandosCELULAR: TStringField;
     ZQComandosCIDADE_UF: TStringField;
     ZQComandosDATA_PROCEDIMENTO: TDateField;
+    ZQComandosDATA_PROC_LAN: TDateField;
     ZQComandosDESCRICAO_DIA: TStringField;
     ZQComandosENDERECO: TStringField;
     ZQComandosID_PROCEDIMENTO: TLongintField;
@@ -74,7 +78,6 @@ type
     ZQComandosNOME_PACIENTE: TStringField;
     ZQComandosNRO: TLongintField;
     ZQComandosPACIENTE: TLongintField;
-    ZQComandosTELEFONE: TStringField;
     ZQComandosTIPO_DIA: TStringField;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure RLBand1BeforePrint(Sender: TObject; var PrintIt: Boolean);
@@ -267,9 +270,10 @@ begin
     sql.add('select																			');
     sql.add('proc.id_procedimento,                                                          ');
     sql.add('proc.paciente,                                                                 ');
+    sql.add('proc.data_proc_lan,                                                            ');
     sql.add('pac.nome as nome_paciente,                                                     ');
     sql.add('cid.nome_cidade || ''-'' ||cid.uf_cidade as CIDADE_UF,                         ');
-    sql.add('PAC.telefone,                                                                  ');
+    sql.add('PAC.celular,                                                                  ');
     sql.add('PAC.logradouro,                                                                ');
     sql.add('PAC.endereco,                                                                  ');
     sql.add('PAC.nro,                                                                       ');

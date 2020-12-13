@@ -51,6 +51,7 @@ type
     procedure ActionGravarExecute(Sender: TObject);
     procedure ActionSairExecute(Sender: TObject);
     procedure ComboBoxColunaChange(Sender: TObject);
+    procedure ComboBoxColunaClick(Sender: TObject);
     procedure ConfiguraControles;
     procedure ActionCancelarExecute(Sender: TObject);
     procedure ActionExcluirExecute(Sender: TObject);
@@ -570,6 +571,11 @@ end;
 procedure TFrmBaseCadastro.ComboBoxColunaChange(Sender: TObject);
 begin
   idxColunaProcura := ComboBoxColuna.ItemIndex;
+end;
+
+procedure TFrmBaseCadastro.ComboBoxColunaClick(Sender: TObject);
+begin
+
 end;
 
 procedure TFrmBaseCadastro.ActionGravarExecute(Sender: TObject);

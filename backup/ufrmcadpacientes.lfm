@@ -1,11 +1,12 @@
 inherited FrmCadPacientes: TFrmCadPacientes
-  Left = 336
+  Left = 256
   Height = 556
-  Top = 52
-  Width = 784
+  Top = 36
+  Width = 782
+  BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Cadastro de Pacientes'
   ClientHeight = 556
-  ClientWidth = 784
+  ClientWidth = 782
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -40,6 +41,8 @@ inherited FrmCadPacientes: TFrmCadPacientes
       end
     end
     inherited PageControlCad: TPageControl
+      ActivePage = TabCadastro
+      TabIndex = 1
       inherited TabConsulta: TTabSheet
         inherited PanelPesquisa: TPanel
           inherited ComboBoxColuna: TComboBox
@@ -917,7 +920,6 @@ inherited FrmCadPacientes: TFrmCadPacientes
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      EditMask = '00000\-000\'
       Size = 9
     end
   end

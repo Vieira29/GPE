@@ -1,6 +1,5 @@
 inherited FrmCadProcedimento: TFrmCadProcedimento
   Left = 225
-  Top = 45
   Width = 885
   BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Procedimentos'
@@ -56,13 +55,14 @@ inherited FrmCadProcedimento: TFrmCadProcedimento
     end
     inherited PageControlCad: TPageControl
       Width = 875
-      ActivePage = TabCadastro
-      TabIndex = 1
       inherited TabConsulta: TTabSheet
         ClientWidth = 867
         inherited PanelPesquisa: TPanel
           Width = 867
           ClientWidth = 867
+          inherited ComboBoxColuna: TComboBox
+            OnClick = nil
+          end
           inherited EditPesquisa: TEdit
             Width = 696
           end
@@ -242,9 +242,9 @@ inherited FrmCadProcedimento: TFrmCadProcedimento
           Height = 248
           Top = 143
           Width = 867
-          ActivePage = TabSheetReceita
+          ActivePage = TabSheetDatasProc
           Align = alBottom
-          TabIndex = 1
+          TabIndex = 0
           TabOrder = 4
           object TabSheetDatasProc: TTabSheet
             Caption = 'Datas Tratamento'

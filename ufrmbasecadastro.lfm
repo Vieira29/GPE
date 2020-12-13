@@ -164,6 +164,7 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
             Width = 112
             ItemHeight = 15
             OnChange = ComboBoxColunaChange
+            OnClick = ComboBoxColunaClick
             TabOrder = 0
           end
           object EditPesquisa: TEdit

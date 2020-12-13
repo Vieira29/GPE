@@ -93,6 +93,7 @@ procedure TFrmRelProcPorData.FormShow(Sender: TObject);
 begin
   DateEditDataInicial.Date:= now;
   DateEditDataFim.Date:= now;
+  TipoDia := 'TE';
 end;
 
 procedure TFrmRelProcPorData.BitBtnVisualizarClick(Sender: TObject);
@@ -121,8 +122,6 @@ function TFrmRelProcPorData.Gerar_Relatorio(ImpV: smallint): boolean;
 begin
 
   RLLabelRelFiltro.Caption := FormatDateTime('DD\MM\YYYY', DateEditDataInicial.Date) + ' até ' + FormatDateTime('DD\MM\YYYY', DateEditDataFim.Date)  + ' | ';
-
-
 
   CASE RadioGroupTipoDia.ItemIndex
   of

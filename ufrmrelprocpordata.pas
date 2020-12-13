@@ -93,6 +93,7 @@ procedure TFrmRelProcPorData.FormShow(Sender: TObject);
 begin
   DateEditDataInicial.Date:= now;
   DateEditDataFim.Date:= now;
+  TipoDia := 'TE';
 end;
 
 procedure TFrmRelProcPorData.BitBtnVisualizarClick(Sender: TObject);

@@ -256,12 +256,12 @@ begin
   END;
 
   //PROBLEMA
-  if ZQObjetos.FieldByName('PROBLEMA').AsString = '' then
+  {if ZQObjetos.FieldByName('PROBLEMA').AsString = '' then
   BEGIN
     MessageDlg('Atenção', 'Preencha o Problema do paciente!', mtWarning, [mbOK],0 );
     DBMemoProblema.SetFocus;
     abort;
-  END;
+  END;}
 
 
   try

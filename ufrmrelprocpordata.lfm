@@ -1,19 +1,18 @@
 inherited FrmRelProcPorData: TFrmRelProcPorData
-  Left = 300
-  Height = 366
-  Top = 61
-  Width = 514
+  Left = 266
+  Height = 368
+  Top = 81
+  Width = 512
   BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Relatório de Fase de Procedimento'
-  ClientHeight = 366
-  ClientWidth = 514
+  ClientHeight = 368
+  ClientWidth = 512
   OnClose = FormClose
   OnShow = FormShow
-  Position = poDesigned
   inherited PanelRelRodape: TPanel
-    Top = 290
-    Width = 514
-    ClientWidth = 514
+    Top = 292
+    Width = 512
+    ClientWidth = 512
     inherited BitBtnImprimir: TBitBtn
       OnClick = BitBtnImprimirClick
     end
@@ -22,18 +21,18 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
     end
   end
   inherited PanelInfo: TPanel
-    Top = 226
-    Width = 514
-    ClientWidth = 514
+    Top = 228
+    Width = 512
+    ClientWidth = 512
     inherited LabelInfo: TLabel
       Width = 284
       Caption = 'Relatório de fase de procedimento por Data e Tipo.'
     end
   end
   object RLReportRelProcPorData: TRLReport[3]
-    Left = 624
+    Left = 712
     Height = 1123
-    Top = -24
+    Top = 32
     Width = 794
     DataSource = DSRelatorio
     Font.Color = clBlack
@@ -413,11 +412,15 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       end
       object RLDBText5: TRLDBText
         Left = 605
-        Height = 16
+        Height = 15
         Top = 4
-        Width = 108
+        Width = 100
         DataField = 'DESCRICAO_DIA'
         DataSource = DSRelatorio
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
@@ -477,9 +480,9 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
     end
   end
   object GroupBoxPeriodo: TGroupBox[4]
-    Left = 8
+    Left = 5
     Height = 105
-    Top = 8
+    Top = 7
     Width = 500
     Caption = 'Período:'
     ClientHeight = 85
@@ -521,9 +524,9 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
     end
   end
   object RadioGroupTipoDia: TRadioGroup[5]
-    Left = 8
+    Left = 5
     Height = 106
-    Top = 115
+    Top = 114
     Width = 499
     AutoFill = True
     Caption = 'Tipo Dia:'
@@ -686,5 +689,7 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       Required = False
       Size = 21
     end
+  end
+  inherited RLXLSXFilter1: TRLXLSXFilter[14]
   end
 end

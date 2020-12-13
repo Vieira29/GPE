@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
   StdCtrls, uFrmBaseRelatorio, ZDataset, db, RLReport, RLDraftFilter,
-  RLHTMLFilter, RLPDFFilter, RLXLSFilter;
+  RLHTMLFilter, RLPDFFilter, RLXLSFilter, RLXLSXFilter;
 
 type
 
@@ -67,6 +67,7 @@ type
     RLMemo1: TRLMemo;
     RLReportGuiaInstrucoes: TRLReport;
     ZQComandosBAIRRO: TStringField;
+    ZQComandosCELULAR: TStringField;
     ZQComandosCIDADE_UF: TStringField;
     ZQComandosDATA_PROCEDIMENTO: TDateField;
     ZQComandosDATA_PROC_LAN: TDateField;
@@ -77,7 +78,6 @@ type
     ZQComandosNOME_PACIENTE: TStringField;
     ZQComandosNRO: TLongintField;
     ZQComandosPACIENTE: TLongintField;
-    ZQComandosTELEFONE: TStringField;
     ZQComandosTIPO_DIA: TStringField;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure RLBand1BeforePrint(Sender: TObject; var PrintIt: Boolean);
@@ -273,7 +273,7 @@ begin
     sql.add('proc.data_proc_lan,                                                            ');
     sql.add('pac.nome as nome_paciente,                                                     ');
     sql.add('cid.nome_cidade || ''-'' ||cid.uf_cidade as CIDADE_UF,                         ');
-    sql.add('PAC.telefone,                                                                  ');
+    sql.add('PAC.celular,                                                                  ');
     sql.add('PAC.logradouro,                                                                ');
     sql.add('PAC.endereco,                                                                  ');
     sql.add('PAC.nro,                                                                       ');

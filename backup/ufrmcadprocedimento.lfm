@@ -1,9 +1,9 @@
 inherited FrmCadProcedimento: TFrmCadProcedimento
-  Left = 113
-  Top = 29
-  Width = 1067
+  Left = 225
+  Width = 885
+  BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Procedimentos'
-  ClientWidth = 1067
+  ClientWidth = 885
   OnClose = FormClose
   OnShow = FormShow
   Position = poDesktopCenter
@@ -241,9 +241,9 @@ inherited FrmCadProcedimento: TFrmCadProcedimento
           Height = 248
           Top = 143
           Width = 867
-          ActivePage = TabSheetReceita
+          ActivePage = TabSheetDatasProc
           Align = alBottom
-          TabIndex = 1
+          TabIndex = 0
           TabOrder = 4
           object TabSheetDatasProc: TTabSheet
             Caption = 'Datas Tratamento'

@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
   StdCtrls, uFrmBaseRelatorio, ZDataset, db, RLReport, RLDraftFilter,
-  RLHTMLFilter, RLPDFFilter, RLXLSFilter;
+  RLHTMLFilter, RLPDFFilter, RLXLSFilter, RLXLSXFilter;
 
 type
 
@@ -43,17 +43,14 @@ type
     RLDraw18: TRLDraw;
     RLDraw19: TRLDraw;
     RLDraw3: TRLDraw;
-    RLDraw4: TRLDraw;
     RLDraw5: TRLDraw;
     RLDraw6: TRLDraw;
     RLDraw7: TRLDraw;
-    RLDraw8: TRLDraw;
     RLDraw9: TRLDraw;
     RLGroupMestre: TRLGroup;
     RLLabel1: TRLLabel;
     RLLabel10: TRLLabel;
     RLLabel11: TRLLabel;
-    RLLabel12: TRLLabel;
     RLLabel13: TRLLabel;
     RLLabel14: TRLLabel;
     RLLabel15: TRLLabel;
@@ -71,6 +68,7 @@ type
     RLLabelTituloProc: TRLLabel;
     RLReportRelReceita: TRLReport;
     ZQComandosBAIRRO: TStringField;
+    ZQComandosCELULAR: TStringField;
     ZQComandosCIDADE_UF: TStringField;
     ZQComandosENDERECO: TStringField;
     ZQComandosID_PROCEDIMENTO: TLongintField;
@@ -82,7 +80,6 @@ type
     ZQComandosPOSOLOGIA: TStringField;
     ZQComandosQTD_FRASCOS: TSmallintField;
     ZQComandosREMEDIO: TLongintField;
-    ZQComandosTELEFONE: TStringField;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
@@ -122,7 +119,7 @@ begin
     sql.add('proc.paciente,                                                                                 ');
     sql.add('pac.nome as nome_paciente,                                                                     ');
     sql.add('cid.nome_cidade || ''-'' ||cid.uf_cidade as CIDADE_UF,                                         ');
-    sql.add('PAC.telefone,                                                                                  ');
+    sql.add('PAC.celular,                                                                                  ');
     sql.add('PAC.logradouro,                                                                                ');
     sql.add('PAC.endereco,                                                                                  ');
     sql.add('PAC.nro,                                                                                       ');

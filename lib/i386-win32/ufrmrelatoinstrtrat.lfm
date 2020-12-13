@@ -356,8 +356,8 @@ inherited FrmRelatoInstrTrat: TFrmRelatoInstrTrat
           Left = 580
           Height = 14
           Top = 0
-          Width = 55
-          Caption = 'Telefone:'
+          Width = 45
+          Caption = 'Celular:'
           Font.Color = clBlack
           Font.Height = -11
           Font.Name = 'Arial'
@@ -600,8 +600,8 @@ inherited FrmRelatoInstrTrat: TFrmRelatoInstrTrat
           Left = 580
           Height = 15
           Top = 16
-          Width = 61
-          DataField = 'TELEFONE'
+          Width = 56
+          DataField = 'CELULAR'
           DataSource = DSRelatorio
           Font.Color = clBlack
           Font.Height = -12
@@ -832,7 +832,7 @@ inherited FrmRelatoInstrTrat: TFrmRelatoInstrTrat
       'proc.data_proc_lan, '
       'pac.nome as nome_paciente,'
       'cid.nome_cidade || ''-'' ||cid.uf_cidade as CIDADE_UF,'
-      'PAC.telefone,'
+      'PAC.celular,'
       'PAC.logradouro,'
       'PAC.endereco,'
       'PAC.nro,'
@@ -918,63 +918,65 @@ inherited FrmRelatoInstrTrat: TFrmRelatoInstrTrat
       Required = False
       Size = 103
     end
-    object ZQComandosTELEFONE: TStringField[7]
-      FieldKind = fkData
-      FieldName = 'TELEFONE'
-      Index = 7
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 16
-    end
-    object ZQComandosLOGRADOURO: TStringField[8]
+    object ZQComandosLOGRADOURO: TStringField[7]
       FieldKind = fkData
       FieldName = 'LOGRADOURO'
-      Index = 8
+      Index = 7
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
       Size = 50
     end
-    object ZQComandosENDERECO: TStringField[9]
+    object ZQComandosENDERECO: TStringField[8]
       FieldKind = fkData
       FieldName = 'ENDERECO'
-      Index = 9
+      Index = 8
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
       Size = 80
     end
-    object ZQComandosNRO: TLongintField[10]
+    object ZQComandosNRO: TLongintField[9]
       FieldKind = fkData
       FieldName = 'NRO'
-      Index = 10
+      Index = 9
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
     end
-    object ZQComandosBAIRRO: TStringField[11]
+    object ZQComandosBAIRRO: TStringField[10]
       FieldKind = fkData
       FieldName = 'BAIRRO'
-      Index = 11
+      Index = 10
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
       Size = 50
     end
-    object ZQComandosDATA_PROC_LAN: TDateField[12]
+    object ZQComandosDATA_PROC_LAN: TDateField[11]
       FieldKind = fkData
       FieldName = 'DATA_PROC_LAN'
-      Index = 12
+      Index = 11
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
     end
+    object ZQComandosCELULAR: TStringField[12]
+      FieldKind = fkData
+      FieldName = 'CELULAR'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+  end
+  inherited RLXLSXFilter1: TRLXLSXFilter[12]
   end
 end
