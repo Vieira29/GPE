@@ -592,6 +592,8 @@ procedure TFrmCadPacientes.FormShow(Sender: TObject);
 begin
   CarregarPacientes();
   inherited;
+  ComboBoxColuna.ItemIndex := 2;
+  idxColunaProcura := 2;
 end;
 
 function TFrmCadPacientes.Procurar_Cidade(pNomeCidade, pUF: String): boolean;

@@ -9,7 +9,6 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
   ClientWidth = 512
   OnClose = FormClose
   OnShow = FormShow
-  Position = poDesigned
   inherited PanelRelRodape: TPanel
     Top = 292
     Width = 512

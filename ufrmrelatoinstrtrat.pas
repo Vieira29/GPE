@@ -285,7 +285,7 @@ begin
     sql.add('WHEN ''CE'' then ''Cirurgia Espiritual''                                       ');
     sql.add('WHEN ''RA'' then ''Repouso Absoluto''                                          ');
     sql.add('WHEN ''RR'' then ''Repouso Relativo''                                          ');
-    sql.add('WHEN ''RP'' then ''Repouso Relativo e Retirada dos Pontos''                    ');
+    sql.add('WHEN ''RP'' then ''Retirada dos Pontos''                                       ');
     sql.add('end as DESCRICAO_DIA                                                           ');
     sql.add('from tprocedimento proc                                                        ');
     sql.add('left join tpaciente pac on proc.paciente = pac.id_paciente                     ');

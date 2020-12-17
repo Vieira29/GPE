@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, uFrmBaseForm, uFrmMain, uFrmCadPacientes, uDM, zcomponent,
   uFrmCadCidade, uFrmCadRemedio, uFrmCadProcedimento, uFrmRelatoInstrTrat,
-  uCarregaINI, ufrmrelreceita, uFrmRelProcPorData
+  uCarregaINI, ufrmrelreceita, uFrmRelProcPorData, tachartlazaruspkg
   { you can add units after this };
 
 {$R *.res}

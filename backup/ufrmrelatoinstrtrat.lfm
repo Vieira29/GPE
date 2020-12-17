@@ -356,8 +356,8 @@ inherited FrmRelatoInstrTrat: TFrmRelatoInstrTrat
           Left = 580
           Height = 14
           Top = 0
-          Width = 55
-          Caption = 'Telefone:'
+          Width = 45
+          Caption = 'Celular:'
           Font.Color = clBlack
           Font.Height = -11
           Font.Name = 'Arial'

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, ActnList,
-  Menus, ExtCtrls, Buttons, uCarregaINI;
+  Menus, ExtCtrls, Buttons, uCarregaINI, TADbSource, TAGraph;
 
 type
 

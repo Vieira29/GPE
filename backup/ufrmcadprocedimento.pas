@@ -545,6 +545,8 @@ begin
 
              Gravar_Receita(VCodigo);
 
+             ActionImpInstrucoesExecute(self);
+
              end
         ELSE begin
 
@@ -750,6 +752,8 @@ begin
   CarregarDiasProcedimento(ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger);
   CarregarReceita(ZQObjetos.FieldByName('ID_PROCEDIMENTO').AsInteger);
   inherited;
+  ComboBoxColuna.ItemIndex := 3;
+  idxColunaProcura         := 3;
 end;
 
 procedure TFrmCadProcedimento.GravarReceitaClick(Sender: TObject);
@@ -1210,8 +1214,10 @@ begin
                     BDDataProc.FieldByName('TIPO_DIA').AsString            := 'RP';
                     BDDataProc.FieldByName('DESCRICAO_DIA').AsString       := 'Retirada dos Pontos';
 
+                    BDDataProc.Post;
 
-                     for i := 0 to pQtdDias
+
+                    { for i := 0 to pQtdDias
              do begin
 
                    if   not BDDataProc.Active
@@ -1237,7 +1243,7 @@ begin
 
                    BDDataProc.Post;
 
-                  end;
+                  end;}
 
                   ZQObjetos.FieldByName('QTD_DIAS').AsInteger := BDDataProc.RecordCount;
        end;

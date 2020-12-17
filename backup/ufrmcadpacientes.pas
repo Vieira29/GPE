@@ -313,7 +313,6 @@ begin
           end;
 
           ParamByName('IDADE').AsInteger       := ZQObjetos.FieldByName('IDADE').AsInteger;
-          ParamByName('ORIGEM_CAD').AsString  := ZQObjetos.FieldByName('ORIGEM_CAD').AsString;
           ParamByName('PROBLEMA').AsString    := ZQObjetos.FieldByName('PROBLEMA').AsString;
           ExecSQL;
           DM.ConfirmaTransacao;
@@ -593,6 +592,7 @@ procedure TFrmCadPacientes.FormShow(Sender: TObject);
 begin
   CarregarPacientes();
   inherited;
+  ComboBoxColuna.ItemIndex:=2;
 end;
 
 function TFrmCadPacientes.Procurar_Cidade(pNomeCidade, pUF: String): boolean;
