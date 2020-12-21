@@ -141,6 +141,7 @@ begin
     sql.add('PROC.id_procedimento,                                                              ');
     sql.add('PROC.paciente,                                                                     ');
     sql.add('PAC.nome AS NOME_PACIENTE,                                                         ');
+    sql.add('PAC.CELULAR,                                                                       ');
     sql.add('DPROC.data_procedimento,                                                           ');
     sql.add('DPROC.tipo_dia,                                                                    ');
     sql.add('CASE DPROC.tipo_dia                                                                ');

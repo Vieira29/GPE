@@ -30,9 +30,9 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
     end
   end
   object RLReportRelProcPorData: TRLReport[3]
-    Left = 712
+    Left = 688
     Height = 1123
-    Top = 32
+    Top = 56
     Width = 794
     DataSource = DSRelatorio
     Font.Color = clBlack
@@ -412,13 +412,13 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       end
       object RLDBText5: TRLDBText
         Left = 605
-        Height = 15
+        Height = 12
         Top = 4
-        Width = 100
+        Width = 80
         DataField = 'DESCRICAO_DIA'
         DataSource = DSRelatorio
         Font.Color = clBlack
-        Font.Height = -12
+        Font.Height = -9
         Font.Name = 'Arial'
         ParentFont = False
         RealBounds.Left = 0

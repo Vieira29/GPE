@@ -179,6 +179,9 @@ begin
     ZQObjetos.Open;
 
     VarPesquisa := 'TPACIENTE';
+
+
+
   end;
 
   // REMEDIO
@@ -412,7 +415,12 @@ begin
         ComboBoxColuna.Items.Add('Não definido')
       else
         ComboBoxColuna.Items.Add(DBGrid1.Columns[i].Field.DisplayName);
+  end;
 
+  if VarPesquisa = 'TPACIENTE'
+  then begin
+       ComboBoxColuna.ItemIndex := 1;
+      idxColunaProcura         := 1;
   end;
 
 end;

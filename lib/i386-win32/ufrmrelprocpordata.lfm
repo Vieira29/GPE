@@ -2,38 +2,48 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
   Left = 266
   Height = 368
   Top = 81
-  Width = 512
+  Width = 508
   BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Relatório de Fase de Procedimento'
   ClientHeight = 368
-  ClientWidth = 512
+  ClientWidth = 508
   OnClose = FormClose
   OnShow = FormShow
   inherited PanelRelRodape: TPanel
     Top = 292
-    Width = 512
-    ClientWidth = 512
+    Width = 508
+    ClientWidth = 508
     inherited BitBtnImprimir: TBitBtn
+      Left = 41
       OnClick = BitBtnImprimirClick
     end
     inherited BitBtnVisualizar: TBitBtn
+      Left = 201
       OnClick = BitBtnVisualizarClick
+    end
+    inherited BitBtnSair: TBitBtn
+      Left = 369
     end
   end
   inherited PanelInfo: TPanel
     Top = 228
-    Width = 512
-    ClientWidth = 512
+    Width = 508
+    ClientWidth = 508
     inherited LabelInfo: TLabel
       Width = 284
       Caption = 'Relatório de fase de procedimento por Data e Tipo.'
     end
   end
   object RLReportRelProcPorData: TRLReport[3]
-    Left = 712
+    Left = 528
     Height = 1123
-    Top = 32
+    Top = 168
     Width = 794
+    Borders.Sides = sdCustom
+    Borders.DrawLeft = True
+    Borders.DrawTop = True
+    Borders.DrawRight = True
+    Borders.DrawBottom = True
     DataSource = DSRelatorio
     Font.Color = clBlack
     Font.Height = -13
@@ -43,10 +53,10 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
     RealBounds.Width = 0
     RealBounds.Height = 0
     object RLBand1: TRLBand
-      Left = 38
+      Left = 39
       Height = 111
-      Top = 38
-      Width = 718
+      Top = 39
+      Width = 716
       BandType = btHeader
       Borders.Sides = sdCustom
       Borders.DrawLeft = False
@@ -152,10 +162,10 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       end
     end
     object RLBand2: TRLBand
-      Left = 38
+      Left = 39
       Height = 26
-      Top = 149
-      Width = 718
+      Top = 150
+      Width = 716
       BandType = btColumnHeader
       RealBounds.Left = 0
       RealBounds.Top = 0
@@ -164,8 +174,8 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       object RLDraw2: TRLDraw
         Left = 1
         Height = 24
-        Top = 0
-        Width = 92
+        Top = 1
+        Width = 67
         Angle = 0
         RealBounds.Left = 0
         RealBounds.Top = 0
@@ -176,8 +186,8 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         Left = 3
         Height = 15
         Top = 5
-        Width = 83
-        Caption = 'Procedimento'
+        Width = 33
+        Caption = 'Proc.'
         Font.Color = clBlack
         Font.Height = -12
         Font.Name = 'Arial'
@@ -189,9 +199,9 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLDraw3: TRLDraw
-        Left = 92
+        Left = 67
         Height = 24
-        Top = 0
+        Top = 1
         Width = 63
         Angle = 0
         RealBounds.Left = 0
@@ -200,7 +210,7 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLLabel9: TRLLabel
-        Left = 94
+        Left = 70
         Height = 15
         Top = 5
         Width = 53
@@ -216,10 +226,10 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLDraw4: TRLDraw
-        Left = 154
+        Left = 129
         Height = 24
-        Top = 0
-        Width = 317
+        Top = 1
+        Width = 283
         Angle = 0
         RealBounds.Left = 0
         RealBounds.Top = 0
@@ -227,7 +237,7 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLLabel10: TRLLabel
-        Left = 156
+        Left = 134
         Height = 15
         Top = 5
         Width = 89
@@ -243,10 +253,10 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLDraw5: TRLDraw
-        Left = 470
+        Left = 495
         Height = 24
-        Top = 0
-        Width = 131
+        Top = 1
+        Width = 106
         Angle = 0
         RealBounds.Left = 0
         RealBounds.Top = 0
@@ -254,11 +264,11 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLLabel11: TRLLabel
-        Left = 472
+        Left = 499
         Height = 15
         Top = 5
-        Width = 112
-        Caption = 'Data Procedimento'
+        Width = 62
+        Caption = 'Data Proc.'
         Font.Color = clBlack
         Font.Height = -12
         Font.Name = 'Arial'
@@ -272,7 +282,7 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       object RLDraw6: TRLDraw
         Left = 600
         Height = 24
-        Top = 0
+        Top = 1
         Width = 118
         Angle = 0
         RealBounds.Left = 0
@@ -296,12 +306,39 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Width = 0
         RealBounds.Height = 0
       end
+      object RLDraw13: TRLDraw
+        Left = 411
+        Height = 24
+        Top = 1
+        Width = 85
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLLabel13: TRLLabel
+        Left = 414
+        Height = 15
+        Top = 5
+        Width = 43
+        Caption = 'Celular'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
     end
     object RLBand3: TRLBand
-      Left = 38
-      Height = 26
-      Top = 175
-      Width = 718
+      Left = 39
+      Height = 25
+      Top = 176
+      Width = 716
       RealBounds.Left = 0
       RealBounds.Top = 0
       RealBounds.Width = 0
@@ -310,7 +347,7 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         Left = 1
         Height = 24
         Top = 0
-        Width = 92
+        Width = 67
         Angle = 0
         RealBounds.Left = 0
         RealBounds.Top = 0
@@ -318,7 +355,7 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLDraw8: TRLDraw
-        Left = 92
+        Left = 67
         Height = 24
         Top = 0
         Width = 63
@@ -329,10 +366,10 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLDraw9: TRLDraw
-        Left = 154
+        Left = 129
         Height = 24
         Top = 0
-        Width = 317
+        Width = 283
         Angle = 0
         RealBounds.Left = 0
         RealBounds.Top = 0
@@ -340,10 +377,10 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Height = 0
       end
       object RLDraw10: TRLDraw
-        Left = 470
+        Left = 495
         Height = 24
         Top = 0
-        Width = 131
+        Width = 106
         Angle = 0
         RealBounds.Left = 0
         RealBounds.Top = 0
@@ -363,48 +400,64 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       end
       object RLDBText1: TRLDBText
         Left = 3
-        Height = 16
+        Height = 12
         Top = 4
-        Width = 127
+        Width = 93
         DataField = 'ID_PROCEDIMENTO'
         DataSource = DSRelatorio
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
         RealBounds.Height = 0
       end
       object RLDBText2: TRLDBText
-        Left = 94
-        Height = 16
+        Left = 70
+        Height = 12
         Top = 4
-        Width = 68
+        Width = 49
         DataField = 'PACIENTE'
         DataSource = DSRelatorio
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
         RealBounds.Height = 0
       end
       object RLDBText3: TRLDBText
-        Left = 156
-        Height = 16
+        Left = 134
+        Height = 13
         Top = 4
-        Width = 308
+        Width = 261
         AutoSize = False
         DataField = 'NOME_PACIENTE'
         DataSource = DSRelatorio
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
         RealBounds.Height = 0
       end
       object RLDBText4: TRLDBText
-        Left = 472
-        Height = 16
+        Left = 499
+        Height = 12
         Top = 4
-        Width = 149
+        Width = 107
         DataField = 'DATA_PROCEDIMENTO'
         DataSource = DSRelatorio
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        ParentFont = False
         RealBounds.Left = 0
         RealBounds.Top = 0
         RealBounds.Width = 0
@@ -426,12 +479,39 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
         RealBounds.Width = 0
         RealBounds.Height = 0
       end
+      object RLDraw14: TRLDraw
+        Left = 411
+        Height = 24
+        Top = 0
+        Width = 85
+        Angle = 0
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
+      object RLDBText6: TRLDBText
+        Left = 415
+        Height = 12
+        Top = 5
+        Width = 46
+        DataField = 'CELULAR'
+        DataSource = DSRelatorio
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        ParentFont = False
+        RealBounds.Left = 0
+        RealBounds.Top = 0
+        RealBounds.Width = 0
+        RealBounds.Height = 0
+      end
     end
     object RLBand4: TRLBand
-      Left = 38
+      Left = 39
       Height = 24
       Top = 201
-      Width = 718
+      Width = 716
       BandType = btColumnFooter
       RealBounds.Left = 0
       RealBounds.Top = 0
@@ -582,6 +662,7 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       'PROC.id_procedimento,'
       'PROC.paciente,'
       'PAC.nome AS NOME_PACIENTE,'
+      'PAC.CELULAR,'
       'DPROC.data_procedimento,'
       'DPROC.tipo_dia,'
       'CASE DPROC.tipo_dia'
@@ -688,6 +769,16 @@ inherited FrmRelProcPorData: TFrmRelProcPorData
       ReadOnly = True
       Required = False
       Size = 21
+    end
+    object ZQComandosCELULAR: TStringField[6]
+      FieldKind = fkData
+      FieldName = 'CELULAR'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
     end
   end
   inherited RLXLSXFilter1: TRLXLSXFilter[14]

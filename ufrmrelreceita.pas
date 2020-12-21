@@ -163,6 +163,7 @@ begin
 
   if (ImpV = 2) then
   begin
+     RLReportRelReceita.Prepare;
     RLReportRelReceita.Preview;
   end;
 end;

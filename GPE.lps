@@ -9,14 +9,14 @@
         <Filename Value="GPE.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="29" Y="9"/>
-        <UsageCount Value="95"/>
+        <CursorPos Y="18"/>
+        <UsageCount Value="97"/>
       </Unit0>
       <Unit1>
         <Filename Value="ufrmbasecadastro.lfm"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit1>
       <Unit2>
@@ -26,12 +26,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFrmBaseCadastro"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="562"/>
-        <CursorPos X="109" Y="570"/>
-        <UsageCount Value="95"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="565"/>
+        <CursorPos X="36" Y="582"/>
+        <UsageCount Value="97"/>
       </Unit2>
       <Unit3>
         <Filename Value="ufrmbaseform.pas"/>
@@ -43,7 +42,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
         <CursorPos X="81" Y="16"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
       </Unit3>
       <Unit4>
         <Filename Value="ufrmbaseform.lfm"/>
@@ -52,7 +51,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit4>
       <Unit5>
@@ -62,7 +61,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit5>
       <Unit6>
@@ -74,7 +73,7 @@
         <UnitName Value="uFrmBaseRelatorio"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="131" Y="5"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
       </Unit6>
       <Unit7>
         <Filename Value="ufrmfiltro.lfm"/>
@@ -83,7 +82,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit7>
       <Unit8>
@@ -92,12 +91,13 @@
         <ComponentName Value="FrmFiltro"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="218"/>
-        <CursorPos X="56" Y="235"/>
-        <UsageCount Value="95"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="406"/>
+        <CursorPos X="79" Y="412"/>
+        <UsageCount Value="97"/>
+        <Bookmarks Count="1">
+          <Item0 X="42" Y="419" ID="9"/>
+        </Bookmarks>
       </Unit8>
       <Unit9>
         <Filename Value="ufrmrotinas.lfm"/>
@@ -106,7 +106,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit9>
       <Unit10>
@@ -117,7 +117,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
       </Unit10>
       <Unit11>
         <Filename Value="uvalidacaogeral.pas"/>
@@ -126,7 +126,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="30"/>
         <CursorPos X="45" Y="39"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
       </Unit11>
       <Unit12>
         <Filename Value="ufrmmain.pas"/>
@@ -135,12 +135,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFrmMain"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="91"/>
-        <CursorPos X="36" Y="94"/>
-        <UsageCount Value="95"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="90"/>
+        <CursorPos X="71" Y="96"/>
+        <UsageCount Value="97"/>
       </Unit12>
       <Unit13>
         <Filename Value="ufrmcadpacientes.pas"/>
@@ -149,15 +147,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFrmCadPacientes"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="590"/>
         <CursorPos X="53" Y="597"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
         <Bookmarks Count="1">
           <Item0 X="45" Y="643" ID="7"/>
         </Bookmarks>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit13>
       <Unit14>
         <Filename Value="udm.pas"/>
@@ -169,7 +165,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="79"/>
         <CursorPos X="71" Y="86"/>
-        <UsageCount Value="90"/>
+        <UsageCount Value="92"/>
       </Unit14>
       <Unit15>
         <Filename Value="ufrmcadcidade.pas"/>
@@ -181,7 +177,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="79"/>
         <CursorPos X="126" Y="86"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="85"/>
       </Unit15>
       <Unit16>
         <Filename Value="ufrmcadremedio.pas"/>
@@ -193,7 +189,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="122"/>
         <CursorPos Y="133"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
       </Unit16>
       <Unit17>
         <Filename Value="ufrmcadprocedimento.pas"/>
@@ -203,15 +199,14 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFrmCadProcedimento"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="560"/>
-        <CursorPos X="47" Y="563"/>
-        <UsageCount Value="79"/>
-        <Bookmarks Count="5">
+        <TopLine Value="871"/>
+        <CursorPos X="121" Y="877"/>
+        <UsageCount Value="81"/>
+        <Bookmarks Count="4">
           <Item0 X="16" Y="977" ID="3"/>
-          <Item1 X="35" Y="1045" ID="9"/>
-          <Item2 X="8" Y="359" ID="1"/>
-          <Item3 X="4" Y="381" ID="2"/>
-          <Item4 X="38" Y="546" ID="8"/>
+          <Item1 X="8" Y="359" ID="1"/>
+          <Item2 X="4" Y="381" ID="2"/>
+          <Item3 X="38" Y="546" ID="8"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -223,12 +218,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFrmRelatoInstrTrat"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="267"/>
-        <CursorPos X="77" Y="272"/>
-        <UsageCount Value="50"/>
+        <TopLine Value="166"/>
+        <CursorPos X="52" Y="194"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit18>
       <Unit19>
         <Filename Value="ucarregaini.pas"/>
@@ -236,7 +229,7 @@
         <UnitName Value="uCarregaINI"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="39" Y="7"/>
-        <UsageCount Value="49"/>
+        <UsageCount Value="51"/>
       </Unit19>
       <Unit20>
         <Filename Value="ufrmrelreceita.pas"/>
@@ -244,10 +237,10 @@
         <ComponentName Value="FrmRelReceita"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="114"/>
-        <CursorPos X="95" Y="124"/>
-        <UsageCount Value="34"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="144"/>
+        <CursorPos Y="166"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit20>
@@ -258,10 +251,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFrmRelProcPorData"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="76"/>
-        <CursorPos X="88" Y="87"/>
-        <UsageCount Value="27"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="144"/>
+        <CursorPos X="91" Y="149"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit21>
@@ -324,127 +318,47 @@
         <UsageCount Value="10"/>
       </Unit29>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="10" HistoryIndex="9">
       <Position1>
         <Filename Value="ufrmrelatoinstrtrat.pas"/>
-        <Caret Line="275" Column="20" TopLine="267"/>
+        <Caret Line="197" Column="3" TopLine="188"/>
       </Position1>
       <Position2>
-        <Filename Value="ufrmrelatoinstrtrat.pas"/>
-        <Caret Line="274" Column="20" TopLine="266"/>
+        <Filename Value="ufrmcadprocedimento.pas"/>
+        <Caret Line="565" Column="40" TopLine="560"/>
       </Position2>
       <Position3>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="125" Column="65" TopLine="110"/>
+        <Filename Value="ufrmcadprocedimento.pas"/>
+        <Caret Line="589" Column="8" TopLine="577"/>
       </Position3>
       <Position4>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="126" Column="65" TopLine="111"/>
+        <Filename Value="ufrmrelprocpordata.pas"/>
+        <Caret Line="144" Column="40" TopLine="139"/>
       </Position4>
       <Position5>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="125" Column="65" TopLine="110"/>
+        <Filename Value="ufrmrelprocpordata.pas"/>
+        <Caret Line="145" Column="40" TopLine="140"/>
       </Position5>
       <Position6>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="124" Column="65" TopLine="109"/>
+        <Filename Value="ufrmrelprocpordata.pas"/>
+        <Caret Line="146" Column="40" TopLine="141"/>
       </Position6>
       <Position7>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="123" Column="65" TopLine="108"/>
+        <Filename Value="ufrmrelprocpordata.pas"/>
+        <Caret Line="147" Column="40" TopLine="142"/>
       </Position7>
       <Position8>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="122" Column="65" TopLine="107"/>
+        <Filename Value="ufrmrelprocpordata.pas"/>
+        <Caret Line="146" Column="40" TopLine="141"/>
       </Position8>
       <Position9>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="121" Column="65" TopLine="106"/>
+        <Filename Value="ufrmrelprocpordata.pas"/>
+        <Caret Line="147" Column="40" TopLine="142"/>
       </Position9>
       <Position10>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="122" Column="65" TopLine="107"/>
+        <Filename Value="ufrmrelprocpordata.pas"/>
+        <Caret Line="148" Column="40" TopLine="143"/>
       </Position10>
-      <Position11>
-        <Filename Value="ufrmrelreceita.pas"/>
-        <Caret Line="121" Column="65" TopLine="106"/>
-      </Position11>
-      <Position12>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="761" TopLine="727"/>
-      </Position12>
-      <Position13>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="735" Column="34" TopLine="694"/>
-      </Position13>
-      <Position14>
-        <Filename Value="ufrmcadpacientes.pas"/>
-        <Caret Line="593" Column="74" TopLine="588"/>
-      </Position14>
-      <Position15>
-        <Filename Value="ufrmcadpacientes.pas"/>
-        <Caret Line="605" Column="79" TopLine="588"/>
-      </Position15>
-      <Position16>
-        <Filename Value="ufrmcadpacientes.pas"/>
-        <Caret Line="275" Column="63" TopLine="271"/>
-      </Position16>
-      <Position17>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="787" Column="38" TopLine="769"/>
-      </Position17>
-      <Position18>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="548" Column="14" TopLine="537"/>
-      </Position18>
-      <Position19>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="588" Column="8" TopLine="585"/>
-      </Position19>
-      <Position20>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="542" Column="87" TopLine="535"/>
-      </Position20>
-      <Position21>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="586" Column="57" TopLine="585"/>
-      </Position21>
-      <Position22>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="493" Column="34" TopLine="475"/>
-      </Position22>
-      <Position23>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="374" Column="3" TopLine="370"/>
-      </Position23>
-      <Position24>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="130" Column="15" TopLine="117"/>
-      </Position24>
-      <Position25>
-        <Filename Value="ufrmcadprocedimento.pas"/>
-        <Caret Line="1173" Column="67" TopLine="1167"/>
-      </Position25>
-      <Position26>
-        <Filename Value="ufrmmain.pas"/>
-        <Caret Line="94" Column="36" TopLine="91"/>
-      </Position26>
-      <Position27>
-        <Filename Value="ufrmmain.pas"/>
-        <Caret Line="95" Column="36" TopLine="92"/>
-      </Position27>
-      <Position28>
-        <Filename Value="ufrmmain.pas"/>
-        <Caret Line="96" Column="36" TopLine="93"/>
-      </Position28>
-      <Position29>
-        <Filename Value="ufrmmain.pas"/>
-        <Caret Line="95" Column="36" TopLine="92"/>
-      </Position29>
-      <Position30>
-        <Filename Value="ufrmmain.pas"/>
-        <Caret Line="94" Column="36" TopLine="91"/>
-      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

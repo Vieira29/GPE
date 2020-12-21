@@ -545,8 +545,6 @@ begin
 
              Gravar_Receita(VCodigo);
 
-             ActionImpInstrucoesExecute(self);
-
              end
         ELSE begin
 
@@ -560,11 +558,14 @@ begin
 
              end;
 
-          if ZQObjetos.State in [DSINSERT] then
-            MessageDlg( 'Informação', 'Cadastro realizado com sucesso!', mtConfirmation, [mbOK],0 )
-          else
-            MessageDlg( 'Informação', 'Alteração realizada com sucesso!', mtConfirmation, [mbOK],0 );
-
+          if ZQObjetos.State in [DSINSERT]
+          then begin
+               MessageDlg( 'Informação', 'Cadastro realizado com sucesso!', mtConfirmation, [mbOK],0 );
+               ActionImpInstrucoesExecute(self);
+          end
+          else begin
+               MessageDlg( 'Informação', 'Alteração realizada com sucesso!', mtConfirmation, [mbOK],0 );
+          end;
 
       end;
 

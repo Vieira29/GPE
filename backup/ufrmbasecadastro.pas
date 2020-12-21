@@ -575,7 +575,7 @@ end;
 
 procedure TFrmBaseCadastro.ComboBoxColunaClick(Sender: TObject);
 begin
-    idxColunaProcura := ComboBoxColuna.ItemIndex;
+
 end;
 
 procedure TFrmBaseCadastro.ActionGravarExecute(Sender: TObject);

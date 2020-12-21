@@ -124,7 +124,9 @@ end;
 procedure TFrmRelatoInstrTrat.RLBand3BeforePrint(Sender: TObject;
   var PrintIt: Boolean);
 begin
-    if TipoProc = 'T'
+
+  Application.ProcessMessages;
+  if TipoProc = 'T'
   then begin
        RLMemo1.Lines.Clear;
        RLMemo1.Lines.Add('1) NA SEMANA QUE ANTECEDE O TRATAMENTO																										');
@@ -150,6 +152,7 @@ begin
        RLMemo1.Lines.Add('C) Seguir bebendo a água de 02 em 02 horas.                                                                                                  ');
        end;
 
+  Application.ProcessMessages;
   if TipoProc = 'C'
   then begin
        RLMemo1.Lines.Clear;
@@ -194,6 +197,8 @@ end;
 procedure TFrmRelatoInstrTrat.RLMemo1BeforePrint(Sender: TObject;
   var AText: string; var PrintIt: Boolean);
 begin
+
+  Application.ProcessMessages;
   if TipoProc = 'T'
   then begin
        RLMemo1.Lines.Clear;
@@ -220,6 +225,7 @@ begin
        RLMemo1.Lines.Text := 'C) Seguir bebendo a água de 02 em 02 horas.                                                                                                  ';
        end;
 
+  Application.ProcessMessages;
   if TipoProc = 'C'
   then begin
        RLMemo1.Lines.Text := '1) NA SEMANA QUE ANTECEDE A CIRURGIA												        ';
@@ -319,6 +325,7 @@ begin
 
   if (ImpV = 2) then
   begin
+    RLReportGuiaInstrucoes.Prepare;
     RLReportGuiaInstrucoes.Preview;
   end;
 end;

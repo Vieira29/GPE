@@ -1,9 +1,9 @@
 inherited FrmCadProcedimento: TFrmCadProcedimento
   Left = 225
-  Width = 885
+  Width = 878
   BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Procedimentos'
-  ClientWidth = 885
+  ClientWidth = 878
   OnClose = FormClose
   OnShow = FormShow
   Position = poDesktopCenter

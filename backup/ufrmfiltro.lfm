@@ -4,7 +4,7 @@ inherited FrmFiltro: TFrmFiltro
   Top = 104
   Width = 774
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'FrmFiltro'
+  Caption = 'Pesquisar'
   ClientHeight = 365
   ClientWidth = 774
   OnClose = FormClose

@@ -194,6 +194,8 @@ end;
 procedure TFrmRelatoInstrTrat.RLMemo1BeforePrint(Sender: TObject;
   var AText: string; var PrintIt: Boolean);
 begin
+
+  Application.ProcessMessages;
   if TipoProc = 'T'
   then begin
        RLMemo1.Lines.Clear;
@@ -220,6 +222,7 @@ begin
        RLMemo1.Lines.Text := 'C) Seguir bebendo a água de 02 em 02 horas.                                                                                                  ';
        end;
 
+  Application.ProcessMessages;
   if TipoProc = 'C'
   then begin
        RLMemo1.Lines.Text := '1) NA SEMANA QUE ANTECEDE A CIRURGIA												        ';
@@ -285,7 +288,7 @@ begin
     sql.add('WHEN ''CE'' then ''Cirurgia Espiritual''                                       ');
     sql.add('WHEN ''RA'' then ''Repouso Absoluto''                                          ');
     sql.add('WHEN ''RR'' then ''Repouso Relativo''                                          ');
-    sql.add('WHEN ''RP'' then ''Repouso Relativo e Retirada dos Pontos''                    ');
+    sql.add('WHEN ''RP'' then ''Retirada dos Pontos''                                       ');
     sql.add('end as DESCRICAO_DIA                                                           ');
     sql.add('from tprocedimento proc                                                        ');
     sql.add('left join tpaciente pac on proc.paciente = pac.id_paciente                     ');
@@ -319,6 +322,7 @@ begin
 
   if (ImpV = 2) then
   begin
+    RLReportGuiaInstrucoes.Prepare;
     RLReportGuiaInstrucoes.Preview;
   end;
 end;

@@ -12,6 +12,8 @@
       <UseXPManifest Value="True"/>
       <XPManifest>
         <DpiAware Value="True"/>
+        <TextName Value="GPE"/>
+        <TextDesc Value="GPE - Gestão de Pronto Socorro Espiritual"/>
       </XPManifest>
       <Icon Value="0"/>
     </General>

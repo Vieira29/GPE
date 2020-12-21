@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
   StdCtrls, EditBtn, uFrmBaseRelatorio, ZDataset, db, RLReport, RLDraftFilter,
-  RLHTMLFilter, RLPDFFilter, RLXLSFilter;
+  RLHTMLFilter, RLPDFFilter, RLXLSFilter, RLXLSXFilter;
 
 type
 
@@ -29,10 +29,13 @@ type
     RLDBText3: TRLDBText;
     RLDBText4: TRLDBText;
     RLDBText5: TRLDBText;
+    RLDBText6: TRLDBText;
     RLDraw1: TRLDraw;
     RLDraw10: TRLDraw;
     RLDraw11: TRLDraw;
     RLDraw12: TRLDraw;
+    RLDraw13: TRLDraw;
+    RLDraw14: TRLDraw;
     RLDraw2: TRLDraw;
     RLDraw3: TRLDraw;
     RLDraw4: TRLDraw;
@@ -45,6 +48,7 @@ type
     RLLabel10: TRLLabel;
     RLLabel11: TRLLabel;
     RLLabel12: TRLLabel;
+    RLLabel13: TRLLabel;
     RLLabel2: TRLLabel;
     RLLabel3: TRLLabel;
     RLLabel4: TRLLabel;
@@ -53,6 +57,7 @@ type
     RLLabelTituloProc: TRLLabel;
     RLLabelRelFiltro: TRLLabel;
     RLReportRelProcPorData: TRLReport;
+    ZQComandosCELULAR: TStringField;
     ZQComandosDATA_PROCEDIMENTO: TDateField;
     ZQComandosDESCRICAO_DIA: TStringField;
     ZQComandosID_PROCEDIMENTO: TLongintField;
@@ -141,6 +146,7 @@ begin
     sql.add('PROC.id_procedimento,                                                              ');
     sql.add('PROC.paciente,                                                                     ');
     sql.add('PAC.nome AS NOME_PACIENTE,                                                         ');
+    sql.add('PAC.CELULAR,                                                                       ');
     sql.add('DPROC.data_procedimento,                                                           ');
     sql.add('DPROC.tipo_dia,                                                                    ');
     sql.add('CASE DPROC.tipo_dia                                                                ');
