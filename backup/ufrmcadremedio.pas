@@ -163,6 +163,7 @@ end;
 procedure TFrmCadRemedio.ActionCancelarExecute(Sender: TObject);
 begin
   inherited;
+  PageControlCad.ActivePage := TabConsulta;
 end;
 
 procedure TFrmCadRemedio.FormShow(Sender: TObject);

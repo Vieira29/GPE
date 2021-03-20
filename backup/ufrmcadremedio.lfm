@@ -32,8 +32,6 @@ inherited FrmCadRemedio: TFrmCadRemedio
       end
     end
     inherited PageControlCad: TPageControl
-      ActivePage = TabCadastro
-      TabIndex = 1
       inherited TabConsulta: TTabSheet
         inherited DBGridCad: TDBGrid
           Columns = <          

@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, DBCtrls, ComCtrls, DBGrids, ActnList, DBExtCtrls, ExtDlgs, MaskUtils,
-  uFrmBaseCadastro, ZDataset, db, uDM, Grids, ACBrCEP, DateUtils;
+  uFrmBaseCadastro, ZDataset, db, uDM, Grids, ACBrCEP, ACBrEnterTab, DateUtils;
 
 type
 
@@ -55,6 +55,7 @@ type
     LabelCodigo8: TLabel;
     LabelCodigo9: TLabel;
     OpenPictureDialog1: TOpenPictureDialog;
+    BtnClonar: TSpeedButton;
     ZQObjetosBAIRRO: TStringField;
     ZQObjetosCELULAR: TStringField;
     ZQObjetosCEP: TStringField;
@@ -81,6 +82,7 @@ type
     procedure ActionNovoExecute(Sender: TObject);
     procedure BtnAbrirImagemClick(Sender: TObject);
     procedure BtnBuscaCEPClick(Sender: TObject);
+    procedure BtnClonarClick(Sender: TObject);
     procedure BtnLimparImagemClick(Sender: TObject);
     procedure BtnPesqCidadeClick(Sender: TObject);
     procedure DBDateEditNacimentoExit(Sender: TObject);
@@ -88,6 +90,7 @@ type
     procedure DBGridCadCellClick(Column: TColumn);
     procedure DBGridCadDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DSObjetosStateChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -96,6 +99,7 @@ type
     procedure FormShow(Sender: TObject);
     function  Procurar_Cidade(pNomeCidade, pUF:String):boolean;
     procedure Gravando_Nova_Cidade(pNomeCidade, pUF:String);
+    procedure ZQObjetosAfterScroll(DataSet: TDataSet);
   private
 
   public
@@ -405,6 +409,47 @@ begin
         end;
 end;
 
+procedure TFrmCadPacientes.BtnClonarClick(Sender: TObject);
+begin
+  with ZQComandos do
+   begin
+     close;
+     sql.Clear;
+     sql.add('select '' '' as selecionado, PACIENTE.*,                        ');
+     sql.add('       cidade.nome_cidade,                                      ');
+     sql.add('       CIDADE.uf_cidade                                         ');
+     sql.add('from tpaciente PACIENTE                                         ');
+     sql.add('inner join tcidade cidade on PACIENTE.cidade = cidade.id_cidade ');
+     sql.add('WHERE PACIENTE.ID_PACIENTE = :ID_PACIENTE ');
+     ParamByName('ID_PACIENTE').AsInteger := ZQObjetosID_PACIENTE.AsInteger;
+     open;
+     last;
+     first;
+   end;
+
+  //Instanciando novo registro
+  ActionNovoExecute(self);
+
+  ZQObjetos.FieldByName('NOME').AsString	  :=  ZQComandos.FieldByName('NOME').AsString;
+  ZQObjetos.FieldByName('TELEFONE').AsString      :=  ZQComandos.FieldByName('TELEFONE').AsString;
+  ZQObjetos.FieldByName('CEP').AsString           :=  ZQComandos.FieldByName('CEP').AsString;
+  ZQObjetos.FieldByName('LOGRADOURO').AsString    :=  ZQComandos.FieldByName('LOGRADOURO').AsString;
+  ZQObjetos.FieldByName('BAIRRO').AsString        :=  ZQComandos.FieldByName('BAIRRO').AsString;
+  ZQObjetos.FieldByName('ENDERECO').AsString      :=  ZQComandos.FieldByName('ENDERECO').AsString;
+  ZQObjetos.FieldByName('NRO').AsInteger          :=  ZQComandos.FieldByName('NRO').AsInteger;
+  ZQObjetos.FieldByName('COMPLEMENTO').AsString   :=  ZQComandos.FieldByName('COMPLEMENTO').AsString;
+  ZQObjetos.FieldByName('CIDADE').AsInteger       :=  ZQComandos.FieldByName('CIDADE').AsInteger;
+  ZQObjetos.FieldByName('CELULAR').AsString       :=  ZQComandos.FieldByName('CELULAR').AsString;
+  ZQObjetos.FieldByName('NASCIMENTO').AsDateTime  :=  ZQComandos.FieldByName('NASCIMENTO').AsDateTime;
+  ZQObjetos.FieldByName('EMAIL_CONTA').AsString   :=  ZQComandos.FieldByName('EMAIL_CONTA').AsString;
+  ZQObjetos.FieldByName('IDADE').AsInteger        :=  ZQComandos.FieldByName('IDADE').AsInteger;
+  ZQObjetos.FieldByName('PROBLEMA').AsString      :=  ZQComandos.FieldByName('PROBLEMA').AsString;
+
+  DBEditCidadeExit(self);
+
+
+end;
+
 procedure TFrmCadPacientes.BtnLimparImagemClick(Sender: TObject);
 begin
    inherited;
@@ -553,6 +598,12 @@ begin
   end;
 end;
 
+procedure TFrmCadPacientes.DSObjetosStateChange(Sender: TObject);
+begin
+  inherited;
+  BtnClonar.Enabled := (ZQObjetos.State in [dsBrowse, dsInactive]) and (PageControlCad.ActivePageIndex in [TabConsulta.TabIndex, TabCadastro.TabIndex]);
+end;
+
 
 procedure TFrmCadPacientes.FormDestroy(Sender: TObject);
 begin
@@ -592,7 +643,8 @@ procedure TFrmCadPacientes.FormShow(Sender: TObject);
 begin
   CarregarPacientes();
   inherited;
-  ComboBoxColuna.ItemIndex:=2;
+  ComboBoxColuna.ItemIndex := 2;
+  idxColunaProcura := 2;
 end;
 
 function TFrmCadPacientes.Procurar_Cidade(pNomeCidade, pUF: String): boolean;
@@ -664,6 +716,12 @@ begin
 
 end;
 
+end;
+
+procedure TFrmCadPacientes.ZQObjetosAfterScroll(DataSet: TDataSet);
+begin
+  inherited;
+  BtnClonar.Enabled := (ZQObjetos.State in [dsBrowse, dsInactive]) and (PageControlCad.ActivePageIndex in [TabConsulta.TabIndex, TabCadastro.TabIndex]);
 end;
 
 initialization

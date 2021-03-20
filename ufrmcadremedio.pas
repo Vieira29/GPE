@@ -168,8 +168,8 @@ end;
 
 procedure TFrmCadRemedio.FormShow(Sender: TObject);
 begin
-  inherited;
   CarregarRemedio();
+  inherited;
 end;
 
 procedure TFrmCadRemedio.CarregarRemedio();
