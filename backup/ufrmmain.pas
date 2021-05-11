@@ -6,18 +6,20 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, ActnList,
-  Menus, ExtCtrls, Buttons, uCarregaINI;
+  Menus, ExtCtrls, Buttons, uCarregaINI, TADbSource, TAGraph;
 
 type
 
   { TFrmMain }
 
   TFrmMain = class(TForm)
+    BitBtnTelaEventos: TBitBtn;
     BitBtnTelaRemedio: TBitBtn;
     BitBtnTelaPacientes: TBitBtn;
     BitBtnTelaCidades: TBitBtn;
     BitBtnTelaProcedimento: TBitBtn;
     BitBtnTelaRelProcPorData: TBitBtn;
+    BitBtnTelaGrupoFamiliar: TBitBtn;
     ImageFundo: TImage;
     PageControlOpcoes: TPageControl;
     Panel1: TPanel;
@@ -26,6 +28,8 @@ type
     TabSheet2: TTabSheet;
     Timer1: TTimer;
     procedure BitBtnTelaCidadesClick(Sender: TObject);
+    procedure BitBtnTelaEventosClick(Sender: TObject);
+    procedure BitBtnTelaGrupoFamiliarClick(Sender: TObject);
     procedure BitBtnTelaPacientesClick(Sender: TObject);
     procedure BitBtnTelaProcedimentoClick(Sender: TObject);
     procedure BitBtnTelaRelProcPorDataClick(Sender: TObject);
@@ -49,7 +53,10 @@ var
 
 implementation
 
-uses udm, uFrmCadPacientes, uFrmCadCidade, uFrmCadRemedio, uFrmCadProcedimento, uFrmRelProcPorData;
+uses
+  udm, uFrmCadPacientes, uFrmCadCidade,
+  uFrmCadRemedio, uFrmCadProcedimento, uFrmRelProcPorData,
+  ufrmcadgrupofamiliar, uFrmCadEvento;
 
 {$R *.lfm}
 
@@ -160,6 +167,32 @@ begin
     FrmCadCidade.Show;
   end;
 
+end;
+
+procedure TFrmMain.BitBtnTelaEventosClick(Sender: TObject);
+begin
+    if not Assigned(FrmCadEvento) then
+  begin
+    FrmCadEvento := TFrmCadEvento.Create(self);
+    FrmCadEvento.Show;
+  end
+  else
+  begin
+    FrmCadEvento.Show;
+  end;
+end;
+
+procedure TFrmMain.BitBtnTelaGrupoFamiliarClick(Sender: TObject);
+begin
+ if not Assigned(FrmCadGrupoFamiliar) then
+  begin
+    FrmCadGrupoFamiliar := TFrmCadGrupoFamiliar.Create(self);
+    FrmCadGrupoFamiliar.Show;
+  end
+  else
+  begin
+    FrmCadGrupoFamiliar.Show;
+  end;
 end;
 
 end.

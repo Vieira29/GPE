@@ -73,7 +73,7 @@ var
 implementation
 
 uses
-  uFrmCadCidade;
+  uFrmCadCidade, ufrmcadgrupofamiliar;
 
 {$R *.lfm}
 
@@ -140,7 +140,6 @@ begin
       sql.Add('SELECT * FROM TCIDADE');
       Open;
       Last;
-      First;
     end;
     ZQObjetos.Open;
 
@@ -148,6 +147,40 @@ begin
 
 
     VarPesquisa := 'TCIDADE';
+  end;
+
+  // GRUPO FAMILIAR
+  if TipoPesquisa = 'TGRUPO_FAMILIAR' then
+  begin
+    ZQObjetos.Close;
+    DBGrid1.Clear;
+    DBGrid1.Columns.Clear;
+
+    DBGrid1.Columns.Add;
+    DBGrid1.Columns[0].FieldName := 'ID_GRUPO_FAMILIAR';
+    DBGrid1.Columns[0].Title.Caption := 'Código';
+    DBGrid1.Columns[0].Width := 80;
+
+    DBGrid1.Columns.Add;
+    DBGrid1.Columns[1].FieldName := 'DESCRICAO';
+    DBGrid1.Columns[1].Title.Caption := 'Descrição do Grupo Familiar';
+    DBGrid1.Columns[1].Width := 350;
+
+    with ZQObjetos do
+    begin
+      Close;
+      sql.Clear;
+      sql.Add('SELECT * FROM TGRUPO_FAMILIAR');
+      Open;
+      Last;
+      First;
+    end;
+    ZQObjetos.Open;
+
+    BitBtnCadastrar.Visible := true;
+
+
+    VarPesquisa := 'TGRUPO_FAMILIAR';
   end;
 
   // PACIENTE
@@ -326,6 +359,7 @@ end;
 
 procedure TFrmFiltro.BitBtnCadastrarClick(Sender: TObject);
 begin
+
   //  CIDADE
   if VarPesquisa = 'TCIDADE' then
   begin
@@ -340,8 +374,25 @@ begin
      end;
      FreeAndNil(FrmCadCidade);
      Busca('TCIDADE');
-
   end;
+
+  // TGRUPO_FAMILIAR
+  if VarPesquisa = 'TGRUPO_FAMILIAR' then
+  begin
+     if not Assigned(FrmCadGrupoFamiliar) then
+     begin
+       FrmCadGrupoFamiliar := TFrmCadGrupoFamiliar.Create(self);
+       FrmCadGrupoFamiliar.ShowModal;
+     end
+     else
+     begin
+       FrmCadGrupoFamiliar.ShowModal;
+     end;
+     FreeAndNil(FrmCadGrupoFamiliar);
+     Busca('TGRUPO_FAMILIAR');
+  end;
+
+
 end;
 
 procedure TFrmFiltro.EditPesquisaExit(Sender: TObject);

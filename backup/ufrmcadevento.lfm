@@ -1,0 +1,741 @@
+inherited FrmCadEvento: TFrmCadEvento
+  Left = 198
+  Height = 588
+  Top = 13
+  Width = 900
+  Caption = 'Eventos'
+  ClientHeight = 588
+  ClientWidth = 900
+  OnClose = FormClose
+  OnShow = FormShow
+  inherited PanelContent: TPanel
+    Height = 585
+    Width = 778
+    ClientHeight = 585
+    ClientWidth = 778
+    inherited PanelHeader: TPanel
+      Height = 50
+      Width = 776
+      ClientHeight = 50
+      ClientWidth = 776
+      inherited LabelTitulo: TLabel
+        Top = 4
+        Width = 100
+        Caption = 'Eventos'
+      end
+    end
+    inherited PanelControle: TPanel
+      Top = 508
+      Width = 776
+      ClientWidth = 776
+      inherited SpeedButton1: TSpeedButton
+        Flat = False
+      end
+      inherited DBNavigatorCad: TDBNavigator
+        Hints.Strings = (        )
+      end
+      inherited SpeedButton2: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton3: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton4: TSpeedButton
+        Flat = False
+      end
+      inherited SpeedButton5: TSpeedButton
+        Left = 660
+        Flat = False
+      end
+      object spbExibirEvento: TSpeedButton[6]
+        Left = 510
+        Height = 50
+        Top = 1
+        Width = 75
+        Caption = 'Exibir Evento'
+        Font.Height = -11
+        Font.Style = [fsBold]
+        Glyph.Data = {
+          76060000424D7606000000000000360000002800000014000000140000000100
+          2000000000004006000064000000640000000000000000000000FFFFFF003E3E
+          3E8B55555589FFFFFF05FFFFFF00FFFFFF00FFFFFF0053535358333333AB2A2A
+          2ADE292929DE313131AB4E4E4E58FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00404040A6393939FC343434D02828287E3838
+          38642E2E2EC7454545F4686868FF7D7D7DFF7D7D7DFF686868FF454545F42D2D
+          2DC73F3F3F63FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF004B4B
+          4B38474747FFC4C4C4FF767676FF525252FFB1B1B1FFF5F5F5FFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFF5F5F5FFB2B2B2FF515151FF2B2B2BC57676761CFFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00282828C2ABABABFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFEFEFEFF808080FF2F2F2FEA6464641AFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF01262626CB939393FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF858585FF2C2C
+          2CD2FFFFFF02FFFFFF00FFFFFF003838386E575757FFFEFEFEFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFF565656FF3838386EFFFFFF00A3A3A3102F2F
+          2FDBC8C8C8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC8C8
+          C8FF2F2F2FDBAAAAAA103D3D3D7D515151FEFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF515151FE3D3D3D7D333333ED7C7C
+          7CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8FFFFFFFFFFFFFFFFFFFFFF
+          FFFFFAFAFAFFFFFFFFFFFFFFFFFFF9F9F9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFF7C7C7CFF333333ED161616FF959595FFFFFFFFFFFFFFFFFFFFFFFFFFC7C7
+          C7FF1E1E1EFFAEAEAEFFFFFFFFFF737373FF393939FFF7F7F7FFE9E9E9FF2B2B
+          2BFF888888FFFFFFFFFFFFFFFFFFFFFFFFFF969696FF191919FF141414FF9797
+          97FFFFFFFFFFFFFFFFFFFFFFFFFFD7D7D7FF474747FFC2C2C2FFFFFFFFFF8F8F
+          8FFF5E5E5EFFFAFAFAFFEFEFEFFF525252FFA2A2A2FFFFFFFFFFFFFFFFFFFFFF
+          FFFF979797FF181818FF2E2E2EEF808080FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7FFF2E2E2EEF363636865454
+          54FEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFF555555FE363636866F6F6F112E2E2EDED2D2D2FFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFD1D1D1FF2E2E2EDE79797911FFFFFF002A2A
+          2A76606060FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5F5F
+          5FFF2C2C2C76FFFFFF00FFFFFF00B1B1B1082C2C2CE0969696FFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF969696FF2C2C2CE0B5B5B508FFFFFF00FFFFFF00FFFF
+          FF005D5D5D29272727EC939393FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF939393FF272727EC5C5C
+          5C29FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00555555282A2A2AD55F5F
+          5FFFC6C6C6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC6C6
+          C6FF5F5F5FFF292929D555555528FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF062F2F2F73303030D6515151FA787878FF9191
+          91FF919191FF787878FF515151FA2F2F2FD62F2F2F73FFFFFF06FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00D1D1D1103B3B3B79363636E3212121FF212121FF353535E33A3A3A79CFCF
+          CF10FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+        }
+        Layout = blGlyphTop
+        OnClick = spbExibirEventoClick
+        ParentFont = False
+      end
+      object spbExibirEventoFamiliar: TSpeedButton[7]
+        Left = 585
+        Height = 50
+        Top = 1
+        Width = 75
+        Caption = 'Ev. Familiar'
+        Font.Height = -11
+        Font.Style = [fsBold]
+        Glyph.Data = {
+          76060000424D7606000000000000360000002800000014000000140000000100
+          2000000000004006000064000000640000000000000000000000FFFFFF003E3E
+          3E8B55555589FFFFFF05FFFFFF00FFFFFF00FFFFFF0053535358333333AB2A2A
+          2ADE292929DE313131AB4E4E4E58FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00404040A6393939FC343434D02828287E3838
+          38642E2E2EC7454545F4686868FF7D7D7DFF7D7D7DFF686868FF454545F42D2D
+          2DC73F3F3F63FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF004B4B
+          4B38474747FFC4C4C4FF767676FF525252FFB1B1B1FFF5F5F5FFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFF5F5F5FFB2B2B2FF515151FF2B2B2BC57676761CFFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00282828C2ABABABFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFEFEFEFF808080FF2F2F2FEA6464641AFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF01262626CB939393FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF858585FF2C2C
+          2CD2FFFFFF02FFFFFF00FFFFFF003838386E575757FFFEFEFEFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFF565656FF3838386EFFFFFF00A3A3A3102F2F
+          2FDBC8C8C8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC8C8
+          C8FF2F2F2FDBAAAAAA103D3D3D7D515151FEFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF515151FE3D3D3D7D333333ED7C7C
+          7CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8FFFFFFFFFFFFFFFFFFFFFF
+          FFFFFAFAFAFFFFFFFFFFFFFFFFFFF9F9F9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFF7C7C7CFF333333ED161616FF959595FFFFFFFFFFFFFFFFFFFFFFFFFFC7C7
+          C7FF1E1E1EFFAEAEAEFFFFFFFFFF737373FF393939FFF7F7F7FFE9E9E9FF2B2B
+          2BFF888888FFFFFFFFFFFFFFFFFFFFFFFFFF969696FF191919FF141414FF9797
+          97FFFFFFFFFFFFFFFFFFFFFFFFFFD7D7D7FF474747FFC2C2C2FFFFFFFFFF8F8F
+          8FFF5E5E5EFFFAFAFAFFEFEFEFFF525252FFA2A2A2FFFFFFFFFFFFFFFFFFFFFF
+          FFFF979797FF181818FF2E2E2EEF808080FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7FFF2E2E2EEF363636865454
+          54FEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFF555555FE363636866F6F6F112E2E2EDED2D2D2FFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFD1D1D1FF2E2E2EDE79797911FFFFFF002A2A
+          2A76606060FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5F5F
+          5FFF2C2C2C76FFFFFF00FFFFFF00B1B1B1082C2C2CE0969696FFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF969696FF2C2C2CE0B5B5B508FFFFFF00FFFFFF00FFFF
+          FF005D5D5D29272727EC939393FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF939393FF272727EC5C5C
+          5C29FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00555555282A2A2AD55F5F
+          5FFFC6C6C6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC6C6
+          C6FF5F5F5FFF292929D555555528FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF062F2F2F73303030D6515151FA787878FF9191
+          91FF919191FF787878FF515151FA2F2F2FD62F2F2F73FFFFFF06FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00D1D1D1103B3B3B79363636E3212121FF212121FF353535E33A3A3A79CFCF
+          CF10FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+        }
+        Layout = blGlyphTop
+        OnClick = spbExibirEventoFamiliarClick
+        ParentFont = False
+      end
+    end
+    inherited PageControlCad: TPageControl
+      Height = 457
+      Top = 51
+      Width = 776
+      inherited TabConsulta: TTabSheet
+        ClientHeight = 429
+        ClientWidth = 768
+        inherited PanelPesquisa: TPanel
+          Width = 768
+          ClientWidth = 768
+        end
+        inherited DBGridCad: TDBGrid
+          Height = 358
+          Width = 768
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Cód. Evento'
+              Width = 70
+              FieldName = 'ID_EVENTO'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Paciente'
+              Width = 400
+              FieldName = 'NOME_PACIENTE'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Família'
+              FieldName = 'GRUPO_FAMILIAR'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Descrição Evento'
+              Width = 100
+              FieldName = 'DESCRICAO_EVENTO'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Data Evento'
+              Width = 100
+              FieldName = 'DATA_EVENTO'
+            end>
+        end
+      end
+      inherited TabCadastro: TTabSheet
+        ClientHeight = 429
+        ClientWidth = 768
+        object DBEditCodigoProcedimento: TDBEdit[0]
+          Left = 9
+          Height = 23
+          Top = 33
+          Width = 80
+          DataField = 'ID_EVENTO'
+          DataSource = DSObjetos
+          ReadOnly = True
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object LabelCodigo: TLabel[1]
+          Left = 9
+          Height = 15
+          Top = 17
+          Width = 42
+          Caption = 'Código:'
+          ParentColor = False
+        end
+        object LabelPaciente: TLabel[2]
+          Left = 9
+          Height = 15
+          Top = 64
+          Width = 48
+          Caption = 'Paciente:'
+          ParentColor = False
+        end
+        object DBEditNomePaciente: TDBEdit[3]
+          Left = 135
+          Height = 23
+          Top = 83
+          Width = 407
+          DataField = 'NOME_PACIENTE'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object BtnPesqPaciente: TSpeedButton[4]
+          Left = 95
+          Height = 24
+          Hint = 'Selecionar Paciente...'
+          Top = 82
+          Width = 32
+          Flat = True
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000CA990000CA9900000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFCFCFCF4F4F4EDEDEDE7E7E7E4E4E4D7D7D7BBBBBBB6B6
+            B6D0D0D0FAFAFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDF9F9F9F5
+            F5F5F2F2F2F0F0F0E7E7E7999898A2A2A3BBBBBBFCFCFCFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA8A8A731302F9291
+            91CFCECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFE0E0DF3635345E5C5ACFCECEFBFBFBFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDDDDD4B4949696665C3C2C2FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE
+            FEFE686767535150B2B1B1F7F6F6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            F6F6F6E6E6E6DADADAD4D4D4E5E5E5C5C5C5646261A4A2A2FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFF4F4F4D5D2CEDAD2C7D1C8C0C3BCB5AFACAA9F
+            9FA1C6C6C6F0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2CCC7BF
+            F3E3C9FEF4E1FFFCF6FEFCFBF6EFEAC8C4BFD6D6D6FFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFD8D6D3D7CBB7FFF0D1FFF5DFFFFBF3FFFEFDFEFDFCF6
+            EFE8CAC8C7F5F5F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC2BDB6E8DDCA
+            FFF0D2FFF4DBFFFAEEFFFEFBFFFFFFFDFBF9DED8D2E9E9E9FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFB7B3ACECE3D5FFF3DAFFF2D8FFF8E8FFFDF8FFFFFFFE
+            FCFBE1DAD4EBEBEBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCBCAC7DDD5C5
+            FFF5E1FFF1D5FFF6E3FFFCF3FFFFFFFAF6F3DBD8D3F3F3F3FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFE8E8E7CFCDC7FEF8E9FFF2D6FFF4DEFFFAEEFEFCF9D4
+            CECAE3E3E3FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFDE8E7E6
+            D5D4D1E0D7C6DBD1BCD9D2C6C1BDB9D0CFCEFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDE7E6E6CFCDCCC5C3BFD1D0CDE6E5E5FC
+            FCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          }
+          Layout = blGlyphTop
+          OnClick = BtnPesqPacienteClick
+          ShowHint = True
+          ParentFont = False
+          ParentShowHint = False
+        end
+        object DBEditCodPaciente: TDBEdit[5]
+          Left = 9
+          Height = 23
+          Top = 83
+          Width = 80
+          DataField = 'PACIENTE'
+          DataSource = DSObjetos
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+          OnExit = DBEditCodPacienteExit
+        end
+        object DBRadioGroupTipoEvento: TDBRadioGroup[6]
+          Left = 555
+          Height = 90
+          Top = 17
+          Width = 185
+          AutoFill = True
+          Caption = 'Tipo Evento:'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          DataField = 'TIPO_EVENTO'
+          DataSource = DSObjetos
+          Items.Strings = (
+            'Solicitação'
+            'Retorno'
+          )
+          OnChangeBounds = DBRadioGroupTipoEventoChangeBounds
+          OnClick = DBRadioGroupTipoEventoClick
+          TabOrder = 3
+          Values.Strings = (
+            'S'
+            'R'
+          )
+        end
+        object DBDateEditDataLanEvento: TDBDateEdit[7]
+          Left = 135
+          Height = 23
+          Top = 33
+          Width = 113
+          CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+          DateOrder = doNone
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          TabOrder = 4
+          DataField = 'DATA_EVENTO'
+          DataSource = DSObjetos
+        end
+        object LabelCodigo4: TLabel[8]
+          Left = 135
+          Height = 15
+          Top = 17
+          Width = 112
+          Caption = 'Data de Lançamento:'
+          ParentColor = False
+        end
+        object PageControlTipoEvento: TPageControl[9]
+          Left = 0
+          Height = 196
+          Top = 233
+          Width = 768
+          ActivePage = TabRetorno
+          Align = alBottom
+          TabIndex = 1
+          TabOrder = 5
+          object TabSolicitacao: TTabSheet
+            Caption = 'TabSolicitacao'
+            ClientHeight = 168
+            ClientWidth = 760
+            object PanelTituloTipoSol: TPanel
+              Left = 0
+              Height = 31
+              Top = 0
+              Width = 760
+              Align = alTop
+              Caption = 'Informações de Solicitação'
+              Color = clScrollBar
+              Font.Height = -20
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+              TabOrder = 0
+            end
+            object DBRadioGroupFlagTratOutros: TDBRadioGroup
+              Left = 8
+              Height = 90
+              Top = 48
+              Width = 256
+              AutoFill = True
+              Caption = 'Paciente se encontra em algum tratamento ?'
+              ChildSizing.LeftRightSpacing = 6
+              ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+              ChildSizing.EnlargeVertical = crsHomogenousChildResize
+              ChildSizing.ShrinkHorizontal = crsScaleChilds
+              ChildSizing.ShrinkVertical = crsScaleChilds
+              ChildSizing.Layout = cclLeftToRightThenTopToBottom
+              ChildSizing.ControlsPerLine = 1
+              DataField = 'FLAG_TRAT_OUTROS'
+              DataSource = DSObjetos
+              Items.Strings = (
+                'Sim'
+                'Não'
+              )
+              TabOrder = 1
+              Values.Strings = (
+                'S'
+                'N'
+              )
+            end
+            object LabelCodigo15: TLabel
+              Left = 273
+              Height = 15
+              Top = 48
+              Width = 133
+              Caption = 'Descrição do tratamento:'
+              ParentColor = False
+            end
+            object DBMemoDescTratOutros: TDBMemo
+              Left = 272
+              Height = 71
+              Top = 67
+              Width = 463
+              DataField = 'DESC_TRAT_OUTROS'
+              DataSource = DSObjetos
+              TabOrder = 2
+            end
+          end
+          object TabRetorno: TTabSheet
+            Caption = 'TabRetorno'
+            ClientHeight = 168
+            ClientWidth = 760
+            object PanelTituloTipoRet: TPanel
+              Left = 0
+              Height = 31
+              Top = 0
+              Width = 760
+              Align = alTop
+              Caption = 'Informações de Retorno'
+              Color = clScrollBar
+              Font.Height = -20
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+              TabOrder = 0
+            end
+            object DBDateEditDataUltTratEsp: TDBDateEdit
+              Left = 0
+              Height = 23
+              Top = 57
+              Width = 113
+              CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+              DateOrder = doNone
+              ButtonWidth = 23
+              NumGlyphs = 1
+              MaxLength = 0
+              TabOrder = 1
+              DataField = 'ULT_TRAT_ESP'
+              DataSource = DSObjetos
+            end
+            object LabelCodigo5: TLabel
+              Left = 0
+              Height = 15
+              Top = 41
+              Width = 290
+              Caption = 'Data do último tratamento espiritual com o Dr Hansen:'
+              ParentColor = False
+            end
+            object DBRadioGroupFlagCirEsp: TDBRadioGroup
+              Left = 0
+              Height = 66
+              Top = 89
+              Width = 296
+              AutoFill = True
+              Caption = 'Paciente já fez cirurgia espiritual com o Dr. Hansen ?'
+              ChildSizing.LeftRightSpacing = 6
+              ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+              ChildSizing.EnlargeVertical = crsHomogenousChildResize
+              ChildSizing.ShrinkHorizontal = crsScaleChilds
+              ChildSizing.ShrinkVertical = crsScaleChilds
+              ChildSizing.Layout = cclLeftToRightThenTopToBottom
+              ChildSizing.ControlsPerLine = 1
+              DataField = 'FLAG_CIR_ESP'
+              DataSource = DSObjetos
+              Items.Strings = (
+                'Sim'
+                'Não'
+              )
+              TabOrder = 2
+              Values.Strings = (
+                'S'
+                'N'
+              )
+            end
+            object DBDateEditDataUltCirEsp: TDBDateEdit
+              Left = 304
+              Height = 23
+              Top = 132
+              Width = 113
+              CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+              DateOrder = doNone
+              ButtonWidth = 23
+              NumGlyphs = 1
+              MaxLength = 0
+              TabOrder = 3
+              DataField = 'ULT_CIR_ESP'
+              DataSource = DSObjetos
+            end
+            object LabelCodigo6: TLabel
+              Left = 304
+              Height = 15
+              Top = 116
+              Width = 269
+              Caption = 'Data da última cirurgia espiritual com o Dr Hansen:'
+              ParentColor = False
+            end
+          end
+        end
+        object DBMemoProblema: TDBMemo[10]
+          Left = 9
+          Height = 88
+          Top = 129
+          Width = 731
+          DataField = 'PROBLEMA'
+          DataSource = DSObjetos
+          TabOrder = 6
+        end
+        object LabelCodigo14: TLabel[11]
+          Left = 10
+          Height = 15
+          Top = 112
+          Width = 54
+          Caption = 'Problema:'
+          ParentColor = False
+        end
+      end
+    end
+    inherited StatusBarCad: TStatusBar
+      Top = 561
+      Width = 776
+    end
+  end
+  inherited ActionList1: TActionList
+    inherited ActionNovo: TAction
+      OnExecute = ActionNovoExecute
+    end
+    inherited ActionGravar: TAction
+      OnExecute = ActionGravarExecute
+    end
+    inherited ActionExcluir: TAction
+      OnExecute = ActionExcluirExecute
+    end
+    inherited ActionCancelar: TAction
+      OnExecute = ActionCancelarExecute
+    end
+  end
+  inherited ZQObjetos: TZQuery
+    SQL.Strings = (
+      'SELECT'
+      ''' '' as selecionado,'
+      'EVENTO.*,'
+      'CASE EVENTO.tipo_evento'
+      'WHEN ''S'' then ''Solicitacao'''
+      'WHEN ''R'' then ''Retorno'''
+      'end as DESCRICAO_EVENTO,'
+      'PACIENTE.nome AS NOME_PACIENTE,'
+      'PACIENTE.GRUPO_FAMILIAR'
+      'FROM TEVENTO EVENTO'
+      'LEFT JOIN tpaciente PACIENTE ON EVENTO.paciente = PACIENTE.id_paciente'
+    )
+    object ZQObjetosSELECIONADO: TStringField[0]
+      FieldKind = fkData
+      FieldName = 'SELECIONADO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1
+    end
+    object ZQObjetosID_EVENTO: TLongintField[1]
+      FieldKind = fkData
+      FieldName = 'ID_EVENTO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQObjetosPACIENTE: TLongintField[2]
+      FieldKind = fkData
+      FieldName = 'PACIENTE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosTIPO_EVENTO: TStringField[3]
+      FieldKind = fkData
+      FieldName = 'TIPO_EVENTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object ZQObjetosDATA_EVENTO: TDateField[4]
+      FieldKind = fkData
+      FieldName = 'DATA_EVENTO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosPROBLEMA: TStringField[5]
+      DisplayWidth = 500
+      FieldKind = fkData
+      FieldName = 'PROBLEMA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 500
+    end
+    object ZQObjetosFLAG_TRAT_OUTROS: TStringField[6]
+      FieldKind = fkData
+      FieldName = 'FLAG_TRAT_OUTROS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object ZQObjetosDESC_TRAT_OUTROS: TStringField[7]
+      FieldKind = fkData
+      FieldName = 'DESC_TRAT_OUTROS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object ZQObjetosULT_TRAT_ESP: TDateField[8]
+      FieldKind = fkData
+      FieldName = 'ULT_TRAT_ESP'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosFLAG_CIR_ESP: TStringField[9]
+      FieldKind = fkData
+      FieldName = 'FLAG_CIR_ESP'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object ZQObjetosDESC_CIR_ESP: TStringField[10]
+      FieldKind = fkData
+      FieldName = 'DESC_CIR_ESP'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object ZQObjetosDESCRICAO_EVENTO: TStringField[11]
+      FieldKind = fkData
+      FieldName = 'DESCRICAO_EVENTO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 11
+    end
+    object ZQObjetosNOME_PACIENTE: TStringField[12]
+      FieldKind = fkData
+      FieldName = 'NOME_PACIENTE'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQObjetosULT_CIR_ESP: TDateField[13]
+      FieldKind = fkData
+      FieldName = 'ULT_CIR_ESP'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosGRUPO_FAMILIAR: TLongintField[14]
+      FieldKind = fkData
+      FieldName = 'GRUPO_FAMILIAR'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  inherited ACBrEnterTab1: TACBrEnterTab
+    left = 816
+  end
+end

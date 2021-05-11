@@ -1,5 +1,6 @@
 inherited FrmCadProcedimento: TFrmCadProcedimento
-  Left = 225
+  Left = 273
+  Top = 153
   Width = 878
   BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Procedimentos'

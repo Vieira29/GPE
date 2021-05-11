@@ -239,18 +239,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditCEP: TDBEdit[8]
           Left = 9
           Height = 23
-          Top = 127
+          Top = 173
           Width = 80
           DataField = 'CEP'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 4
+          TabOrder = 6
         end
         object LabelCodigo4: TLabel[9]
           Left = 8
           Height = 15
-          Top = 110
+          Top = 156
           Width = 24
           Caption = 'CEP:'
           ParentColor = False
@@ -258,18 +258,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditLogradouro: TDBEdit[10]
           Left = 132
           Height = 23
-          Top = 127
+          Top = 173
           Width = 80
           DataField = 'LOGRADOURO'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 5
+          TabOrder = 7
         end
         object LabelCodigo5: TLabel[11]
           Left = 131
           Height = 15
-          Top = 110
+          Top = 156
           Width = 65
           Caption = 'Logradouro:'
           ParentColor = False
@@ -277,18 +277,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditEndereco: TDBEdit[12]
           Left = 221
           Height = 23
-          Top = 127
-          Width = 407
+          Top = 173
+          Width = 531
           DataField = 'ENDERECO'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 6
+          TabOrder = 8
         end
         object LabelCodigo6: TLabel[13]
           Left = 220
           Height = 15
-          Top = 110
+          Top = 156
           Width = 52
           Caption = 'Endereço:'
           ParentColor = False
@@ -296,19 +296,19 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditNro: TDBEdit[14]
           Left = 10
           Height = 23
-          Top = 174
+          Top = 220
           Width = 80
           DataField = 'NRO'
           DataSource = DSObjetos
           Alignment = taRightJustify
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 7
+          TabOrder = 9
         end
         object LabelCodigo7: TLabel[15]
           Left = 9
           Height = 15
-          Top = 157
+          Top = 203
           Width = 23
           Caption = 'Nro:'
           ParentColor = False
@@ -316,18 +316,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditComplemento: TDBEdit[16]
           Left = 97
           Height = 23
-          Top = 174
+          Top = 220
           Width = 368
           DataField = 'COMPLEMENTO'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 8
+          TabOrder = 10
         end
         object LabelCodigo8: TLabel[17]
           Left = 97
           Height = 15
-          Top = 157
+          Top = 203
           Width = 80
           Caption = 'Complemento:'
           ParentColor = False
@@ -335,18 +335,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditBairro: TDBEdit[18]
           Left = 476
           Height = 23
-          Top = 174
+          Top = 220
           Width = 278
           DataField = 'BAIRRO'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 9
+          TabOrder = 11
         end
         object LabelCodigo9: TLabel[19]
           Left = 476
           Height = 15
-          Top = 156
+          Top = 202
           Width = 34
           Caption = 'Bairro:'
           ParentColor = False
@@ -354,20 +354,20 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditCidade: TDBEdit[20]
           Left = 10
           Height = 23
-          Top = 221
+          Top = 267
           Width = 80
           DataField = 'CIDADE'
           DataSource = DSObjetos
           Alignment = taRightJustify
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 10
+          TabOrder = 12
           OnExit = DBEditCidadeExit
         end
         object LabelCodigo10: TLabel[21]
           Left = 9
           Height = 15
-          Top = 204
+          Top = 250
           Width = 40
           Caption = 'Cidade:'
           ParentColor = False
@@ -376,7 +376,7 @@ inherited FrmCadPacientes: TFrmCadPacientes
           Left = 96
           Height = 24
           Hint = 'Selecionar Cidade...'
-          Top = 220
+          Top = 266
           Width = 32
           Flat = True
           Font.Color = clWindowText
@@ -419,18 +419,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditNomeCidade: TDBEdit[23]
           Left = 136
           Height = 23
-          Top = 221
+          Top = 267
           Width = 169
           DataField = 'NOME_CIDADE'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 11
+          TabOrder = 13
         end
         object LabelCodigo11: TLabel[24]
           Left = 318
           Height = 15
-          Top = 204
+          Top = 250
           Width = 38
           Caption = 'Estado:'
           ParentColor = False
@@ -438,18 +438,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditUF: TDBEdit[25]
           Left = 318
           Height = 23
-          Top = 221
+          Top = 267
           Width = 80
           DataField = 'UF_CIDADE'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 12
+          TabOrder = 14
         end
         object LabelCodigo12: TLabel[26]
           Left = 413
           Height = 15
-          Top = 204
+          Top = 250
           Width = 40
           Caption = 'Celular:'
           ParentColor = False
@@ -457,18 +457,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditCelular: TDBEdit[27]
           Left = 413
           Height = 23
-          Top = 221
+          Top = 267
           Width = 154
           DataField = 'CELULAR'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 13
+          TabOrder = 15
         end
         object LabelCodigo13: TLabel[28]
           Left = 580
           Height = 15
-          Top = 204
+          Top = 250
           Width = 69
           Caption = 'Email/Conta:'
           ParentColor = False
@@ -476,30 +476,32 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditEmailConta: TDBEdit[29]
           Left = 580
           Height = 23
-          Top = 221
+          Top = 267
           Width = 174
           DataField = 'EMAIL_CONTA'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 14
+          TabOrder = 16
         end
         object DBMemoProblema: TDBMemo[30]
-          Left = 8
-          Height = 90
-          Top = 273
-          Width = 392
+          Left = 11
+          Height = 50
+          Top = 328
+          Width = 226
           DataField = 'PROBLEMA'
           DataSource = DSObjetos
-          TabOrder = 15
+          TabOrder = 17
+          Visible = False
         end
         object LabelCodigo14: TLabel[31]
-          Left = 9
+          Left = 232
           Height = 15
-          Top = 252
+          Top = 360
           Width = 54
           Caption = 'Problema:'
           ParentColor = False
+          Visible = False
         end
         object BtnAbrirImagem: TSpeedButton[32]
           Left = 634
@@ -625,7 +627,7 @@ inherited FrmCadPacientes: TFrmCadPacientes
           Caption = 'Imagem:'
           ClientHeight = 92
           ClientWidth = 115
-          TabOrder = 16
+          TabOrder = 18
           Visible = False
           object DBImageImgPaciente: TDBImage
             Left = 3
@@ -642,9 +644,69 @@ inherited FrmCadPacientes: TFrmCadPacientes
           Left = 95
           Height = 24
           Hint = 'Buscar Dados de Endereço'
-          Top = 125
+          Top = 172
           Width = 32
           Color = clBlue
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000CA990000CA9900000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFCFCFCF4F4F4EDEDEDE7E7E7E4E4E4D7D7D7BBBBBBB6B6
+            B6D0D0D0FAFAFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDF9F9F9F5
+            F5F5F2F2F2F0F0F0E7E7E7999898A2A2A3BBBBBBFCFCFCFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA8A8A731302F9291
+            91CFCECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFE0E0DF3635345E5C5ACFCECEFBFBFBFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDDDDD4B4949696665C3C2C2FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE
+            FEFE686767535150B2B1B1F7F6F6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            F6F6F6E6E6E6DADADAD4D4D4E5E5E5C5C5C5646261A4A2A2FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFF4F4F4D5D2CEDAD2C7D1C8C0C3BCB5AFACAA9F
+            9FA1C6C6C6F0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2CCC7BF
+            F3E3C9FEF4E1FFFCF6FEFCFBF6EFEAC8C4BFD6D6D6FFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFD8D6D3D7CBB7FFF0D1FFF5DFFFFBF3FFFEFDFEFDFCF6
+            EFE8CAC8C7F5F5F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC2BDB6E8DDCA
+            FFF0D2FFF4DBFFFAEEFFFEFBFFFFFFFDFBF9DED8D2E9E9E9FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFB7B3ACECE3D5FFF3DAFFF2D8FFF8E8FFFDF8FFFFFFFE
+            FCFBE1DAD4EBEBEBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCBCAC7DDD5C5
+            FFF5E1FFF1D5FFF6E3FFFCF3FFFFFFFAF6F3DBD8D3F3F3F3FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFE8E8E7CFCDC7FEF8E9FFF2D6FFF4DEFFFAEEFEFCF9D4
+            CECAE3E3E3FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFDE8E7E6
+            D5D4D1E0D7C6DBD1BCD9D2C6C1BDB9D0CFCEFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDE7E6E6CFCDCCC5C3BFD1D0CDE6E5E5FC
+            FCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          }
+          Layout = blGlyphTop
+          OnClick = BtnBuscaCEPClick
+          ParentFont = False
+          ParentShowHint = False
+        end
+        object LabelCodigo15: TLabel[36]
+          Left = 9
+          Height = 15
+          Top = 111
+          Width = 81
+          Caption = 'Grupo Familiar:'
+          ParentColor = False
+        end
+        object DBEditGrupoFamiliar: TDBEdit[37]
+          Left = 10
+          Height = 23
+          Top = 128
+          Width = 80
+          DataField = 'GRUPO_FAMILIAR'
+          DataSource = DSObjetos
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+          OnExit = DBEditGrupoFamiliarExit
+        end
+        object BtnPesqGrupoFamiliar: TSpeedButton[38]
+          Left = 95
+          Height = 24
+          Hint = 'Selecionar Grupo Familiar...'
+          Top = 127
+          Width = 32
           Flat = True
           Font.Color = clWindowText
           Font.Height = -11
@@ -678,10 +740,21 @@ inherited FrmCadPacientes: TFrmCadPacientes
             FCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
           }
           Layout = blGlyphTop
-          OnClick = BtnBuscaCEPClick
+          OnClick = BtnPesqGrupoFamiliarClick
           ShowHint = True
           ParentFont = False
           ParentShowHint = False
+        end
+        object DBEditDescGrupoFamiliar: TDBEdit[39]
+          Left = 136
+          Height = 23
+          Top = 128
+          Width = 488
+          DataField = 'DESCRICAO'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
         end
       end
     end
@@ -798,11 +871,13 @@ inherited FrmCadPacientes: TFrmCadPacientes
   inherited ZQObjetos: TZQuery[9]
     AfterScroll = ZQObjetosAfterScroll
     SQL.Strings = (
-      'select '' '' as selecionado, PACIENTE.*,'
-      '       cidade.nome_cidade,                                                   '
-      '       CIDADE.uf_cidade'
-      'from tpaciente PACIENTE                                                      '
-      'inner join tcidade cidade on PACIENTE.cidade = cidade.id_cidade              '
+      'select '' '' as selecionado, PACIENTE.*,                        '
+      '       cidade.nome_cidade,                                    '
+      '       CIDADE.uf_cidade,                                      '
+      '       GRUPO_FAMILIAR.DESCRICAO                               '
+      'from tpaciente PACIENTE                                       '
+      'inner join tcidade cidade on PACIENTE.cidade = cidade.id_cidade '
+      'LEFT join tgrupo_familiar grupo_familiar on PACIENTE.grupo_familiar = grupo_familiar.id_grupo_familiar'
     )
     left = 813
     object ZQObjetosSELECIONADO: TStringField[0]
@@ -988,6 +1063,25 @@ inherited FrmCadPacientes: TFrmCadPacientes
       ReadOnly = False
       Required = False
       Size = 9
+    end
+    object ZQObjetosGRUPO_FAMILIAR: TLongintField[19]
+      FieldKind = fkData
+      FieldName = 'GRUPO_FAMILIAR'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosDESCRICAO: TStringField[20]
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
     end
   end
   inherited ZQComandos: TZQuery[10]

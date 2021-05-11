@@ -9,7 +9,8 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, uFrmBaseForm, uFrmMain, uFrmCadPacientes, uDM, zcomponent,
   uFrmCadCidade, uFrmCadRemedio, uFrmCadProcedimento, uFrmRelatoInstrTrat,
-  uCarregaINI, ufrmrelreceita, uFrmRelProcPorData, tachartlazaruspkg
+  uCarregaINI, ufrmrelreceita, uFrmRelProcPorData, tachartlazaruspkg,
+  ufrmcadgrupofamiliar, uFrmCadEvento, uFrmbaseTexto
   { you can add units after this };
 
 {$R *.res}
@@ -27,6 +28,9 @@ begin
   Application.CreateForm(TFrmRelatoInstrTrat, FrmRelatoInstrTrat);
   Application.CreateForm(TFrmRelReceita, FrmRelReceita);
   Application.CreateForm(TFrmRelProcPorData, FrmRelProcPorData);
+  Application.CreateForm(TFrmCadGrupoFamiliar, FrmCadGrupoFamiliar);
+  Application.CreateForm(TFrmCadEvento, FrmCadEvento);
+  Application.CreateForm(TFrmBaseTexto, FrmBaseTexto);
   Application.Run;
 end.
 

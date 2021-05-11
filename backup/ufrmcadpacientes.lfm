@@ -47,40 +47,58 @@ inherited FrmCadPacientes: TFrmCadPacientes
         Font.Height = -11
         Font.Style = [fsBold]
         Glyph.Data = {
-          36040000424D3604000000000000360000002800000010000000100000000100
-          2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
-          FF00FFFFFF00FFFFFF00EAEAEA27DBDBDB8AB0B0D9E29191DBFD9292DCFEA1A1
-          D9EFCDCDD7B3E7E7E753F6F6F601FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-          FF00FFFFFF00D3D3D3789191E0FC1919D8FF0000D8FF0000D9FF0000DAFF0000
-          D9FF0000D7FF6161E1FFC3C3D5BAF9F9F91AFFFFFF00FFFFFF00FFFFFF00FFFF
-          FF00D1D1D5974A4ADCFF0000D7FF0000DCFF0000E1FF0000E3FF0000E4FF0000
-          E3FF0000E0FF0000DCFF1717DAFFB3B3DAE5F9F9F91AFFFFFF00FFFFFF00C0C0
-          C04D5858DDFF0000D7FF0000DEFF0000E4FF0000EAFF0000EDFF0000EEFF0000
-          EDFF0000E9FF0000E4FF0000DDFF1717DAFFC4C4D6BAF6F6F601E2E2E22FCFCF
-          E6F50101D5FF0000DDFF0F0FE5FFAAAADAFF3333D5FF0000F5FF0000F7FF1919
-          F1FFACACD6FF2929D0FF0000E4FF0000DCFF6161E1FFE7E7E753C8C8CA843939
-          D9FF0000D8FF0000E1FF5050E8FFEAEAEAFFE4E4E4FF3636D3FF4F4FEDFFDBDB
-          E0FFE4E4E4FF8282C9FF0000E9FF0000E0FF0000D7FFCECED7B3C0C0D9CE2323
-          D7FF0F0FDDFF0000E4FF0000EDFF9B9BEDFFE7E7E8FFE4E4E4FFE4E4E4FFE5E5
-          E5FFD2D2E2FF0808EEFF0000EDFF0000E3FF1111DCFFA3A3DBEFACACDAEC2828
-          D9FF2222DFFF0707E5FF0000EEFF0E0EF8FFC1C1EFFFE9E9E9FFE9E9E9FFE2E2
-          E6FF2222E6FF0000F7FF0000EEFF0B0BE5FF2121DFFF9A9ADFFEB0B0DAE93535
-          DBFF2F2FE1FF2F2FE9FF1414EFFF3131F5FFE1E1F4FFF2F2F2FFF1F1F1FFF2F2
-          F2FF3B3BD9FF0000F5FF1616EFFF2E2EE8FF2F2FE0FF9C9CDFFDC7C7D6B84747
-          DCFF3C3CE2FF3C3CE9FF4E4EF0FFF0F0FDFFFDFDFDFFCFCFF1FFCBCBF7FFFAFA
-          FAFFFDFDFDFF5E5EE0FF3C3CEFFF3C3CE8FF4040E1FFB4B4DCE2EEEEEE6C8D8D
-          E6FE5050E2FF4949E7FF8181EFFFFEFEFFFFDDDDF6FF5454F2FF5454FAFFC0C0
-          FAFFFFFFFFFFA4A4E1FF4949ECFF4B4BE7FF5B5BE4FFD9D9D986E5E5E50AE1E1
-          E1DD7979E6FF5E5EE7FF5656EAFF7171EAFF5A5AEFFF5656F4FF5656F4FF5656
-          F4FF7373EDFF5A5AEDFF5858EAFF7373E9FFB0B0E9FCEAEAEA27FFFFFF00C7C7
-          C70BBABAE8F88F8FEBFF7676EAFF6666EBFF6363EEFF6363EFFF6363EFFF6363
-          EFFF6363EDFF6B6BECFF8E8EEEFF9595EBFFD6D6D679FFFFFF00FFFFFF00FFFF
-          FF00D0D0D02DBDBDE9F8A4A4EEFFA9A9F1FF9696EFFF8686EEFF8585EEFF9090
-          F0FFA5A5F1FFA6A6F0FF9F9FECFFD7D7D798FFFFFF00FFFFFF00FFFFFF00FFFF
-          FF00FFFFFF00C7C7C70BE1E1E1DDACACECFEB8B8F2FFBBBBF3FFBABAF3FFBDBD
-          F3FFA3A3EDFFE3E3EEF5C0C0C04EFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-          FF00FFFFFF00FFFFFF00E5E5E50AEFEFEF6DCACAD7B8BABADDE5B9B9DDEBC5C5
-          DCCECDCDCE85E3E3E330FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+          76060000424D7606000000000000360000002800000014000000140000000100
+          2000000000004006000064000000640000000000000000000000FFFFFF00FFFF
+          FF008A2300BA8C2300FF8C2300FF8C2300FF89230053FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00892300498C2300FF8C2300FF8C2300FF8B23
+          00C4FFFFFF00FFFFFF00FFFFFF008B2300128B2300C58B23004D8B23004D8B23
+          00798A22009EFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008A22
+          00968A23007F8B23004D8B23004D8A2200C689220018FFFFFF00FFFFFF008C23
+          00188B2300B5FFFFFF00FFFFFF00882200338A2200A9FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF008A2200A28822003DFFFFFF00FFFFFF008A22
+          00B389220021FFFFFF00FFFFFF008C2300188B2300B8FFFFFF00FFFFFF008922
+          003E8A2200A8FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008A22
+          00A189220047FFFFFF00FFFFFF008A2200B689220020FFFFFF00FFFFFF008C23
+          00178B2300B7FFFFFF00FFFFFF008922003E8A2200A7FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF008A2200A089220047FFFFFF00FFFFFF008A22
+          00B58922001FFFFFFF00FFFFFF00892200128B2300BDFFFFFF00FFFFFF008922
+          00408A2200ABFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008A22
+          00A389220049FFFFFF00FFFFFF008A2200BB8721001BFFFFFF008A23008B8B23
+          00C48A2300ADFFFFFF00FFFFFF00882200278A2300DB8A2300B18822000DFFFF
+          FF00FFFFFF00FFFFFF00892200648B2300DB8822002EFFFFFF00FFFFFF008A23
+          00A78A2300C68A2300918C2300FF8B23005D6F1C0002FFFFFF00FFFFFF00FFFF
+          FF008321000A8A2200C28A22003CFFFFFF008922002B8A230081FFFFFF008422
+          000AFFFFFF00FFFFFF00FFFFFF00771F0002892200558C2300FF8C2300FF8B23
+          004AFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008922007288210019FFFF
+          FF00FFFFFF008B2300A58B230084FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00892200438C2300FF8C2300FF8B23004DFFFFFF00FFFFFF00FFFFFF008A23
+          003C8B2300768B23006F8B2300748B2300768B2300758B23006F8B2300F58A23
+          008B771E0000FFFFFF00FFFFFF00FFFFFF00892200468C2300FF8C2300FF8B23
+          004CFFFFFF00FFFFFF00FFFFFF008A23003D8B2300768B23006F8B2300748B23
+          00768B2300758B23006F8B2300F58A23008B771E0000FFFFFF00FFFFFF00FFFF
+          FF00892200458C2300FF8C2300FF8B23004AFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF008923007589230013FFFFFF00FFFFFF008B2300A58B230086FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00892200438C2300FF8B2300FF8A23
+          0055FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008A2300C58A230029FFFF
+          FF008822002C8A230081FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF008A22004D8B2300FF8A2200678B2300C68B2300588A2200458A2300428A22
+          00478B2300898B2300B383200001FFFFFF00FFFFFF00FFFFFF00892200418A23
+          00818A2300478A2300428A2200448B2300558B2300C58A230075FFFFFF008A22
+          00328922008B862200A4872200BC872200918A23007C84200006FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00892200158A23007E87220091872200BC862200A48922
+          008C8A230036FFFFFF00FFFFFF00FFFFFF008A23002F8A2300B68B2300A58B23
+          0098FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF008B2300988B2300A58B2300B68923002EFFFFFF00FFFFFF00FFFFFF008020
+          00078A2300CC89220023FFFFFF008B23008D8A230082FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF008A2300818B23008DFFFFFF00892200238B23
+          00CD88220008FFFFFF00FFFFFF007B1F0012892200C5FFFFFF00FFFFFF008A22
+          00488A2300A7FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008922
+          00A58A220048FFFFFF00FFFFFF008A2300C788220013FFFFFF00FFFFFF00FFFF
+          FF008B2300908B2300938A2300578B2300C38A230037FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF008B2300378B2300C38A2300578B2300938B23
+          008FFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008B2300D38B2300FF8A23
+          0069FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF008A2300698B2300FF8B2300D3FFFFFF00FFFFFF00FFFFFF00
         }
         Layout = blGlyphTop
         OnClick = BtnClonarClick
@@ -221,18 +239,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditCEP: TDBEdit[8]
           Left = 9
           Height = 23
-          Top = 127
+          Top = 173
           Width = 80
           DataField = 'CEP'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 4
+          TabOrder = 6
         end
         object LabelCodigo4: TLabel[9]
           Left = 8
           Height = 15
-          Top = 110
+          Top = 156
           Width = 24
           Caption = 'CEP:'
           ParentColor = False
@@ -240,18 +258,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditLogradouro: TDBEdit[10]
           Left = 132
           Height = 23
-          Top = 127
+          Top = 173
           Width = 80
           DataField = 'LOGRADOURO'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 5
+          TabOrder = 7
         end
         object LabelCodigo5: TLabel[11]
           Left = 131
           Height = 15
-          Top = 110
+          Top = 156
           Width = 65
           Caption = 'Logradouro:'
           ParentColor = False
@@ -259,18 +277,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditEndereco: TDBEdit[12]
           Left = 221
           Height = 23
-          Top = 127
-          Width = 407
+          Top = 173
+          Width = 531
           DataField = 'ENDERECO'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 6
+          TabOrder = 8
         end
         object LabelCodigo6: TLabel[13]
           Left = 220
           Height = 15
-          Top = 110
+          Top = 156
           Width = 52
           Caption = 'Endereço:'
           ParentColor = False
@@ -278,19 +296,19 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditNro: TDBEdit[14]
           Left = 10
           Height = 23
-          Top = 174
+          Top = 220
           Width = 80
           DataField = 'NRO'
           DataSource = DSObjetos
           Alignment = taRightJustify
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 7
+          TabOrder = 9
         end
         object LabelCodigo7: TLabel[15]
           Left = 9
           Height = 15
-          Top = 157
+          Top = 203
           Width = 23
           Caption = 'Nro:'
           ParentColor = False
@@ -298,18 +316,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditComplemento: TDBEdit[16]
           Left = 97
           Height = 23
-          Top = 174
+          Top = 220
           Width = 368
           DataField = 'COMPLEMENTO'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 8
+          TabOrder = 10
         end
         object LabelCodigo8: TLabel[17]
           Left = 97
           Height = 15
-          Top = 157
+          Top = 203
           Width = 80
           Caption = 'Complemento:'
           ParentColor = False
@@ -317,18 +335,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditBairro: TDBEdit[18]
           Left = 476
           Height = 23
-          Top = 174
+          Top = 220
           Width = 278
           DataField = 'BAIRRO'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 9
+          TabOrder = 11
         end
         object LabelCodigo9: TLabel[19]
           Left = 476
           Height = 15
-          Top = 156
+          Top = 202
           Width = 34
           Caption = 'Bairro:'
           ParentColor = False
@@ -336,20 +354,20 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditCidade: TDBEdit[20]
           Left = 10
           Height = 23
-          Top = 221
+          Top = 267
           Width = 80
           DataField = 'CIDADE'
           DataSource = DSObjetos
           Alignment = taRightJustify
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 10
+          TabOrder = 12
           OnExit = DBEditCidadeExit
         end
         object LabelCodigo10: TLabel[21]
           Left = 9
           Height = 15
-          Top = 204
+          Top = 250
           Width = 40
           Caption = 'Cidade:'
           ParentColor = False
@@ -358,7 +376,7 @@ inherited FrmCadPacientes: TFrmCadPacientes
           Left = 96
           Height = 24
           Hint = 'Selecionar Cidade...'
-          Top = 220
+          Top = 266
           Width = 32
           Flat = True
           Font.Color = clWindowText
@@ -401,18 +419,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditNomeCidade: TDBEdit[23]
           Left = 136
           Height = 23
-          Top = 221
+          Top = 267
           Width = 169
           DataField = 'NOME_CIDADE'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 11
+          TabOrder = 13
         end
         object LabelCodigo11: TLabel[24]
           Left = 318
           Height = 15
-          Top = 204
+          Top = 250
           Width = 38
           Caption = 'Estado:'
           ParentColor = False
@@ -420,18 +438,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditUF: TDBEdit[25]
           Left = 318
           Height = 23
-          Top = 221
+          Top = 267
           Width = 80
           DataField = 'UF_CIDADE'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 12
+          TabOrder = 14
         end
         object LabelCodigo12: TLabel[26]
           Left = 413
           Height = 15
-          Top = 204
+          Top = 250
           Width = 40
           Caption = 'Celular:'
           ParentColor = False
@@ -439,18 +457,18 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditCelular: TDBEdit[27]
           Left = 413
           Height = 23
-          Top = 221
+          Top = 267
           Width = 154
           DataField = 'CELULAR'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 13
+          TabOrder = 15
         end
         object LabelCodigo13: TLabel[28]
           Left = 580
           Height = 15
-          Top = 204
+          Top = 250
           Width = 69
           Caption = 'Email/Conta:'
           ParentColor = False
@@ -458,30 +476,32 @@ inherited FrmCadPacientes: TFrmCadPacientes
         object DBEditEmailConta: TDBEdit[29]
           Left = 580
           Height = 23
-          Top = 221
+          Top = 267
           Width = 174
           DataField = 'EMAIL_CONTA'
           DataSource = DSObjetos
           CharCase = ecNormal
           MaxLength = 0
-          TabOrder = 14
+          TabOrder = 16
         end
         object DBMemoProblema: TDBMemo[30]
-          Left = 8
-          Height = 90
-          Top = 273
-          Width = 392
+          Left = 11
+          Height = 50
+          Top = 328
+          Width = 226
           DataField = 'PROBLEMA'
           DataSource = DSObjetos
-          TabOrder = 15
+          TabOrder = 17
+          Visible = False
         end
         object LabelCodigo14: TLabel[31]
-          Left = 9
+          Left = 232
           Height = 15
-          Top = 252
+          Top = 360
           Width = 54
           Caption = 'Problema:'
           ParentColor = False
+          Visible = False
         end
         object BtnAbrirImagem: TSpeedButton[32]
           Left = 634
@@ -607,7 +627,7 @@ inherited FrmCadPacientes: TFrmCadPacientes
           Caption = 'Imagem:'
           ClientHeight = 92
           ClientWidth = 115
-          TabOrder = 16
+          TabOrder = 18
           Visible = False
           object DBImageImgPaciente: TDBImage
             Left = 3
@@ -624,9 +644,69 @@ inherited FrmCadPacientes: TFrmCadPacientes
           Left = 95
           Height = 24
           Hint = 'Buscar Dados de Endereço'
-          Top = 125
+          Top = 172
           Width = 32
           Color = clBlue
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000CA990000CA9900000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFCFCFCF4F4F4EDEDEDE7E7E7E4E4E4D7D7D7BBBBBBB6B6
+            B6D0D0D0FAFAFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDF9F9F9F5
+            F5F5F2F2F2F0F0F0E7E7E7999898A2A2A3BBBBBBFCFCFCFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA8A8A731302F9291
+            91CFCECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFE0E0DF3635345E5C5ACFCECEFBFBFBFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDDDDD4B4949696665C3C2C2FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE
+            FEFE686767535150B2B1B1F7F6F6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            F6F6F6E6E6E6DADADAD4D4D4E5E5E5C5C5C5646261A4A2A2FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFF4F4F4D5D2CEDAD2C7D1C8C0C3BCB5AFACAA9F
+            9FA1C6C6C6F0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2CCC7BF
+            F3E3C9FEF4E1FFFCF6FEFCFBF6EFEAC8C4BFD6D6D6FFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFD8D6D3D7CBB7FFF0D1FFF5DFFFFBF3FFFEFDFEFDFCF6
+            EFE8CAC8C7F5F5F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC2BDB6E8DDCA
+            FFF0D2FFF4DBFFFAEEFFFEFBFFFFFFFDFBF9DED8D2E9E9E9FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFB7B3ACECE3D5FFF3DAFFF2D8FFF8E8FFFDF8FFFFFFFE
+            FCFBE1DAD4EBEBEBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCBCAC7DDD5C5
+            FFF5E1FFF1D5FFF6E3FFFCF3FFFFFFFAF6F3DBD8D3F3F3F3FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFE8E8E7CFCDC7FEF8E9FFF2D6FFF4DEFFFAEEFEFCF9D4
+            CECAE3E3E3FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFDE8E7E6
+            D5D4D1E0D7C6DBD1BCD9D2C6C1BDB9D0CFCEFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDE7E6E6CFCDCCC5C3BFD1D0CDE6E5E5FC
+            FCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          }
+          Layout = blGlyphTop
+          OnClick = BtnBuscaCEPClick
+          ParentFont = False
+          ParentShowHint = False
+        end
+        object LabelCodigo15: TLabel[36]
+          Left = 9
+          Height = 15
+          Top = 111
+          Width = 81
+          Caption = 'Grupo Familiar:'
+          ParentColor = False
+        end
+        object DBEditGrupoFamiliar: TDBEdit[37]
+          Left = 10
+          Height = 23
+          Top = 128
+          Width = 80
+          DataField = 'GRUPO_FAMILIAR'
+          DataSource = DSObjetos
+          Alignment = taRightJustify
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+          OnExit = DBEditGrupoFamiliarExit
+        end
+        object BtnPesqGrupoFamiliar: TSpeedButton[38]
+          Left = 95
+          Height = 24
+          Hint = 'Selecionar Grupo Familiar...'
+          Top = 127
+          Width = 32
           Flat = True
           Font.Color = clWindowText
           Font.Height = -11
@@ -660,10 +740,21 @@ inherited FrmCadPacientes: TFrmCadPacientes
             FCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
           }
           Layout = blGlyphTop
-          OnClick = BtnBuscaCEPClick
+          OnClick = BtnPesqGrupoFamiliarClick
           ShowHint = True
           ParentFont = False
           ParentShowHint = False
+        end
+        object DBEditDescGrupoFamiliar: TDBEdit[39]
+          Left = 136
+          Height = 23
+          Top = 128
+          Width = 488
+          DataField = 'DESCRICAO'
+          DataSource = DSObjetos
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
         end
       end
     end
@@ -780,11 +871,13 @@ inherited FrmCadPacientes: TFrmCadPacientes
   inherited ZQObjetos: TZQuery[9]
     AfterScroll = ZQObjetosAfterScroll
     SQL.Strings = (
-      'select '' '' as selecionado, PACIENTE.*,'
-      '       cidade.nome_cidade,                                                   '
-      '       CIDADE.uf_cidade'
-      'from tpaciente PACIENTE                                                      '
-      'inner join tcidade cidade on PACIENTE.cidade = cidade.id_cidade              '
+      'select '' '' as selecionado, PACIENTE.*,                        '
+      '       cidade.nome_cidade,                                    '
+      '       CIDADE.uf_cidade,                                      '
+      '       GRUPO_FAMILIAR.DESCRICAO                               '
+      'from tpaciente PACIENTE                                       '
+      'inner join tcidade cidade on PACIENTE.cidade = cidade.id_cidade '
+      'LEFT join tgrupo_familiar grupo_familiar on PACIENTE.grupo_familiar = grupo_familiar.id_grupo_familiar'
     )
     left = 813
     object ZQObjetosSELECIONADO: TStringField[0]
@@ -970,6 +1063,25 @@ inherited FrmCadPacientes: TFrmCadPacientes
       ReadOnly = False
       Required = False
       Size = 9
+    end
+    object ZQObjetosGRUPO_FAMILIAR: TLongintField[19]
+      FieldKind = fkData
+      FieldName = 'GRUPO_FAMILIAR'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQObjetosDESCRICAO: TStringField[20]
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
     end
   end
   inherited ZQComandos: TZQuery[10]

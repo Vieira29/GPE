@@ -194,7 +194,6 @@ begin
     sql.add('FROM tcidade CID ');
     open;
     last;
-    first;
   end;
 
   ValorTotalRegistros := ZQObjetos.RecordCount;

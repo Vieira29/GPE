@@ -19,10 +19,13 @@ type
     BtnLimparImagem: TSpeedButton;
     BtnPesqCidade: TSpeedButton;
     BtnBuscaCEP: TSpeedButton;
+    BtnPesqGrupoFamiliar: TSpeedButton;
     DBDateEditNacimento: TDBDateEdit;
+    DBEditGrupoFamiliar: TDBEdit;
     DBEditCodigo: TDBEdit;
     DBEditCidade: TDBEdit;
     DBEditNomeCidade: TDBEdit;
+    DBEditDescGrupoFamiliar: TDBEdit;
     DBEditUF: TDBEdit;
     DBEditCelular: TDBEdit;
     DBEditEmailConta: TDBEdit;
@@ -46,6 +49,7 @@ type
     LabelCodigo12: TLabel;
     LabelCodigo13: TLabel;
     LabelCodigo14: TLabel;
+    LabelCodigo15: TLabel;
     LabelCodigo2: TLabel;
     LabelCodigo3: TLabel;
     LabelCodigo4: TLabel;
@@ -61,8 +65,10 @@ type
     ZQObjetosCEP: TStringField;
     ZQObjetosCIDADE: TLongintField;
     ZQObjetosCOMPLEMENTO: TStringField;
+    ZQObjetosDESCRICAO: TStringField;
     ZQObjetosEMAIL_CONTA: TStringField;
     ZQObjetosENDERECO: TStringField;
+    ZQObjetosGRUPO_FAMILIAR: TLongintField;
     ZQObjetosIDADE: TSmallintField;
     ZQObjetosID_PACIENTE: TLongintField;
     ZQObjetosIMAGEM: TBlobField;
@@ -85,8 +91,10 @@ type
     procedure BtnClonarClick(Sender: TObject);
     procedure BtnLimparImagemClick(Sender: TObject);
     procedure BtnPesqCidadeClick(Sender: TObject);
+    procedure BtnPesqGrupoFamiliarClick(Sender: TObject);
     procedure DBDateEditNacimentoExit(Sender: TObject);
     procedure DBEditCidadeExit(Sender: TObject);
+    procedure DBEditGrupoFamiliarExit(Sender: TObject);
     procedure DBGridCadCellClick(Column: TColumn);
     procedure DBGridCadDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
@@ -275,10 +283,9 @@ begin
 
 
         VCodigo := 0;
-        if ZQObjetos.State IN [DSEDIT] then
-          VCodigo := ZQObjetos.FieldByName('ID_PACIENTE').AsInteger // ZQObjetosCODIGO.AsString
-        ELSE
-          VCODIGO := StrToInt(dm.ObtemSequencia('GEN_TPACIENTE_ID'));
+        if ZQObjetos.State IN [DSEDIT]
+        then VCodigo := ZQObjetos.FieldByName('ID_PACIENTE').AsInteger // ZQObjetosCODIGO.AsString
+        ELSE VCODIGO := StrToInt(dm.ObtemSequencia('GEN_TPACIENTE_ID'));
 
         dm.IniciaTransacao();
 
@@ -288,10 +295,10 @@ begin
           SQL.Clear;
           sql.add('UPDATE OR INSERT INTO TPACIENTE 															');
           sql.add('(ID_PACIENTE, NOME, TELEFONE, CEP, LOGRADOURO, BAIRRO, ENDERECO, NRO, COMPLEMENTO, CIDADE, ');
-          sql.add('CELULAR, NASCIMENTO ,EMAIL_CONTA, IMAGEM, IDADE, PROBLEMA)                     ');
+          sql.add('CELULAR, NASCIMENTO ,EMAIL_CONTA, IMAGEM, IDADE, PROBLEMA, GRUPO_FAMILIAR)                     ');
           sql.add('VALUES                                                                                     ');
           sql.add('(:ID_PACIENTE, :NOME, :TELEFONE, :CEP, :LOGRADOURO, :BAIRRO, :ENDERECO, :NRO, :COMPLEMENTO, ');
-          sql.add(':CIDADE, :CELULAR, :NASCIMENTO, :EMAIL_CONTA, :IMAGEM, :IDADE, :PROBLEMA)      ');
+          sql.add(':CIDADE, :CELULAR, :NASCIMENTO, :EMAIL_CONTA, :IMAGEM, :IDADE, :PROBLEMA, :GRUPO_FAMILIAR)      ');
           sql.add('MATCHING (ID_PACIENTE)                                                                     ');
           ParamByName('ID_PACIENTE').AsInteger := VCodigo;
           ParamByName('NOME').AsString 	      := ZQObjetos.FieldByName('NOME').AsString;
@@ -316,15 +323,16 @@ begin
              ZQObjetos.FieldByName('IMAGEM').AsString;
           end;
 
-          ParamByName('IDADE').AsInteger       := ZQObjetos.FieldByName('IDADE').AsInteger;
-          ParamByName('PROBLEMA').AsString    := ZQObjetos.FieldByName('PROBLEMA').AsString;
+          ParamByName('IDADE').AsInteger           := ZQObjetos.FieldByName('IDADE').AsInteger;
+          ParamByName('PROBLEMA').AsString         := ZQObjetos.FieldByName('PROBLEMA').AsString;
+          ParamByName('GRUPO_FAMILIAR').AsInteger  := ZQObjetos.FieldByName('GRUPO_FAMILIAR').AsInteger;
           ExecSQL;
           DM.ConfirmaTransacao;
 
-          if ZQObjetos.State in [DSINSERT] then
-            MessageDlg( 'Informação', 'Cadastro realizado com sucesso!', mtConfirmation, [mbOK],0 )
-          else
-            MessageDlg( 'Informação', 'Alteração realizada com sucesso!', mtConfirmation, [mbOK],0 );
+          if ZQObjetos.State in [DSINSERT]
+          then MessageDlg( 'Informação', 'Cadastro realizado com sucesso!', mtConfirmation, [mbOK],0 )
+          else MessageDlg( 'Informação', 'Alteração realizada com sucesso!', mtConfirmation, [mbOK],0 );
+
         end;
 
           ZQObjetos.FieldByName('ID_PACIENTE').AsInteger := VCodigo;
@@ -417,9 +425,11 @@ begin
      sql.Clear;
      sql.add('select '' '' as selecionado, PACIENTE.*,                        ');
      sql.add('       cidade.nome_cidade,                                      ');
-     sql.add('       CIDADE.uf_cidade                                         ');
+     sql.add('       CIDADE.uf_cidade,                                         ');
+     sql.add('       GRUPO_FAMILIAR.DESCRICAO                                 ');
      sql.add('from tpaciente PACIENTE                                         ');
-     sql.add('inner join tcidade cidade on PACIENTE.cidade = cidade.id_cidade ');
+     sql.add('left join tcidade cidade on PACIENTE.cidade = cidade.id_cidade ');
+     sql.add('left join tgrupo_familiar grupo_familiar on PACIENTE.grupo_familiar = grupo_familiar.id_grupo_familiar ');
      sql.add('WHERE PACIENTE.ID_PACIENTE = :ID_PACIENTE ');
      ParamByName('ID_PACIENTE').AsInteger := ZQObjetosID_PACIENTE.AsInteger;
      open;
@@ -443,6 +453,7 @@ begin
   ZQObjetos.FieldByName('NASCIMENTO').AsDateTime  :=  ZQComandos.FieldByName('NASCIMENTO').AsDateTime;
   ZQObjetos.FieldByName('EMAIL_CONTA').AsString   :=  ZQComandos.FieldByName('EMAIL_CONTA').AsString;
   ZQObjetos.FieldByName('IDADE').AsInteger        :=  ZQComandos.FieldByName('IDADE').AsInteger;
+  ZQObjetos.FieldByName('GRUPO_FAMILIAR').AsInteger :=  ZQComandos.FieldByName('GRUPO_FAMILIAR').AsInteger;
   ZQObjetos.FieldByName('PROBLEMA').AsString      :=  ZQComandos.FieldByName('PROBLEMA').AsString;
 
   DBEditCidadeExit(self);
@@ -475,6 +486,37 @@ begin
       ZQObjetos.FieldByName('CIDADE').AsString       := FrmFiltro.ZQObjetos.FIELDBYNAME('ID_CIDADE').AsString;
       ZQObjetos.FieldByName('NOME_CIDADE').AsString  := FrmFiltro.ZQObjetos.FIELDBYNAME('NOME_CIDADE').AsString;
       ZQObjetos.FieldByName('UF_CIDADE').AsString    := FrmFiltro.ZQObjetos.FIELDBYNAME('UF_CIDADE').AsString;
+    end;
+
+  finally
+    FreeAndNil(FrmFiltro);
+  end;
+end;
+
+procedure TFrmCadPacientes.BtnPesqGrupoFamiliarClick(Sender: TObject);
+begin
+   inherited;
+    try
+     if not (ZQObjetos.State in [dsInsert, dsEdit]) then
+       ZQObjetos.Edit;
+
+    FrmFiltro := TFrmFiltro.Create(self);
+    VTabela := 'TGRUPO_FAMILIAR';
+    FrmFiltro.ShowModal;
+
+    if FrmFiltro.BitBtnSelecionar.ModalResult = mrok then
+    begin
+      ZQObjetos.FieldByName('GRUPO_FAMILIAR').AsString  := FrmFiltro.ZQObjetos.FIELDBYNAME('ID_GRUPO_FAMILIAR').AsString;
+      ZQObjetos.FieldByName('DESCRICAO').AsString       := FrmFiltro.ZQObjetos.FIELDBYNAME('DESCRICAO').AsString;
+      ZQObjetos.FieldByName('CEP').AsString 	     := FrmFiltro.ZQObjetos.FieldByName('CEP').AsString;
+      ZQObjetos.FieldByName('LOGRADOURO').AsString   := FrmFiltro.ZQObjetos.FieldByName('LOGRADOURO').AsString;
+      ZQObjetos.FieldByName('BAIRRO').AsString       := FrmFiltro.ZQObjetos.FieldByName('BAIRRO').AsString;
+      ZQObjetos.FieldByName('ENDERECO').AsString     := FrmFiltro.ZQObjetos.FieldByName('ENDERECO').AsString;
+      ZQObjetos.FieldByName('NRO').AsInteger 	     := FrmFiltro.ZQObjetos.FieldByName('NRO').AsInteger;
+      ZQObjetos.FieldByName('COMPLEMENTO').AsString  := FrmFiltro.ZQObjetos.FieldByName('COMPLEMENTO').AsString;
+      ZQObjetos.FieldByName('CIDADE').AsInteger      := FrmFiltro.ZQObjetos.FieldByName('CIDADE').AsInteger;
+
+
     end;
 
   finally
@@ -541,6 +583,63 @@ begin
           end;
 
   end;
+
+
+end;
+
+procedure TFrmCadPacientes.DBEditGrupoFamiliarExit(Sender: TObject);
+begin
+
+  inherited;
+
+  if not (ZQObjetos.state in [DSEDIT, DSINSERT])
+  then Exit;
+
+  if ZQObjetos.FieldByName('GRUPO_FAMILIAR').AsString = ''
+  then Exit;
+
+
+  with ZQComandos do
+  begin
+    close;
+    sql.Clear;
+    sql.add('SELECT                                    ');
+    sql.add('GF.*                                      ');
+    sql.add('FROM tgrupo_familiar GF                   ');
+    sql.add('WHERE                                     ');
+    sql.add('GF.id_grupo_familiar = :ID_GRUPO_FAMILIAR ');
+    ParamByName('ID_GRUPO_FAMILIAR').AsString := ZQObjetos.FieldByName('GRUPO_FAMILIAR').AsString;
+    open;
+    last;
+    first;
+
+    if (RecordCount = 0)
+    then begin
+          MessageDlg('Grupo Familiar inválido!', mtWarning, [mbOk], 0);
+          DBEditCEP.setfocus;
+          abort;
+          end
+    else begin
+
+      if not (ZQObjetos.State in [DSEDIT, DSINSERT]) then
+         ZQObjetos.Edit;
+         ZQObjetos.FieldByName('GRUPO_FAMILIAR').AsString := FIELDBYNAME('id_grupo_familiar').AsString;
+         ZQObjetos.FieldByName('DESCRICAO').AsString      := FIELDBYNAME('descricao').AsString;
+
+         ZQObjetos.FieldByName('CEP').AsString 	           := FieldByName('CEP').AsString;
+         ZQObjetos.FieldByName('LOGRADOURO').AsString      := FieldByName('LOGRADOURO').AsString;
+         ZQObjetos.FieldByName('BAIRRO').AsString          := FieldByName('BAIRRO').AsString;
+         ZQObjetos.FieldByName('ENDERECO').AsString        := FieldByName('ENDERECO').AsString;
+         ZQObjetos.FieldByName('NRO').AsInteger            := FieldByName('NRO').AsInteger;
+         ZQObjetos.FieldByName('COMPLEMENTO').AsString     := FieldByName('COMPLEMENTO').AsString;
+         ZQObjetos.FieldByName('CIDADE').AsInteger         := FieldByName('CIDADE').AsInteger;
+
+
+
+
+         end;
+
+         end;
 
 
 end;
@@ -619,12 +718,13 @@ begin
     sql.Clear;
     sql.add('select '' '' as selecionado, PACIENTE.*,                        ');
     sql.add('       cidade.nome_cidade,                                      ');
-    sql.add('       CIDADE.uf_cidade                                         ');
+    sql.add('       CIDADE.uf_cidade,                                         ');
+    sql.add('       GRUPO_FAMILIAR.DESCRICAO                                 ');
     sql.add('from tpaciente PACIENTE                                         ');
-    sql.add('inner join tcidade cidade on PACIENTE.cidade = cidade.id_cidade ');
+    sql.add('left join tcidade cidade on PACIENTE.cidade = cidade.id_cidade ');
+    sql.add('LEFT join tgrupo_familiar grupo_familiar on PACIENTE.grupo_familiar = grupo_familiar.id_grupo_familiar ');
     open;
     last;
-    first;
   end;
 
   ValorTotalRegistros := ZQObjetos.RecordCount;
